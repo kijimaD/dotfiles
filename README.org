@@ -1,0 +1,8 @@
+#+begin_src shell
+ln -sf ~/.dotfiles/.bash_logout ~/.bash_logout
+ln -sf ~/.dotfiles/.bash_profile ~/.bash_profile
+ln -sf ~/.dotfiles/.bashrc ~/.bashrc
+ln -sf ~/.dotfiles/.irbrc ~/.irbrc
+ln -sf ~/.dotfiles/.pryrc ~/.pryrc
+ln -sf ~/.dotfiles/.textlintrc ~/.textlintrc
+#+end_src
