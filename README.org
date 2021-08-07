@@ -13,5 +13,5 @@ stow -v bash
 
 Set all file links.
 #+begin_src shell
-make all
+make stow_all
 #+end_src
