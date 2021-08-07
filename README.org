@@ -1,8 +1,17 @@
+Dotfiles managed with GNU Stow!
+* Install  stow
+https://www.gnu.org/software/stow/
+
 #+begin_src shell
-ln -sf ~/.dotfiles/.bash_logout ~/.bash_logout
-ln -sf ~/.dotfiles/.bash_profile ~/.bash_profile
-ln -sf ~/.dotfiles/.bashrc ~/.bashrc
-ln -sf ~/.dotfiles/.irbrc ~/.irbrc
-ln -sf ~/.dotfiles/.pryrc ~/.pryrc
-ln -sf ~/.dotfiles/.textlintrc ~/.textlintrc
+guix install stow
+#+end_src
+* Run
+Specify directory.
+#+begin_src shell
+stow -v bash
+#+end_src
+
+Set all file links.
+#+begin_src shell
+make all
 #+end_src
