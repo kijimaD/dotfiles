@@ -1,5 +1,5 @@
 stow_all:
-	stow -v bash fonts git guix keyboard npm oyainput ruby
+	stow -v autostart bash fonts git guix keyboard npm oyainput ruby
 project:
 	mkdir Project
 clone_roam:
