@@ -15,3 +15,6 @@ Set all file links.
 #+begin_src shell
 make stow_all
 #+end_src
+* Todo
+- syncthing,dropboxなど自動起動
+- caps入れ替え
