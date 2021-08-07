@@ -1,10 +1,10 @@
 stow_all:
 	stow -v autostart bash fish fonts git guile guix keyboard npm nyxt oyainput ruby
 project:
-	mkdir Project
+	mkdir ~/Project
 fonts:
-	mkdir .fonts
+	mkdir ~/.fonts
 clone_roam:
-	git clone git@github.com:kijimaD/roam.git
+	git clone git@github.com:kijimaD/roam.git ~/roam
 clone_cask:
 	git clone https://github.com/cask/cask ~/.cask
