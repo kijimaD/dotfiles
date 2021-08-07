@@ -1,7 +1,9 @@
 stow_all:
-	stow -v autostart bash fonts git guix keyboard npm oyainput ruby
+	stow -v autostart bash fish fonts git guile guix keyboard npm nyxt oyainput ruby
 project:
 	mkdir Project
+fonts:
+	mkdir .fonts
 clone_roam:
 	git clone git@github.com:kijimaD/roam.git
 clone_cask:

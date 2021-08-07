@@ -117,4 +117,3 @@ if ! shopt -oq posix; then
 fi
 
 export EDITOR="xed"
-eval "$(ntfy shell-integration)"
