@@ -13,6 +13,7 @@
    "file"
    "elfutils"
    "go"
+   "stow"
 
    ;; network
    "openssh"
