@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=gnome
+Comment=Gnome
+Exec=sh /home/kijimad/dotfiles/.bash_profile
+Terminal=false
+Hidden=true
