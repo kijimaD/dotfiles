@@ -1,0 +1,7 @@
+\.git
+\.site
+^/.*\.org
+archive
+backgrounds
+LICENSE
+Makefile
