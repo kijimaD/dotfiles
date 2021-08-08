@@ -1,5 +1,5 @@
 stow_all:
-	stow -v autostart bash fish fonts git guile guix keyboard npm nyxt oyainput ruby
+	stow -v autostart bash fish fonts git guile guix keyboard npm nyxt oyainput polybar ruby
 project:
 	mkdir ~/Project
 fonts:
