@@ -13,7 +13,7 @@ stow -v bash
 
 Set all file links.
 #+begin_src shell
-make stow_all
+stow .
 #+end_src
 * Todo
 - syncthing,dropboxなど自動起動

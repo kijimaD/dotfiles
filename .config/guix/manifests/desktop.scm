@@ -26,4 +26,13 @@
    ;; japanese input
    "ibus"
    "ibus-anthy"
-   "font-adobe-source-han-sans"))
+   "font-adobe-source-han-sans"
+
+   ;; emacs
+   "emacs-emacsql"
+   "emacs-vterm"
+   "emacs-org-roam"
+
+   ;; backup
+   "deja-dup"
+   ))
