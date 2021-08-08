@@ -3,7 +3,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/python:$PATH"
 export PATH="$HOME/.cask/bin:$PATH"
 
-export QT_SCALE_FACTOR=2.4
+export QT_SCALE_FACTOR=1
 
 # save history
 export PROMPT_COMMAND='history -a;history -c;history -r'
@@ -14,7 +14,7 @@ export GUIX_GTK3_IM_MODULE_FILE="$HOME/.guix-profile/lib/gtk-3.0/3.0.0/immodules
 
 function parse_git_branch_and_add_brackets {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \[\1\]/'
-n}
+}
 PS1="\h:\W \u\[\033[0;32m\]\$(parse_git_branch_and_add_brackets) \[\033[0m\]\$ "
 
 # non-system guix settings ================
@@ -62,6 +62,7 @@ then
 else
     PS1='\u@\h \w\$ '
 fi
+
 alias ls='ls -p --color=auto'
 alias ll='ls -l'
 alias grep='grep --color=auto'
