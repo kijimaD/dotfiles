@@ -11,13 +11,14 @@ clone_cask:
 	git clone https://github.com/cask/cask ~/.cask
 clone_emacs:
 	git clone git@github.com:kijimaD/.emacs.d.git ~/.emacs.d
+cask_install:
+	cd ~/.emacs.d && sh ~/.cask/bin/cask
+
 init_emacs:
 	make clone_cask
 	rm -rf ~/.emacs.d
 	make clone_emacs
-	cd ~/.emacs.d
-	sh ~/.cask/bin/cask
-	cd
+	make cask_install
 
 init_package:
 	guix package -m ~/dotfiles/.config/guix/manifests/desktop.scm

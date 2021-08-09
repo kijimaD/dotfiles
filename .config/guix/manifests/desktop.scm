@@ -38,6 +38,7 @@
    "emacs-emacsql"
    "emacs-vterm"
    "emacs-org-roam"
+   "libvterm"
 
    ;; backup
    "deja-dup"
