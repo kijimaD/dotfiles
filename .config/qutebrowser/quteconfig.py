@@ -42,3 +42,5 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 # work with the `:scroll-px` command.
 # Type: Bool
 c.scrolling.smooth = True
+
+config.source('qutemacs.py')
