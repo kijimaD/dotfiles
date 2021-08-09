@@ -27,6 +27,7 @@
    "polybar"
    "qutebrowser"
    "nyxt"
+   "redshift"
 
    ;; japanese input
    "ibus"
