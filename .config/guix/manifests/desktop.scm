@@ -17,11 +17,16 @@
 
    ;; network
    "openssh"
+   "curl"
+
+   ;; docker
+   "docker-cli"
 
    ;; desktop
    "syncthing"
    "polybar"
    "qutebrowser"
+   "nyxt"
 
    ;; japanese input
    "ibus"
