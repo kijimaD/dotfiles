@@ -11,7 +11,7 @@
   (timezone "Asia/Tokyo")
   (keyboard-layout
     (keyboard-layout
-      "jp,us"
+      "jp"
       #:options
       '("grp:alt_shift_toggle" "ctrl:nocaps")))
   (host-name "kijimad")
