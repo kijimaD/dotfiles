@@ -1,0 +1,23 @@
+[org/gnome/deja-dup]
+backend='google'
+prompt-check='2021-08-10T01:08:21+00'
+
+[org/gnome/deja-dup/file]
+migrated=true
+
+[org/gnome/desktop/input-sources]
+sources=[('xkb', 'jp')]
+xkb-options=['grp:alt_shift_toggle', 'ctrl:nocaps']
+
+[org/gnome/desktop/interface]
+gtk-im-module='gtk-im-context-simple'
+
+[org/gnome/evolution-data-server]
+migrated=true
+network-monitor-gio-name=''
+
+[org/gnome/shell]
+favorite-apps=['org.gnome.Epiphany.desktop', 'evolution.desktop', 'rhythmbox.desktop', 'shotwell.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop']
+
+[org/gnome/shell/world-clocks]
+locations=@av []
