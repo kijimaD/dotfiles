@@ -68,3 +68,7 @@ alias ll='ls -l'
 alias grep='grep --color=auto'
 
 shepherd
+
+GTK_IM_MODULE DEFAULT=ibus
+QT_IM_MODULE DEFAULT=ibus
+XMODIFIERS DEFAULT=@im=ibus

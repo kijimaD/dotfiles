@@ -6,6 +6,9 @@ clone_roam:
 	git clone git@github.com:kijimaD/roam.git ~/roam
 swapcaps_gnome:
 	gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps']"
+cp_sensitive_files:
+	cp ~/dotfiles/.authinfo ~/
+	cp ~/dotfiles/.gitconfig ~/
 
 clone_cask:
 	git clone https://github.com/cask/cask ~/.cask
@@ -34,4 +37,5 @@ batch:
 	make init_emacs
 	make init_package
 	reload_ja_input
+	cp_sensitive_files
 	stow .

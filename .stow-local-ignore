@@ -2,8 +2,12 @@
 \.gitignore
 \.site
 ^/.*\.org
+
 archive
 backgrounds
 LICENSE
 Makefile
+.authinfo
+.gitconfig
+
 /.config/guix/system\.scm
