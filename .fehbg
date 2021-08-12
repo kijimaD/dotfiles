@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill ~/dotfiles/backgrounds/4k-Ultra-HD_00330.jpg
