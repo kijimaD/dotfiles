@@ -12,8 +12,15 @@
     #:start (make-forkexec-constructor '("redshift"))
     #:stop  (make-kill-destructor)))
 
-(register-services syncthing redshift)
+(define ibus
+  (make <service>
+    #:provides '(ibus)
+    #:respawn? #t
+    #:start (make-forkexec-constructor '("ibus-daemon" "-d"))
+    #:stop  (make-kill-destructor)))
+
+(register-services syncthing redshift ibus)
 (action 'shepherd 'daemonize)
 
 ;; Start user services
-(for-each start '(syncthing)) ;; redshift doesn't work properly...
+(for-each start '(syncthing ibus)) ;; redshift doesn't work properly...
