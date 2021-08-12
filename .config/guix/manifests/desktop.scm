@@ -47,4 +47,5 @@
    "compton"
    "feh"
    "font-awesome"
+   "imagemagick"
    ))

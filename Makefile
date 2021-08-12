@@ -43,5 +43,6 @@ batch:
 
 timestamp = ${shell date "+%Y%m%d%H%M%S"}
 
+# imagemagick
 take_ss:
 	import ~/Desktop/${timestamp}.png
