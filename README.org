@@ -1,20 +1,21 @@
 Dotfiles managed with GNU Stow!
-* Install  stow
-https://www.gnu.org/software/stow/
-
+* Tools
+- GNU Guix
+- GNU Emacs
+- GNU Stow
+- nyxt
+- i3-wm
+- polybar
+* Install
 #+begin_src shell
-guix install stow
+make batch
 #+end_src
-* Run
-Specify directory.
-#+begin_src shell
-stow -v bash
-#+end_src
-
+* stow
 Set all file links.
 #+begin_src shell
 stow .
 #+end_src
-* Todo
-- syncthing,dropboxなど自動起動
-- caps入れ替え
+* Reference
+Great hacker settings.
+- https://github.com/daviwil/dotfiles
+- https://www.youtube.com/c/SystemCrafters

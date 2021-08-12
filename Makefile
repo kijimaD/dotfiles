@@ -39,3 +39,9 @@ batch:
 	reload_ja_input
 	cp_sensitive_files
 	stow .
+
+
+timestamp = ${shell date "+%Y%m%d%H%M%S"}
+
+take_ss:
+	import ~/Desktop/${timestamp}.png
