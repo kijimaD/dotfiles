@@ -1,4 +1,5 @@
 # Base: https://framagit.org/gagbo/dotfiles/blob/master/polybar/.config/polybar/config
+# need to install font-awesome
 
 [settings]
 screenchange-reload = true
@@ -51,7 +52,7 @@ font-4 = Source Code Pro:size=14;0
 
 modules-left = bspwm i3
 modules-center = date
-modules-right = cpu temperature memory eth wlan
+modules-right = cpu temperature memory eth wlan powermenu
 
 ; wm-restack = bspwm
 wm-restack = i3
@@ -180,10 +181,10 @@ wrapping-scroll = false
 ;pin-workspaces = true
 
 ; Workspace icons
-ws-icon-0 = "1;"
-ws-icon-1 = "2;"
-ws-icon-2 = "3;"
-ws-icon-3 = "9;"
+ws-icon-0 = "1;"
+ws-icon-1 = "2;"
+ws-icon-2 = "3;"
+ws-icon-3 = "9;"
 
 ws-icon-default = 
 
@@ -291,7 +292,7 @@ interval = 0.2
 format-prefix =
 format = <label> <ramp-coreload>
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${xrdb:color13:#f90000}
+format-underline = ${colors.primary}
 label = %percentage:2%%
 
 ramp-coreload-spacing = 1
@@ -314,7 +315,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${xrdb:color13:#4bffdc}
 ; label = %percentage_used:2%%
 
-label = MEM
+label = M
 label-font = 1
 label-foreground = #99
 
@@ -524,10 +525,11 @@ type = custom/menu
 expand-right = true
 
 format-spacing = 1
+format-underline = ${xrdb:color1:#0072BC}
 
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
+label-open = 
+label-open-foreground = ${xrdb:color1:#0072BC}
+label-close = cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
