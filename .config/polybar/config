@@ -1,5 +1,6 @@
-# Base: https://framagit.org/gagbo/dotfiles/blob/master/polybar/.config/polybar/config
-# need to install font-awesome
+; Base: https://framagit.org/gagbo/dotfiles/blob/master/polybar/.config/polybar/config
+; need to install font-awesome
+; https://fontawesome.com/v4.7/cheatsheet/
 
 [settings]
 screenchange-reload = true
@@ -26,7 +27,7 @@ height = 26
 offset-x = 0%
 offset-y = 0
 radius = 0
-fixed-center = false
+fixed-center = true
 bottom = false
 
 background = ${colors.background}
@@ -35,7 +36,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 3
+border-size = 0
 border-color = ${colors.background-alt}
 
 padding-left = 2
@@ -86,7 +87,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 2
+border-size = 0
 border-color = ${colors.background-alt}
 
 padding-left = 2
@@ -528,7 +529,7 @@ format-spacing = 1
 format-underline = ${xrdb:color1:#0072BC}
 
 label-open = 
-label-open-foreground = ${xrdb:color1:#0072BC}
+label-open-foreground = ${colors.foreground-alt}
 label-close = cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |

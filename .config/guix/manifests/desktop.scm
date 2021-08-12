@@ -42,4 +42,9 @@
 
    ;; backup
    "deja-dup"
+
+   ;; polybar
+   "compton"
+   "feh"
+   "font-awesome"
    ))
