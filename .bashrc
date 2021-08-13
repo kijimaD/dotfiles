@@ -117,3 +117,8 @@ if ! shopt -oq posix; then
 fi
 
 export EDITOR="xed"
+
+export LC_CTYPE=ja_JP.UTF-8
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus

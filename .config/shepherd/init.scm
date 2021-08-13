@@ -16,11 +16,11 @@
   (make <service>
     #:provides '(ibus)
     #:respawn? #t
-    #:start (make-forkexec-constructor '("ibus-daemon"))
+    #:start (make-forkexec-constructor '("ibus-daemon" "-x"))
     #:stop  (make-kill-destructor)))
 
 (register-services syncthing redshift ibus)
 (action 'shepherd 'daemonize)
 
 ;; Start user services
-(for-each start '(syncthing redshift ibus)) ;; redshift and ibus don't work properly...
+(for-each start '(syncthing redshift ibus))
