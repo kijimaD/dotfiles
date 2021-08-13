@@ -12,12 +12,18 @@
    "clang"
    "file"
    "elfutils"
-   "go"
    "stow"
+
+   ;; language
+   "go"
+   "ruby"
 
    ;; network
    "openssh"
    "curl"
+
+   ;; lock
+   "xautolock"
 
    ;; docker
    "docker-cli"
