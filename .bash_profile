@@ -67,7 +67,7 @@ alias ls='ls -p --color=auto'
 alias ll='ls -l'
 alias grep='grep --color=auto'
 
-shepherd
+shepherd -l ~/dotfiles/.config/shepherd/log
 
 GTK_IM_MODULE DEFAULT=ibus
 QT_IM_MODULE DEFAULT=ibus
