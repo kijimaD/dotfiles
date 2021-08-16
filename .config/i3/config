@@ -43,7 +43,7 @@ exec --no-startup-id $HOME/dotfiles/.config/polybar/launch.sh
 exec --no-startup-id sh $HOME/dotfiles/.bash_profile
 
 # Lock screen
-exec --no-startup-id xautolock -detectsleep
+exec --no-startup-id xautolock -detectsleep -time 10
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
