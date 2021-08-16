@@ -18,6 +18,9 @@
    "go"
    "ruby"
 
+   ;; package system
+   "node"
+
    ;; network
    "openssh"
    "curl"
