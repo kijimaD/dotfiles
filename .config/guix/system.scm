@@ -13,7 +13,7 @@
     (keyboard-layout
       "jp"
       #:options
-      '("grp:alt_shift_toggle" "ctrl:nocaps")))
+      '("ctrl:nocaps")))
   (host-name "kijimad")
   (users (cons* (user-account
                   (name "kijimad")
