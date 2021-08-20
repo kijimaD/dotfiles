@@ -346,7 +346,8 @@ format-connected = <ramp-signal><label-connected>
 format-connected-underline = ${xrdb:color11:#9f78e1}
 
 # The text
-label-connected = %essid% ↑%upspeed% ↓%downspeed%
+; label-connected = %essid% ↑%upspeed% ↓%downspeed%
+label-connected = %{A1:nm-connection-editor:}%essid%%{A} ↑%upspeed% ↓%downspeed%
 label-font = 1
 label-connected-background = ${colors.background}
 label-connected-padding = 0
