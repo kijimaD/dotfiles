@@ -27,6 +27,7 @@
 
    ;; lock
    "xautolock"
+   "xset"
 
    ;; docker
    "docker-cli"

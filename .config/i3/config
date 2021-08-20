@@ -42,6 +42,9 @@ exec --no-startup-id $HOME/dotfiles/.config/polybar/launch.sh
 # Load bash_profile
 exec --no-startup-id sh $HOME/dotfiles/.bash_profile
 
+# Turn off the system bell
+exec --no-startup-id xset -b
+
 # Lock screen
 exec --no-startup-id xautolock -detectsleep -time 10
 
