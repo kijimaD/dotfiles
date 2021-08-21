@@ -26,7 +26,7 @@ init_emacs:
 init_package:
 	guix package -m ~/dotfiles/.config/guix/manifests/desktop.scm
 init_npm:
- 	npm install npm
+	npm install npm
 
 batch:
 	make swapcaps_gnome
