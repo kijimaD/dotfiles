@@ -48,3 +48,8 @@ timestamp = ${shell date "+%Y%m%d%H%M%S"}
 # imagemagick
 take_ss:
 	import ~/Desktop/${timestamp}.png
+
+clone_projects:
+	git clone git@github.com:kijimaD/emacs.git ~/Project/emacs
+	git clone git@github.com:kijimaD/ruby.git ~/Project/ruby
+	git clone git@github.com:kijimaD/projectile.git ~/Project/projectile
