@@ -1,5 +1,6 @@
 make_project:
 	mkdir ~/Project
+	mkdir ~/ProjectOrg
 reload_ja_input:
 	rm -rf ~/.cache/ibus
 clone_roam:
@@ -49,7 +50,8 @@ timestamp = ${shell date "+%Y%m%d%H%M%S"}
 take_ss:
 	import ~/Desktop/${timestamp}.png
 
-clone_projects:
-	git clone git@github.com:kijimaD/emacs.git ~/Project/emacs
-	git clone git@github.com:kijimaD/ruby.git ~/Project/ruby
-	git clone git@github.com:kijimaD/projectile.git ~/Project/projectile
+clone_user_projects:
+	cd ~/Project && curl https://api.github.com/users/kijimaD/repos | jq .[].ssh_url | xargs -n 1 git clone
+
+clone_org_projects:
+	cd ~/ProjectOrg && curl https://api.github.com/orgs/kd-collective/repos  | jq .[].ssh_url | xargs -n 1 git clone
