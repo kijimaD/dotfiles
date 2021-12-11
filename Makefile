@@ -53,8 +53,6 @@ take_ss:
 clone_user_projects:
 	cd ~/Project && curl https://api.github.com/users/kijimaD/repos?per_page=100 | jq .[].ssh_url | xargs -n 1 git clone
 
-clone_org_projects-1:
-	cd ~/ProjectOrg && curl "https://api.github.com/orgs/kd-collective/repos?per_page=100&page=1"  | jq .[].ssh_url | xargs -n 1 git clone
-
-clone_org_projects-2:
-	cd ~/ProjectOrg && curl "https://api.github.com/orgs/kd-collective/repos?per_page=100&page=2"  | jq .[].ssh_url | xargs -n 1 git clone
+PAGE=1
+clone_org_projects:
+	cd ~/ProjectOrg && curl "https://api.github.com/orgs/kd-collective/repos?per_page=100&page=$(PAGE)"  | jq .[].ssh_url | xargs -n 1 git clone
