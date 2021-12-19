@@ -31,6 +31,7 @@
 
    ;; docker
    "docker-cli"
+   "docker-compose"
 
    ;; desktop
    "syncthing"
@@ -45,6 +46,7 @@
    "font-adobe-source-han-sans"
 
    ;; emacs
+   "emacs"
    "emacs-emacsql"
    "emacs-vterm"
    "emacs-org-roam"
@@ -58,4 +60,7 @@
    "feh"
    "font-awesome"
    "imagemagick"
+
+   ;; notification
+   "dunst"
    ))
