@@ -19,7 +19,6 @@ cask_install:
 	cd ~/.emacs.d && sh ~/.cask/bin/cask
 
 init_emacs:
-	cp -r ~/dotfiles/.fonts ~/.fonts
 	make clone_cask
 	rm -rf ~/.emacs.d
 	make clone_emacs
@@ -34,7 +33,7 @@ init_guix: # システムインストールのときのみ必要
 
 batch0:
 	sudo apt-get update
-	sudo apt-get install git syncthing cmigemo fcitx fcitx-mozc rbenv
+	sudo apt-get install git syncthing cmigemo fcitx fcitx-mozc emacs-mozc rbenv
 	guix pull
 	source ~/dotfiles/.bash_profile
 
