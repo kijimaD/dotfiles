@@ -1,0 +1,2 @@
+00 * * * * /home/kijima/bash/sound.sh /home/kijima/bash/win_nt.wav
+30 * * * * /home/kijima/bash/sound.sh /home/kijima/bash/suzu.wav

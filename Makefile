@@ -19,33 +19,38 @@ cask_install:
 	cd ~/.emacs.d && sh ~/.cask/bin/cask
 
 init_emacs:
+	cp -r ~/dotfiles/.fonts ~/.fonts
 	make clone_cask
 	rm -rf ~/.emacs.d
 	make clone_emacs
 	make cask_install
 
-init_package:
+init_packages:
 	guix package -m ~/dotfiles/.config/guix/manifests/desktop.scm
 init_npm:
 	npm install npm
+init_guix: # システムインストールのときのみ必要
+	sudo -E guix system reconfigure ~/.config/guix/system.scm
 
-batch:
+batch0:
+	sudo apt-get update
+	sudo apt-get install git syncthing cmigemo fcitx fcitx-mozc rbenv
+	guix pull
+	source ~/dotfiles/.bash_profile
+
+# TODO: 途中で失敗すると再実行が面倒(directory already exist error)
+batch1:
+	make init_packages
 	make swapcaps_gnome
 	make make_project
 	make clone_roam
 	make init_emacs
-	make init_package
 	make init_npm
 	reload_ja_input
 	cp_sensitive_files
 	stow .
 
-init_guix:
-	guix pull
-	sudo -E guix system reconfigure ~/.config/guix/system.scm
-
 timestamp = ${shell date "+%Y%m%d%H%M%S"}
-
 # imagemagick
 take_ss:
 	import ~/Desktop/${timestamp}.png
