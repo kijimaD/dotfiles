@@ -1,14 +1,10 @@
-set -eu
+set -e
 trap 'echo "ERROR: line no = $LINENO, exit status = $?" >&2; exit 1' ERR
 
 # System Guix ================
 # # japanese input settings
 # export GUIX_GTK2_IM_MODULE_FILE="$HOME/.guix-profile/lib/gtk-2.0/2.10.0/immodules-gtk2.cache"
 # export GUIX_GTK3_IM_MODULE_FILE="$HOME/.guix-profile/lib/gtk-3.0/3.0.0/immodules-gtk3.cache"
-
-# export SSL_CERT_DIR="$HOME/.guix-profile/etc/ssl/certs"
-# export SSL_CERT_FILE="$HOME/.guix-profile/etc/ssl/certs/ca-certificates.crt"
-# export GIT_SSL_CAINFO="$SSL_CERT_FILE"
 
 # non-system Guix settings ================
 GUIX_PROFILE="$HOME/.guix-profile"
@@ -19,6 +15,10 @@ export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 
 source "$HOME/.guix-profile/etc/profile"
 source "$HOME/.config/guix/current/etc/profile"
+
+export SSL_CERT_DIR="$HOME/.guix-profile/etc/ssl/certs"
+export SSL_CERT_FILE="$HOME/.guix-profile/etc/ssl/certs/ca-certificates.crt"
+export GIT_SSL_CAINFO="$SSL_CERT_FILE"
 
 # Git ================
 function parse_git_branch_and_add_brackets {
@@ -46,8 +46,10 @@ alias ls='ls -p --color=auto'
 alias ll='ls -l'
 alias grep='grep --color=auto'
 
-# save history
+# qute browser font size
 export QT_SCALE_FACTOR=2
+
+# save history
 export PROMPT_COMMAND='history -a;history -c;history -r'
 
 eval "$(rbenv init -)"
