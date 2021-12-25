@@ -1,2 +1,2 @@
-00 * * * * /home/kijima/bash/sound.sh /home/kijima/bash/win_nt.wav
-30 * * * * /home/kijima/bash/sound.sh /home/kijima/bash/suzu.wav
+DISPLAY=:0.0
+00 * * * * notify-send "時報" "$(date +\%H):00!"

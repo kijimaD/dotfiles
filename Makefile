@@ -30,6 +30,8 @@ init_npm:
 	npm install npm
 init_guix: # システムインストールのときのみ必要
 	sudo -E guix system reconfigure ~/.config/guix/system.scm
+init_crontab:
+	crontab ~/dotfiles/crontab
 
 batch0:
 	sudo apt-get update
