@@ -1,2 +1,1 @@
-DISPLAY=:0.0
-00 * * * * notify-send "時報" "$(date +\%H):00!"
+00 * * * * DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus setpriv --euid=1000 notify-send "Timebot" "$(date +\%H):00!"
