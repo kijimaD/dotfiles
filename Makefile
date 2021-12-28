@@ -1,6 +1,6 @@
 make_project:
-	mkdir ~/Project
-	mkdir ~/ProjectOrg
+	mkdir -p ~/Project
+	mkdir -p ~/ProjectOrg
 reload_ja_input:
 	rm -rf ~/.cache/ibus
 clone_roam:
@@ -28,8 +28,13 @@ init_packages:
 	guix package -m ~/dotfiles/.config/guix/manifests/desktop.scm
 init_npm:
 	npm install npm
-init_guix: # システムインストールのときのみ必要
+init_guix_system: # システムインストールのときのみ必要
 	sudo -E guix system reconfigure ~/.config/guix/system.scm
+init_guix:
+	cd /tmp && \
+	wget https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh && \
+	chmod +x guix-install.sh && \
+	sudo ./guix-install.sh
 init_crontab:
 	crontab ~/dotfiles/crontab
 
