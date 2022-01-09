@@ -16,6 +16,9 @@ export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 source "$HOME/.guix-profile/etc/profile"
 source "$HOME/.config/guix/current/etc/profile"
 
+export PATH="$HOME/.config/guix/current/bin:$PATH"
+export INFOPATH="$HOME/.config/guix/current/share/info:$INFOPATH"
+
 export SSL_CERT_DIR="$HOME/.guix-profile/etc/ssl/certs"
 export SSL_CERT_FILE="$HOME/.guix-profile/etc/ssl/certs/ca-certificates.crt"
 export GIT_SSL_CAINFO="$SSL_CERT_FILE"
