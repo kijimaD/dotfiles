@@ -4,6 +4,7 @@
  '(;; code
    "git"
    "gcc-toolchain"
+   "glibc-locales"
    "make"
    "pkg-config"
    "texinfo"

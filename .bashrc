@@ -1,3 +1,6 @@
+set -e
+trap 'echo "ERROR: line no = $LINENO, exit status = $?" >&2; exit 1' ERR
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -68,6 +71,12 @@ else
 fi
 unset color_prompt force_color_prompt
 
+# Adjust the prompt depending on whether we're in 'guix environment'.
+if [ -n "$GUIX_ENVIRONMENT" ]
+then
+    PS1='\u@\h \w [env]\$ '
+fi
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && (eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)")
@@ -115,3 +124,41 @@ function peco-select-history() {
 bind -x '"\C-r": peco-select-history'
 
 alias sshp='ssh $(grep Host ~/.ssh/config | grep -v HostName | cut -d" " -f2 | peco)'
+
+# general alias ================
+alias grep='grep --color=auto'
+alias obs='QT_SCALE_FACTOR=2 obs' # scale up font
+
+# environment variabels ================
+# qute browser font size
+export QT_SCALE_FACTOR=2
+
+# save history
+export PROMPT_COMMAND='history -a;history -c;history -r'
+
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/python:$PATH"
+export PATH="$HOME/.cask/bin:$PATH"
+
+# non-system Guix settings ================
+GUIX_PROFILE="$HOME/.guix-profile"
+. "$GUIX_PROFILE/etc/profile"
+GUIX_PROFILE="$HOME/.config/guix/current"
+. "$GUIX_PROFILE/etc/profile"
+export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+
+source "$HOME/.guix-profile/etc/profile"
+source "$HOME/.config/guix/current/etc/profile"
+
+export PATH="$HOME/.config/guix/current/bin:$PATH"
+export INFOPATH="$HOME/.config/guix/current/share/info:$INFOPATH"
+
+export SSL_CERT_DIR="$HOME/.guix-profile/etc/ssl/certs"
+export SSL_CERT_FILE="$HOME/.guix-profile/etc/ssl/certs/ca-certificates.crt"
+export GIT_SSL_CAINFO="$SSL_CERT_FILE"
+
+# System Guix ================
+# # japanese input settings
+# export GUIX_GTK2_IM_MODULE_FILE="$HOME/.guix-profile/lib/gtk-2.0/2.10.0/immodules-gtk2.cache"
+# export GUIX_GTK3_IM_MODULE_FILE="$HOME/.guix-profile/lib/gtk-3.0/3.0.0/immodules-gtk3.cache"
