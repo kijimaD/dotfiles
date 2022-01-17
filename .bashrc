@@ -1,5 +1,5 @@
-set -e
-trap 'echo "ERROR: line no = $LINENO, exit status = $?" >&2; exit 1' ERR
+# set -e
+# trap 'echo "ERROR: line no = $LINENO, exit status = $?" >&2; exit 1' ERR
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
