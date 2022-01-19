@@ -21,6 +21,7 @@ margin-top = 0
 margin-bottom = 0
 
 [bar/top]
+enable-ipc = true
 monitor = ${env:MONITOR:}
 width = 100%
 height = 44
@@ -48,23 +49,16 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = "Cantarell:size=12;2"
+; font-0 = "Cantarell:size=12:weight=bold;2"
 font-1 = "Font Awesome:size=12;2"
 font-2 = "Material Icons:size=12;5"
 font-3 = "Fira Mono:size=12;-3"
 
-; modules-left =
+modules-left = exwm-workspace
 modules-center = date
-modules-right = pomodoro cpu temperature memory powermenu battery
-
-; wm-restack = i3
+modules-right = pomodoro battery
 
 ; override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -170,12 +164,12 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 1
+interval = 5
 
-date = "%A %d %B %Y"
-date-alt = "%c"
+date = "%a %b %e"
+date-alt = "%A %B %d %Y"
 time = %H:%M
-time-alt = %R
+time-alt = %H:%M:%S
 format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
 
@@ -373,3 +367,12 @@ exec = ~/dotfiles/.config/polybar/pomodoro-bar.sh
 interval = 5
 
 format-underline = ${colors.primary}
+
+; https://github.com/daviwil/emacs-from-scratch/blob/master/show-notes/Emacs-Desktop-05.org
+[module/exwm-workspace]
+type = custom/ipc
+hook-0 = emacsclient -e "(efs/polybar-exwm-workspace)" | sed -e 's/^"//' -e 's/"$//'
+initial = 1
+
+format-underline = ${colors.primary}
+format-padding = 1
