@@ -31,6 +31,7 @@
    "xset"
 
    ;; docker
+   "docker"
    "docker-cli"
    "docker-compose"
 
@@ -51,6 +52,8 @@
    "emacs-emacsql"
    "emacs-vterm"
    "emacs-org-roam"
+   "cmake"
+   "libtool"
    "libvterm"
 
    ;; backup
