@@ -255,7 +255,7 @@ format-discharging-underline = ${xrdb:color3:#ff9800}
 
 format-full-prefix =
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${xrdb:color2:#719611}
+format-full-underline = ${colors.primary}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
