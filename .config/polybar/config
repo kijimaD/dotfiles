@@ -6,13 +6,16 @@
 screenchange-reload = true
 
 [colors]
-#background = ${xrdb:color0:#222}
-background = ${xrdb:background:#0fff0000}
+background = ${xrdb:background:#0fff0000} ; dark
+; background = ${xrdb:background:#fff} ; white
 background-alt = ${xrdb:color8:#000}
-; foreground = ${xrdb:color7:#222}
-foreground = ${xrdb:foreground:#dfdfdf}
+
+foreground = ${xrdb:foreground:#dfdfdf} ; dark
+; foreground = ${xrdb:foreground:#000} ; white
 foreground-alt = ${xrdb:color7:#444}
-primary = ${xrdb:color4:#1e90ff}
+
+primary = ${xrdb:color4:#fff} ; dark
+; primary = ${xrdb:color4:#1e90ff} ; white
 secondary = ${xrdb:color7:#e60053}
 alert = ${xrdb:color1:#bd2c40}
 
@@ -56,7 +59,7 @@ font-3 = "Fira Mono:size=12;-3"
 
 modules-left = exwm-workspace
 modules-center = pomodoro
-modules-right =  date battery
+modules-right = date battery
 
 ; override-redirect = true
 
