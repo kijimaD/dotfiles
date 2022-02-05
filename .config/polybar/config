@@ -6,16 +6,13 @@
 screenchange-reload = true
 
 [colors]
-background = ${xrdb:background:#0fff0000} ; dark
-; background = ${xrdb:background:#fff} ; white
+background = ${xrdb:background:#2b2b2b}
 background-alt = ${xrdb:color8:#000}
 
-foreground = ${xrdb:foreground:#dfdfdf} ; dark
-; foreground = ${xrdb:foreground:#000} ; white
+foreground = ${xrdb:foreground:#dfdfdf}
 foreground-alt = ${xrdb:color7:#444}
 
-primary = ${xrdb:color4:#fff} ; dark
-; primary = ${xrdb:color4:#1e90ff} ; white
+primary = ${xrdb:color4:#fff}
 secondary = ${xrdb:color7:#e60053}
 alert = ${xrdb:color1:#bd2c40}
 
