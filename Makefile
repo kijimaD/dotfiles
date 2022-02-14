@@ -40,7 +40,7 @@ init_crontab:
 
 batch0:
 	sudo apt-get update
-	sudo apt-get install git syncthing cmigemo fcitx fcitx-mozc emacs-mozc rbenv
+	sudo apt-get install git syncthing cmigemo fcitx fcitx-mozc emacs-mozc rbenv peco
 	guix pull
 	source ~/dotfiles/.bash_profile
 
