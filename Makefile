@@ -5,8 +5,9 @@ reload_ja_input:
 	rm -rf ~/.cache/ibus
 clone_roam:
 	git clone git@github.com:kijimaD/roam.git ~/roam
-swapcaps_gnome:
-	gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps']"
+swapcaps_cinnamon:
+	gsettings set org.cinnamon.desktop.input-sources xkb-options "['ctrl:swapcaps']"
+	gsettings set org.cinnamon.desktop.interface gtk-key-theme Emacs
 cp_sensitive_files:
 	cp ~/dotfiles/.authinfo ~/
 	cp ~/dotfiles/.gitconfig ~/
@@ -37,17 +38,20 @@ init_guix:
 	yes | sudo ./guix-install.sh
 init_crontab:
 	crontab ~/dotfiles/crontab
+init_inotify:
+	echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
+	sudo sysctl -p
 
 batch0:
 	sudo apt-get update
-	sudo apt-get install git syncthing cmigemo fcitx fcitx-mozc emacs-mozc rbenv peco
+	sudo apt-get install -y git syncthing cmigemo fcitx fcitx-mozc emacs-mozc rbenv peco silversearcher-ag docker docker-compose nvidia-driver-510
 	guix pull
 	source ~/dotfiles/.bash_profile
 
 # TODO: 途中で失敗すると再実行が面倒(directory already exist error)
 batch1:
 	make init_packages
-	make swapcaps_gnome
+	make swapcaps_cinnamon
 	make make_project
 	make clone_roam
 	make init_emacs
