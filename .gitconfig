@@ -3,3 +3,5 @@
 	name = kijimaD
 [github]
 	user = kijimaD
+[http]
+	sslVerify = false

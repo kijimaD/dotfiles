@@ -9,5 +9,9 @@ LICENSE
 Makefile
 .authinfo
 .gitconfig
+.guile
+Dockerfile
+docker-compose.yml
+crontab
 
 /.config/guix/system\.scm
