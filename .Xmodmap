@@ -5,6 +5,6 @@ remove Control = Control_L
 remove Lock = Control_L
 remove Control = Caps_Lock
 keysym Control_L = Caps_Lock
-keysm Caps_Lock = Control_L
+keysym Caps_Lock = Control_L
 add Lock = Caps_Lock
 add Control = Control_L
