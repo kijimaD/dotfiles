@@ -14,6 +14,7 @@
    "file"
    "elfutils"
    "stow"
+   "shepherd"
 
    ;; language
    "go"
