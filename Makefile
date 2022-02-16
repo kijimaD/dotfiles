@@ -5,9 +5,9 @@ reload_ja_input:
 	rm -rf ~/.cache/ibus
 clone_roam:
 	git clone git@github.com:kijimaD/roam.git ~/roam
-swapcaps_cinnamon:
-	gsettings set org.cinnamon.desktop.input-sources xkb-options "['ctrl:swapcaps']"
+key_cinnamon:
 	gsettings set org.cinnamon.desktop.interface gtk-key-theme Emacs
+
 cp_sensitive_files:
 	cp ~/dotfiles/.authinfo ~/
 	cp ~/dotfiles/.gitconfig ~/
@@ -51,7 +51,7 @@ batch0:
 # TODO: 途中で失敗すると再実行が面倒(directory already exist error)
 batch1:
 	make init_packages
-	make swapcaps_cinnamon
+	make key_cinnamon
 	make make_project
 	make clone_roam
 	make init_emacs
