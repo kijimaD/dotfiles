@@ -6,6 +6,7 @@
    "gcc-toolchain"
    "glibc-locales"
    "make"
+   "jq"
    "pkg-config"
    "texinfo"
    "llvm"
@@ -27,6 +28,7 @@
    ;; network
    "openssh"
    "curl"
+   "nss-certs"
 
    ;; lock
    "xautolock"

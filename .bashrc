@@ -137,9 +137,8 @@ export QT_SCALE_FACTOR=2
 export PROMPT_COMMAND='history -a;history -c;history -r'
 
 eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/python:$PATH"
-export PATH="$HOME/.cask/bin:$PATH"
+PATH="$HOME/.rbenv/bin:$PATH"
+PATH="$HOME/.cask/bin:$PATH"
 
 # non-system Guix settings ================
 GUIX_PROFILE="$HOME/.guix-profile"
@@ -157,10 +156,12 @@ export INFOPATH="$HOME/.config/guix/current/share/info:$INFOPATH"
 export SSL_CERT_DIR="$HOME/.guix-profile/etc/ssl/certs"
 export SSL_CERT_FILE="$HOME/.guix-profile/etc/ssl/certs/ca-certificates.crt"
 export GIT_SSL_CAINFO="$SSL_CERT_FILE"
+export CURL_CA_BUNDLE="$HOME/.guix-profile/etc/ssl/certs/ca-certificates.crt"
 
 # System Guix ================
 # # japanese input settings
 # export GUIX_GTK2_IM_MODULE_FILE="$HOME/.guix-profile/lib/gtk-2.0/2.10.0/immodules-gtk2.cache"
 # export GUIX_GTK3_IM_MODULE_FILE="$HOME/.guix-profile/lib/gtk-3.0/3.0.0/immodules-gtk3.cache"
 
-setxkbmap -option ctrl:swapcaps
+# setxkbmap -option ctrl:swapcaps
+# xmodmap ~/dotfiles/.Xmodmap
