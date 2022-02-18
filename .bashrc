@@ -162,3 +162,5 @@ export GIT_SSL_CAINFO="$SSL_CERT_FILE"
 # # japanese input settings
 # export GUIX_GTK2_IM_MODULE_FILE="$HOME/.guix-profile/lib/gtk-2.0/2.10.0/immodules-gtk2.cache"
 # export GUIX_GTK3_IM_MODULE_FILE="$HOME/.guix-profile/lib/gtk-3.0/3.0.0/immodules-gtk3.cache"
+
+setxkbmap -option ctrl:swapcaps
