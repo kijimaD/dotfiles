@@ -46,8 +46,8 @@ install0: make_project \
 	apt \
 	guix
 
-install1: cask_run \
-	init_stow
+install1: init_stow \
+	cask_run
 
 make_project:
 	mkdir -p ~/Project
@@ -65,7 +65,7 @@ cp_sensitive_files:
 	cp ~/dotfiles/.gitconfig ~/
 init_crontab:
 ifeq ($(TEST),1)
-	echo "not run"
+	echo "init_crontab not run"
 else
 	crontab ~/dotfiles/crontab
 endif
@@ -84,7 +84,7 @@ endif
 
 guix:
 ifeq ($(TEST),1)
-	echo "not run"
+	echo "guix not run"
 else
 	make init_guix;
 endif
@@ -93,13 +93,19 @@ init_guix:
 	wget https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh && \
 	chmod +x guix-install.sh && \
 	yes | sudo ./guix-install.sh && \
-	systemctl daemon-reload && \
-	systemctl restart guix-daemon && \
+	. ~/.bashrc && \
+	sudo systemctl daemon-reload && \
+	sudo systemctl restart guix-daemon && \
 	guix pull && \
+	cd ~/dotfiles && \
 	make init_packages
 
 cask_run:
+ifeq ($(TEST),1)
+	echo "cask_run not run"
+else
 	cd ~/.emacs.d && ~/.cask/bin/cask
+endif
 
 # ================================
 

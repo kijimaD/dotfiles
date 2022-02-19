@@ -164,4 +164,4 @@ export CURL_CA_BUNDLE="$HOME/.guix-profile/etc/ssl/certs/ca-certificates.crt"
 # export GUIX_GTK3_IM_MODULE_FILE="$HOME/.guix-profile/lib/gtk-3.0/3.0.0/immodules-gtk3.cache"
 
 # setxkbmap -option ctrl:swapcaps
-# xmodmap ~/dotfiles/.Xmodmap
+xmodmap ~/dotfiles/.Xmodmap
