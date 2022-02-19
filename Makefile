@@ -29,7 +29,11 @@
 CLONE_STRATEGY = "git@github.com:"
 
 test:
-	git clone https://github.com/kijimaD/dotfiles.git ~/dotfiles;
+	if [ -d ~/dotfiles ]; then \
+	  echo "not run" \
+	else \
+	  git clone https://github.com/kijimaD/dotfiles.git ~/dotfiles;
+	fi
 	make install0 TEST="1" CLONE_STRATEGY="https://github.com/"
 	make install1 TEST="1"
 
@@ -53,7 +57,7 @@ clone_repos:
 	git clone $(CLONE_STRATEGY)cask/cask ~/.cask
 	git clone $(CLONE_STRATEGY)kijimaD/.emacs.d.git ~/.emacs.d
 key_theme:
-	if [ -d ~/.cinnamon ]; then\
+	if [ -d ~/.cinnamon ]; then \
 	  gsettings set org.cinnamon.desktop.interface gtk-key-theme Emacs; \
 	fi
 cp_sensitive_files:
