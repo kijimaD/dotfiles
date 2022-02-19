@@ -35,8 +35,8 @@ test:
 	  git clone https://github.com/kijimaD/dotfiles.git ~/dotfiles; \
 	fi
 	make guix
-	make install0 TEST="1" CLONE_STRATEGY="https://github.com/"
-	make install1 TEST="1"
+	make install0 TEST=1 CLONE_STRATEGY="https://github.com/"
+	make install1 TEST=1
 
 install0: make_project \
 	clone_repos \
@@ -65,7 +65,7 @@ cp_sensitive_files:
 	cp ~/dotfiles/.authinfo ~/
 	cp ~/dotfiles/.gitconfig ~/
 init_crontab:
-	if [ $(TEST) ]; then \
+	if [ $(TEST)==1 ]; then \
 	  echo "not run" \
 	else \
 	  crontab ~/dotfiles/crontab; \
@@ -79,12 +79,12 @@ init_spotify:
 apt:
 	sudo apt-get update
 	sudo DEBIAN_FRONTEND=noninteractive apt-get install -y cmigemo fcitx fcitx-mozc emacs-mozc rbenv peco silversearcher-ag docker docker-compose nvidia-driver-510
-	if [ $(TEST) ]; then \
+	if [ $(TEST)==1 ]; then \
 	  sudo apt-get install -y emacs stow; \
 	fi
 
 guix:
-	if [ $(TEST) ]; then \
+	if [ $(TEST)==1 ]; then \
 	  echo "not run" \
 	else \
 	  make init_guix; \
