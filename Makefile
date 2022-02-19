@@ -28,14 +28,12 @@
 
 CLONE_STRATEGY = "git@github.com:"
 
+ci:
+	git clone https://github.com/kijimaD/dotfiles.git ~/dotfiles
+	make guix
+	make test
+
 test:
-	if [ -d ~/dotfiles ]; then \
-	  echo "not run" \
-	else \
-	  git clone https://github.com/kijimaD/dotfiles.git ~/dotfiles; \
-	fi
-	# make guix TEST=0
-	make init_crontab
 	make install0 TEST=1 CLONE_STRATEGY="https://github.com/"
 	make install1 TEST=1
 

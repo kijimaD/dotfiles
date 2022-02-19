@@ -31,4 +31,4 @@ jobs:
 
     - name: make batch
       run: |
-        make test
+        make ci
