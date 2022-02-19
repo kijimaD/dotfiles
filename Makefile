@@ -93,8 +93,9 @@ init_guix:
 	wget https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh && \
 	chmod +x guix-install.sh && \
 	yes | sudo ./guix-install.sh && \
-	systemctl daemon-reload && \
-	systemctl restart guix-daemon && \
+	source ~/.bashrc && \
+	sudo systemctl daemon-reload && \
+	sudo systemctl restart guix-daemon && \
 	guix pull && \
 	make init_packages
 
