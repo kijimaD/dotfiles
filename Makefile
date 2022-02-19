@@ -29,6 +29,7 @@
 CLONE_STRATEGY = "git@github.com:"
 
 test:
+	git clone https://github.com/kijimaD/dotfiles.git ~/dotfiles;
 	make install0 TEST="1" CLONE_STRATEGY="https://github.com/"
 	make install1 TEST="1"
 
