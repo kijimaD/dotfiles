@@ -65,7 +65,7 @@ cp_sensitive_files:
 	cp ~/dotfiles/.gitconfig ~/
 init_crontab:
 ifeq ($(TEST),1)
-	echo "not run"
+	echo "init_crontab not run"
 else
 	crontab ~/dotfiles/crontab
 endif
@@ -84,7 +84,7 @@ endif
 
 guix:
 ifeq ($(TEST),1)
-	echo "not run"
+	echo "guix not run"
 else
 	make init_guix;
 endif
@@ -102,7 +102,7 @@ init_guix:
 
 cask_run:
 ifeq ($(TEST),1)
-	echo "not run"
+	echo "cask_run not run"
 else
 	cd ~/.emacs.d && ~/.cask/bin/cask
 endif
