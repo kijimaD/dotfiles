@@ -46,8 +46,8 @@ install0: make_project \
 	apt \
 	guix
 
-install1: cask_run \
-	init_stow
+install1: init_stow \
+	cask_run
 
 make_project:
 	mkdir -p ~/Project
@@ -101,7 +101,11 @@ init_guix:
 	make init_packages
 
 cask_run:
+ifeq ($(TEST),1)
+	echo "not run"
+else
 	cd ~/.emacs.d && ~/.cask/bin/cask
+endif
 
 # ================================
 
