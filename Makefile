@@ -34,7 +34,8 @@ test:
 	else \
 	  git clone https://github.com/kijimaD/dotfiles.git ~/dotfiles; \
 	fi
-	make guix
+	# make guix TEST=0
+	make init_crontab
 	make install0 TEST=1 CLONE_STRATEGY="https://github.com/"
 	make install1 TEST=1
 
@@ -65,11 +66,11 @@ cp_sensitive_files:
 	cp ~/dotfiles/.authinfo ~/
 	cp ~/dotfiles/.gitconfig ~/
 init_crontab:
-	if [ $(TEST)==1 ]; then \
-	  echo "not run" \
-	else \
-	  crontab ~/dotfiles/crontab; \
-	fi
+ifeq ($(TEST),1)
+	echo "not run"
+else
+	crontab ~/dotfiles/crontab
+endif
 init_inotify:
 	echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
 	sudo sysctl -p
@@ -79,16 +80,16 @@ init_spotify:
 apt:
 	sudo apt-get update
 	sudo DEBIAN_FRONTEND=noninteractive apt-get install -y cmigemo fcitx fcitx-mozc emacs-mozc rbenv peco silversearcher-ag docker docker-compose nvidia-driver-510
-	if [ $(TEST)==1 ]; then \
-	  sudo apt-get install -y emacs stow; \
-	fi
+ifeq ($(TEST),1)
+	sudo apt-get install -y emacs stow
+endif
 
 guix:
-	if [ $(TEST)==1 ]; then \
-	  echo "not run" \
-	else \
-	  make init_guix; \
-	fi
+ifeq ($(TEST),1)
+	echo "not run"
+else
+	make init_guix;
+endif
 init_guix:
 	cd /tmp && \
 	wget https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh && \
