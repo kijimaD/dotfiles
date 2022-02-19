@@ -11,12 +11,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Install required packages
-      run: |
-        sudo apt-get install shellcheck
+    # - name: Install required packages
+    #   run: |
+    #     sudo apt-get install shellcheck
 
-    - name: Check .bash_profile
-      run: shellcheck ${GITHUB_WORKSPACE}/.bash_profile --exclude=SC2148,SC1090
+    # - name: Check .bash_profile
+    #   run: shellcheck ${GITHUB_WORKSPACE}/.bash_profile --exclude=SC2148,SC1090
 
-    - name: Check .bashrc
-      run: shellcheck ${GITHUB_WORKSPACE}/.bashrc --exclude=SC2148,SC1090
+    # - name: Check .bashrc
+    #   run: shellcheck ${GITHUB_WORKSPACE}/.bashrc --exclude=SC2148,SC1090

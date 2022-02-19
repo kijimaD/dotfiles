@@ -13,10 +13,8 @@
 	cp_sensitive_files \
 	clone_cask \
 	clone_emacs \
-	cask_install \
-	init_emacs \
+	cask_run \
 	init_packages \
-	init_npm \
 	init_guix_system \
 	init_guix \
 	init_crontab \
@@ -31,18 +29,28 @@
 CLONE_STRATEGY = "git@github.com:"
 
 test:
-	make install CLONE_STRATEGY="https://github.com/"
+	make install0 TEST="1" CLONE_STRATEGY="https://github.com/"
+	make install1 TEST="1"
 
-install: make_project \
-	clone_roam \
+install0: make_project \
+	clone_repos \
 	key_theme \
-	cp_sensitive_files
+	cp_sensitive_files \
+	init_inotify \
+	init_crontab \
+	apt \
+	guix
+
+install1: cask_run \
+	init_stow
 
 make_project:
 	mkdir -p ~/Project
 	mkdir -p ~/ProjectOrg
-clone_roam:
+clone_repos:
 	git clone $(CLONE_STRATEGY)kijimaD/roam.git ~/roam;
+	git clone $(CLONE_STRATEGY)cask/cask ~/.cask
+	git clone $(CLONE_STRATEGY)kijimaD/.emacs.d.git ~/.emacs.d
 key_theme:
 	if [ -d ~/.cinnamon ]; then\
 	  gsettings set org.cinnamon.desktop.interface gtk-key-theme Emacs; \
@@ -50,57 +58,43 @@ key_theme:
 cp_sensitive_files:
 	cp ~/dotfiles/.authinfo ~/
 	cp ~/dotfiles/.gitconfig ~/
-
-clone_cask:
-	git clone https://github.com/cask/cask ~/.cask
-clone_emacs:
-	git clone git@github.com:kijimaD/.emacs.d.git ~/.emacs.d
-cask_install:
-	cd ~/.emacs.d && sh ~/.cask/bin/cask
-
-init_emacs:
-	make clone_cask
-	rm -rf ~/.emacs.d
-	make clone_emacs
-	make cask_install
-
-init_packages:
-	guix package -m ~/dotfiles/.config/guix/manifests/desktop.scm
-init_npm:
-	npm install npm
-init_guix_system: # システムインストールのときのみ必要
-	sudo -E guix system reconfigure ~/.config/guix/system.scm
-init_guix:
-	cd /tmp && \
-	wget https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh && \
-	chmod +x guix-install.sh && \
-	yes | sudo ./guix-install.sh
 init_crontab:
-	crontab ~/dotfiles/crontab
+	if [ $(TEST) ]; then \
+	  echo "not run" \
+	else \
+	  crontab ~/dotfiles/crontab; \
+	fi
 init_inotify:
 	echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
 	sudo sysctl -p
 init_spotify:
 	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 	sudo flatpak install com.spotify.Client
-
-batch0:
+apt:
 	sudo apt-get update
-	sudo apt-get install -y git syncthing cmigemo fcitx fcitx-mozc emacs-mozc rbenv peco silversearcher-ag docker docker-compose nvidia-driver-510
-	guix pull
-	source ~/dotfiles/.bash_profile
+	sudo DEBIAN_FRONTEND=noninteractive apt-get install -y cmigemo fcitx fcitx-mozc emacs-mozc rbenv peco silversearcher-ag docker docker-compose nvidia-driver-510
+	if [ $(TEST) ]; then \
+	  sudo apt-get install -y emacs stow; \
+	fi
 
-# TODO: 途中で失敗すると再実行が面倒(directory already exist error)
-batch1:
+guix:
+	if [ $(TEST) ]; then \
+	  echo "not run" \
+	else \
+	  make init_guix; \
+	fi
+init_guix:
+	cd /tmp && \
+	wget https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh && \
+	chmod +x guix-install.sh && \
+	yes | sudo ./guix-install.sh && \
+	systemctl daemon-reload && \
+	systemctl restart guix-daemon && \
+	guix pull && \
 	make init_packages
-	make key_theme
-	make make_project
-	make clone_roam
-	make init_emacs
-	make init_npm
-	reload_ja_input
-	cp_sensitive_files
-	stow .
+
+cask_run:
+	cd ~/.emacs.d && ~/.cask/bin/cask
 
 # ================================
 
@@ -108,13 +102,22 @@ batch1:
 
 # ================================
 
+init_guix_system: # システムインストールのときのみ必要
+	sudo -E guix system reconfigure ~/.config/guix/system.scm
+
+init_packages:
+	guix package -m ~/dotfiles/.config/guix/manifests/desktop.scm
+
+init_stow:
+	stow .
+
+reload_ja_input:
+	rm -rf ~/.cache/ibus
+
 timestamp = ${shell date "+%Y%m%d%H%M%S"}
 # imagemagick
 take_ss:
 	import ~/Desktop/${timestamp}.png
-
-reload_ja_input:
-	rm -rf ~/.cache/ibus
 
 clone_user_projects:
 	cd ~/Project && curl https://api.github.com/users/kijimaD/repos?per_page=100 | jq .[].ssh_url | xargs -n 1 git clone
