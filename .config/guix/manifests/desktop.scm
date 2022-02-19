@@ -71,4 +71,7 @@
 
    ;; notification
    "dunst"
+
+   ;; for spotify
+   "flatpak"
    ))

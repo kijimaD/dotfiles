@@ -41,6 +41,9 @@ init_crontab:
 init_inotify:
 	echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
 	sudo sysctl -p
+init_spotify:
+	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+	sudo flatpak install com.spotify.Client
 
 batch0:
 	sudo apt-get update
