@@ -32,7 +32,7 @@ test:
 	if [ -d ~/dotfiles ]; then \
 	  echo "not run" \
 	else \
-	  git clone https://github.com/kijimaD/dotfiles.git ~/dotfiles;
+	  git clone https://github.com/kijimaD/dotfiles.git ~/dotfiles; \
 	fi
 	make guix
 	make install0 TEST="1" CLONE_STRATEGY="https://github.com/"
