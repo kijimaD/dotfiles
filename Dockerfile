@@ -5,8 +5,7 @@ RUN apt install -y git make wget sudo gpg xz-utils && \
     rm -rf /var/lib/apt/lists/* && \
     apt clean
 
-COPY . "/dotfiles"
-WORKDIR "/dotfiles"
+WORKDIR "/root/dotfiles"
 
 # docker build . -t system
-# docker run -t -i system /bin/bash
+# docker run -v $(pwd):/root/dotfiles -i --rm -t system /bin/bash

@@ -1,13 +1,52 @@
+# ================================
+
+# build system
+
+# ================================
+
+.PHONY: test \
+	no_depends \
+	make_project \
+	reload_ja_input \
+	clone_roam \
+	key_theme \
+	cp_sensitive_files \
+	clone_cask \
+	clone_emacs \
+	cask_install \
+	init_emacs \
+	init_packages \
+	init_npm \
+	init_guix_system \
+	init_guix \
+	init_crontab \
+	init_inotify \
+	init_spotify \
+	batch0 \
+	batch1 \
+	take_ss \
+	clone_user_projects \
+	clone_org_projects
+
+CLONE_STRATEGY = "git@github.com:"
+
+test:
+	make install CLONE_STRATEGY="https://github.com/"
+
+install: make_project \
+	clone_roam \
+	key_theme \
+	cp_sensitive_files
+
 make_project:
 	mkdir -p ~/Project
 	mkdir -p ~/ProjectOrg
-reload_ja_input:
-	rm -rf ~/.cache/ibus
 clone_roam:
-	git clone git@github.com:kijimaD/roam.git ~/roam
-key_cinnamon:
-	gsettings set org.cinnamon.desktop.interface gtk-key-theme Emacs
-
+	git clone $(CLONE_STRATEGY)kijimaD/roam.git ~/roam;
+key_theme:
+	if [ -d ~/.cinnamon ]; then\
+	  gsettings set org.cinnamon.desktop.interface gtk-key-theme Emacs; \
+	fi
 cp_sensitive_files:
 	cp ~/dotfiles/.authinfo ~/
 	cp ~/dotfiles/.gitconfig ~/
@@ -54,7 +93,7 @@ batch0:
 # TODO: 途中で失敗すると再実行が面倒(directory already exist error)
 batch1:
 	make init_packages
-	make key_cinnamon
+	make key_theme
 	make make_project
 	make clone_roam
 	make init_emacs
@@ -63,10 +102,19 @@ batch1:
 	cp_sensitive_files
 	stow .
 
+# ================================
+
+# convenient tasks
+
+# ================================
+
 timestamp = ${shell date "+%Y%m%d%H%M%S"}
 # imagemagick
 take_ss:
 	import ~/Desktop/${timestamp}.png
+
+reload_ja_input:
+	rm -rf ~/.cache/ibus
 
 clone_user_projects:
 	cd ~/Project && curl https://api.github.com/users/kijimaD/repos?per_page=100 | jq .[].ssh_url | xargs -n 1 git clone
