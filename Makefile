@@ -97,6 +97,8 @@ init_guix:
 	sudo systemctl daemon-reload && \
 	sudo systemctl restart guix-daemon && \
 	guix pull && \
+	guix hash && \
+	cd ~/dotfiles && \
 	make init_packages
 
 cask_run:
