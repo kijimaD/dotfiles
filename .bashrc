@@ -165,3 +165,6 @@ export CURL_CA_BUNDLE="$HOME/.guix-profile/etc/ssl/certs/ca-certificates.crt"
 
 # setxkbmap -option ctrl:swapcaps
 xmodmap ~/dotfiles/.Xmodmap
+
+export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1

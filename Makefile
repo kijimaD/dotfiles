@@ -125,6 +125,9 @@ init_stow:
 reload_ja_input:
 	rm -rf ~/.cache/ibus
 
+en_dir: # ディレクトリを英語化
+	LANG=C xdg-user-dirs-gtk-update
+
 timestamp = ${shell date "+%Y%m%d%H%M%S"}
 # imagemagick
 take_ss:
@@ -136,3 +139,6 @@ clone_user_projects:
 PAGE=1
 clone_org_projects:
 	cd ~/ProjectOrg && curl "https://api.github.com/orgs/kd-collective/repos?per_page=100&page=$(PAGE)"  | jq .[].ssh_url | xargs -n 1 git clone
+
+clone:
+	cd ~/ProjectOrg && git clone git@github.com:kd-collective/$(REPO).git
