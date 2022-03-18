@@ -6,7 +6,6 @@
 archive
 backgrounds
 LICENSE
-Makefile
 .authinfo
 .gitconfig
 .guile
