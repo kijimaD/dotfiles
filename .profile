@@ -1,3 +1,7 @@
+# bashに依存しない
+# GUIアプリで使うものやbin/sh で使うものを置く
+# 例: 環境変数, PATH
+
 # ~/.profile: executed by the command interpreter for login shells.
 # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
 # exists.
@@ -30,3 +34,10 @@ fi
 # export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
 # PATH="/usr/local/heroku/bin:$PATH"
+. "$HOME/.cargo/env"
+
+# Firefoxのスクロール
+export MOZ_USE_XINPUT2=1
+
+setxkbmap -option ctrl:swapcaps
+xmodmap ~/dotfiles/.Xmodmap

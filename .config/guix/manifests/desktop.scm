@@ -20,7 +20,6 @@
    ;; language
    "go"
    "ruby"
-   "clisp"
 
    ;; package system
    "node"
