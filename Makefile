@@ -142,3 +142,6 @@ clone_org_projects:
 
 clone:
 	cd ~/ProjectOrg && git clone git@github.com:kd-collective/$(REPO).git
+
+cache_clean:
+	docker builder prune

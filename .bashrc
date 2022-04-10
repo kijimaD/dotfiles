@@ -1,6 +1,9 @@
 # set -e
 # trap 'echo "ERROR: line no = $LINENO, exit status = $?" >&2; exit 1' ERR
 
+# Bashで使うものを書く
+# 例: エイリアス、プロンプト設定
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -162,9 +165,6 @@ export CURL_CA_BUNDLE="$HOME/.guix-profile/etc/ssl/certs/ca-certificates.crt"
 # # japanese input settings
 # export GUIX_GTK2_IM_MODULE_FILE="$HOME/.guix-profile/lib/gtk-2.0/2.10.0/immodules-gtk2.cache"
 # export GUIX_GTK3_IM_MODULE_FILE="$HOME/.guix-profile/lib/gtk-3.0/3.0.0/immodules-gtk3.cache"
-
-# setxkbmap -option ctrl:swapcaps
-xmodmap ~/dotfiles/.Xmodmap
 
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
