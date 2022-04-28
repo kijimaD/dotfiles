@@ -9,10 +9,10 @@ screenchange-reload = true
 background = ${xrdb:background:#2b2b2b}
 background-alt = ${xrdb:color8:#000}
 
-foreground = ${xrdb:foreground:#dfdfdf}
+foreground = ${xrdb:foreground:#dcdcdc}
 foreground-alt = ${xrdb:color7:#444}
 
-primary = ${xrdb:color4:#fff}
+primary = ${xrdb:color4:#a9a9a9}
 secondary = ${xrdb:color7:#e60053}
 alert = ${xrdb:color1:#bd2c40}
 
@@ -55,8 +55,8 @@ font-2 = "Material Icons:size=12;5"
 font-3 = "Fira Mono:size=12;-3"
 
 modules-left = exwm-workspace
-modules-center = eth pomodoro
-modules-right = date battery
+modules-center = pomodoro
+modules-right = eth date battery
 
 ; override-redirect = true
 
@@ -152,10 +152,10 @@ interface = enp0s31f6
 interval = 3.0
 
 format-connected-underline = ${colors.primary}
-label-connected = %{F#990000}ONLINE%{F-}
+label-connected = %{F#990000}%{F-}
 
 format-disconnected-underline = ${colors.primary}
-label-disconnected = %{F#008000}FOCUS%{F-}
+label-disconnected = %{F#008000}{F-}
 
 [module/date]
 type = internal/date

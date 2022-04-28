@@ -140,8 +140,11 @@ PAGE=1
 clone_org_projects:
 	cd ~/ProjectOrg && curl "https://api.github.com/orgs/kd-collective/repos?per_page=100&page=$(PAGE)"  | jq .[].ssh_url | xargs -n 1 git clone
 
+# make clone REPO=emacs
 clone:
 	cd ~/ProjectOrg && git clone git@github.com:kd-collective/$(REPO).git
 
-cache_clean:
+clean:
 	docker builder prune
+	git gc
+	git fetch --prune

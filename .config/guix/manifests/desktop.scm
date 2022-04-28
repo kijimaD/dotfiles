@@ -16,6 +16,7 @@
    "elfutils"
    "stow"
    "shepherd"
+   "ripgrep"
 
    ;; language
    "go"
