@@ -146,5 +146,12 @@ clone:
 
 clean:
 	docker builder prune
+	docker volume prune
 	git gc
 	git fetch --prune
+
+restart_bt:
+	sudo systemctl restart bluetooth.service
+
+restart_wm:
+	sudo systemctl restart display-manager
