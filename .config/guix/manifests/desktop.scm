@@ -45,6 +45,7 @@
    "qutebrowser"
    "nyxt"
    "redshift"
+   "obs"
 
    ;; japanese input
    "ibus"
