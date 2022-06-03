@@ -155,7 +155,7 @@ format-connected-underline = ${colors.primary}
 label-connected = %{F#990000}%{F-}
 
 format-disconnected-underline = ${colors.primary}
-label-disconnected = %{F#008000}{F-}
+label-disconnected = %{F#008000}%{F-}
 
 [module/date]
 type = internal/date
