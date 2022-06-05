@@ -7,6 +7,8 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch Polybar, using default config location ~/.config/polybar/config
+# export BAR_COLOR=#E50914
+export BAR_COLOR=#FFFFFF
 polybar top &
 
 echo "Polybar launched..."
