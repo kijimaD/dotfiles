@@ -16,6 +16,7 @@
    "elfutils"
    "stow"
    "shepherd"
+   "ripgrep"
 
    ;; language
    "go"
@@ -44,6 +45,7 @@
    "qutebrowser"
    "nyxt"
    "redshift"
+   "obs"
 
    ;; japanese input
    "ibus"
