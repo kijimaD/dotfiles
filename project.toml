@@ -1,0 +1,8 @@
+[config]
+host = "github"
+dest_dir = "/home/green/Project" # WARN: need absolute path!
+repos = [
+  "kijimaD/digger_rs",
+  "kijimaD/cloner",
+  "amethyst/rustrogueliketutorial",
+]
