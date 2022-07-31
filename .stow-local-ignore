@@ -12,5 +12,6 @@ LICENSE
 Dockerfile
 docker-compose.yml
 crontab
+cloner
 
 /.config/guix/system\.scm

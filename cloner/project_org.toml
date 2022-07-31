@@ -1,6 +1,6 @@
 [config]
 host = "github"
-dest_dir = "/home/green/ProjectOrg" # WARN: need absolute path!
+dest_dir = "~/ProjectOrg"
 repos = [
   # Emacs
   "kd-collective/corfu",

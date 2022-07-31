@@ -141,7 +141,7 @@ clone_org_projects:
 	cd ~/ProjectOrg && curl "https://api.github.com/orgs/kd-collective/repos?per_page=100&page=$(PAGE)"  | jq .[].ssh_url | xargs -n 1 git clone
 
 cloner:
-	cargo install cloner && cloner ./project.toml && cloner ./project_org.toml
+	cargo install cloner && cloner ./cloner/project.toml && cloner ./cloner/project_org.toml
 
 clean:
 	docker builder prune
