@@ -15,10 +15,12 @@ repos = [
   # Rust
   "kd-collective/rust",
   "kd-collective/specs",
+  "kd-collective/shellexpand",
+  "kd-collective/dirs",
 
   # C++
   "kd-collective/simutrans",
-  "kd-collective/Cataclysm-DDA",
+  # "kd-collective/Cataclysm-DDA", # big file size
 
   # Ruby
   "kd-collective/doctree",
