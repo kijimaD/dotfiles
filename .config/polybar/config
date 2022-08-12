@@ -31,7 +31,7 @@ radius = 0
 fixed-center = true
 bottom = false
 
-dpi = 100
+dpi = 120
 
 background = ${colors.background}
 foreground = ${colors.foreground}
