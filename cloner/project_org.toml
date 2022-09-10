@@ -46,8 +46,15 @@ repos = [
   "kd-collective/gitlabhq",
   "kd-collective/mastodon",
 
+  # TypeScript
+  "kd-collective/login-action",
+
   # Go
   "kd-collective/go",
-  "kd-collective/compose",
   "kd-collective/ecspresso",
+  "kd-collective/compose",
+  "kd-collective/cli",
+  "kd-collective/buildx",
+  "kd-collective/moby",
+  "kd-collective/build-push-action",
 ]

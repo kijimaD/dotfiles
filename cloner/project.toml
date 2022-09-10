@@ -2,6 +2,7 @@
 host = "github"
 dest_dir = "~/Project"
 repos = [
+  "kijimaD/my_go",
   "kijimaD/digger_rs",
   "kijimaD/cloner",
   "amethyst/rustrogueliketutorial",
