@@ -50,9 +50,8 @@ jobs:
           echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
           sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
           sudo chmod +x /usr/local/bin/docker-compose
-          curl -Lo vscode.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 -o vscode.deb"
           sudo apt-get update
-          echo -e "\n" | sudo apt install -y git curl nodejs docker-ce docker-ce-cli containerd.io ./vscode.deb
+          echo -e "\n" | sudo apt install -y git curl nodejs docker-ce docker-ce-cli containerd.io
           # ================
           sudo apt clean && sudo rm -rf /tmp/* ~/.bash_history && sudo rm /etc/resolv.conf && sudo rm /var/lib/dbus/machine-id && sudo rm /sbin/initctl && sudo dpkg-divert --rename --remove /sbin/initctl
           sudo umount /proc || sudo umount -lf /proc && sudo umount /dev/pts
