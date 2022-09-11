@@ -2,8 +2,8 @@
 
 on:
   push:
-    # tags:
-    #   - 'v*'
+    tags:
+      - 'v*'
 
 name: Create Release
 env:
