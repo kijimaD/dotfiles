@@ -139,10 +139,6 @@ export QT_SCALE_FACTOR=2
 # save history
 export PROMPT_COMMAND='history -a;history -c;history -r'
 
-eval "$(rbenv init -)"
-PATH="$HOME/.rbenv/bin:$PATH"
-PATH="$HOME/.cask/bin:$PATH"
-
 # non-system Guix settings ================
 GUIX_PROFILE="$HOME/.guix-profile"
 . "$GUIX_PROFILE/etc/profile"
@@ -168,7 +164,3 @@ export CURL_CA_BUNDLE="$HOME/.guix-profile/etc/ssl/certs/ca-certificates.crt"
 
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
-
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOBIN

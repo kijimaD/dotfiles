@@ -34,7 +34,25 @@ fi
 # export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
 # PATH="/usr/local/heroku/bin:$PATH"
-. "$HOME/.cargo/env"
+
+if [ -d "$HOME/.cargo" ] ; then
+    . "$HOME/.cargo/env"
+fi
+
+if [ -d "$HOME/go" ] ; then
+    export GOPATH=$HOME/go
+    export GOBIN=$GOPATH/bin
+    export PATH=$PATH:$GOBIN
+fi
+
+if [ -d "$HOME/.rbenv" ] ; then
+    eval "$(rbenv init -)"
+    PATH="$HOME/.rbenv/bin:$PATH"
+fi
+
+if [ -d "$HOME/.cask" ] ; then
+    PATH="$HOME/.cask/bin:$PATH"
+fi
 
 # Firefoxのスクロール
 export MOZ_USE_XINPUT2=1
