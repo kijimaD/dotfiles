@@ -2,8 +2,8 @@
 
 on:
   push:
-    tags:
-      - 'v*'
+    # tags:
+    #   - 'v*'
 
 name: Create Release
 env:
@@ -32,7 +32,7 @@ jobs:
         run: sudo mount -o bind /run/ edit/run && sudo mount --bind /dev/ edit/dev
       - name: under chroot environment
         run: |
-          cat << EOF |  script -e -c 'sudo chroot edit'
+          cat << EOF | script -e -c 'sudo chroot edit'
           sudo mount -t proc none /proc && sudo mount -t devpts none /dev/pts
           export HOME=/root && export LC_ALL=C
           dbus-uuidgen | sudo tee /var/lib/dbus/machine-id && sudo dpkg-divert --local --rename --add /sbin/initctl && sudo ln -s /bin/true /sbin/initctl
@@ -77,7 +77,14 @@ jobs:
         working-directory: ./extract-cd
       - name: split iso
         run: split -b 1G -d ${{ env.CUSTOM_IMAGE_ISO }} ${{ env.CUSTOM_IMAGE_ISO }}-
+
+      - name: upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          path: ./${{ env.CUSTOM_IMAGE_ISO }}-*
+
       - name: Create Release
+        if: startsWith(github.ref, 'refs/tags/v')
         run: |
             gh release create ${GITHUB_REF##*/} -t "Releases ${GITHUB_REF##*/}"
         env:
