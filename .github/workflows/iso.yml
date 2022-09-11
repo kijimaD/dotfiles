@@ -51,7 +51,7 @@ jobs:
           sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
           sudo chmod +x /usr/local/bin/docker-compose
           sudo apt-get update
-          echo -e "\n" | sudo apt install -y git curl nodejs docker-ce docker-ce-cli containerd.io
+          echo -e "\n" | sudo apt install -y nodejs docker-ce docker-ce-cli containerd.io cmigemo fcitx fcitx-mozc emacs-mozc rbenv peco silversearcher-ag emacs stow syncthing
           # ================
           sudo apt clean && sudo rm -rf /tmp/* ~/.bash_history && sudo rm /etc/resolv.conf && sudo rm /var/lib/dbus/machine-id && sudo rm /sbin/initctl && sudo dpkg-divert --rename --remove /sbin/initctl
           sudo umount /proc || sudo umount -lf /proc && sudo umount /dev/pts
