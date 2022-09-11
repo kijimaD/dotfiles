@@ -17,7 +17,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: pull base image
-        run: curl -LO https://releases.ubuntu.com/20.04.3/ubuntu-20.04.3-desktop-amd64.iso
+        run: curl -LO http://cdimage.ubuntulinux.jp/releases/22.04/ubuntu-ja-22.04-desktop-amd64.iso
       - name: install essential package
         run: sudo apt install -y squashfs-tools genisoimage
       - name: mount base image
