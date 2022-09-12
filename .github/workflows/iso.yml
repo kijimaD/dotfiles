@@ -80,9 +80,11 @@ jobs:
           sudo add-apt-repository universe
           sudo add-apt-repository restricted
           sudo add-apt-repository multiverse
+          sudo add-apt-repository ppa:kelleyk/emacs
           sudo apt update &
           wait
-          echo -e "\n" | sudo apt install -y cmigemo fcitx fcitx-mozc emacs-mozc peco silversearcher-ag stow syncthing
+          echo -e "\n" | sudo apt purge emacs # remove old version
+          echo -e "\n" | sudo apt install -y emacs28 emacs-mozc cmigemo fcitx fcitx-mozc peco silversearcher-ag stow syncthing
           # clone
           mkdir /etc/skel/Project
           mkdir /etc/skel/ProjectOrg
@@ -106,10 +108,12 @@ jobs:
           check_cmd_exist git
           check_cmd_exist cargo
           check_cmd_exist go
+          check_cmd_exist emacs
           check_cmd_exist syncthing
           check_cmd_exist google-chrome-stable
           check_cmd_exist spotify
           check_cmd_exist unetbootin
+          emacs -nw --batch --eval '(message (emacs-version))' # check version
           # ================
           sudo apt clean && sudo rm -rf /tmp/* ~/.bash_history && sudo rm /etc/resolv.conf && sudo rm /var/lib/dbus/machine-id && sudo rm /sbin/initctl && sudo dpkg-divert --rename --remove /sbin/initctl
           sudo umount /proc || sudo umount -lf /proc && sudo umount /dev/pts
