@@ -45,7 +45,7 @@ jobs:
           # Rust(機能してない)
           curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
           curl https://sh.rustup.rs -sSf | sudo sh -s -- -y
-          mv $HOME/.cargo /etc/skel # .cargoがないエラーになる
+          mv .cargo /etc/skel # .cargoがないエラーになる
           curl -OL https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
           # Go
           sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
@@ -59,11 +59,13 @@ jobs:
           # Chrome
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb
-          # apt-get
+          # apt-get いくつかインストールされない
           sudo apt-get update
           echo -e "\n" | sudo apt install -y nodejs docker-ce docker-ce-cli containerd.io cmigemo fcitx fcitx-mozc emacs-mozc rbenv peco silversearcher-ag emacs stow syncthing
           # ================
           ls -al
+          ls -al /home
+          ls -al /root
           sudo apt clean && sudo rm -rf /tmp/* ~/.bash_history && sudo rm /etc/resolv.conf && sudo rm /var/lib/dbus/machine-id && sudo rm /sbin/initctl && sudo dpkg-divert --rename --remove /sbin/initctl
           sudo umount /proc || sudo umount -lf /proc && sudo umount /dev/pts
           exit
