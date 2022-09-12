@@ -77,8 +77,6 @@ jobs:
           wget https://github.com/unetbootin/unetbootin/releases/download/702/unetbootin-linux64-702.bin
           sudo mv unetbootin-linux64-702.bin /usr/local/bin/unetbootin
           sudo chmod +x /usr/local/bin/unetbootin
-          # Small tools
-          cargo install cloner # git cloneツール
           # apt
           echo -e "\n" | sudo apt install -y software-properties-common
           sudo add-apt-repository -y main
