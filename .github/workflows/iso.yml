@@ -65,7 +65,10 @@ jobs:
           sudo dpkg -i google-chrome-stable_current_amd64.deb
           # apt
           echo -e "\n" | sudo apt install -y software-properties-common
-          sudo add-apt-repository main universe restricted multiverse
+          sudo add-apt-repository main
+          sudo add-apt-repository universe
+          sudo add-apt-repository restricted
+          sudo add-apt-repository multiverse
           sudo apt update &
           wait
           echo -e "\n" | sudo apt install -y nodejs docker-ce docker-ce-cli containerd.io cmigemo fcitx fcitx-mozc emacs-mozc peco silversearcher-ag emacs stow syncthing compton feh imagemagick dunst redshift polybar
