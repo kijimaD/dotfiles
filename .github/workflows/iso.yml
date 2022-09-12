@@ -78,6 +78,12 @@ jobs:
           sudo apt update &
           wait
           echo -e "\n" | sudo apt install -y cmigemo fcitx fcitx-mozc emacs-mozc peco silversearcher-ag stow syncthing
+          # cask
+          git clone git@github.com:cask/cask.git /etc/skel/.cask
+          # my repos
+          git clone git@github.com:kijimaD/.emacs.d.git /etc/skel/.emacs.d
+          git clone git@github.com:kijimaD/dotfiles.git /etc/skel/dotfiles
+          git clone git@github.com:kijimaD/roam.git /etc/skel/roam
           # Check
           ls -al /
           ls -al /etc/skel
