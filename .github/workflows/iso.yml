@@ -99,7 +99,7 @@ jobs:
           cd /tmp
           # Cask install
           cd /etc/skel/.emacs.d
-          sudo /etc/skel/.cask/bin/cask
+          yes | sudo /etc/skel/.cask/bin/cask
           cd /tmp
           # Check
           ls -al /
