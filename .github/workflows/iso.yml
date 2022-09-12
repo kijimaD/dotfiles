@@ -79,6 +79,7 @@ jobs:
           wait
           echo -e "\n" | sudo apt install -y cmigemo fcitx fcitx-mozc emacs-mozc peco silversearcher-ag stow syncthing
           # cask
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
           git clone git@github.com:cask/cask.git /etc/skel/.cask
           # my repos
           git clone git@github.com:kijimaD/.emacs.d.git /etc/skel/.emacs.d
