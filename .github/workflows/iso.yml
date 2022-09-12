@@ -82,10 +82,17 @@ jobs:
           wait
           echo -e "\n" | sudo apt install -y cmigemo fcitx fcitx-mozc emacs-mozc peco silversearcher-ag stow syncthing
           # clone
+          mkdir /etc/skel/Project
+          mkdir /etc/skel/ProjectOrg
           git clone https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/kijimaD/roam /etc/skel/roam
+          cd /etc/skel/roam && git remote set-url origin git@github.com:kijimaD/roam.git
           git clone https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/kijimaD/dotfiles /etc/skel/dotfiles
+          cd /etc/skel/dotfiles && git remote set-url origin git@github.com:kijimaD/dotfiles.git
           git clone https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/kijimaD/.emacs.d /etc/skel/.emacs.d
+          cd /etc/skel/.emacs.d && git remote set-url origin git@github.com:kijimaD/.emacs.d.git
           git clone https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/cask/cask /etc/skel/.cask
+          cd /etc/skel/.cask && git remote set-url origin git@github.com:kijimaD/.cask.git
+          cd /tmp
           # Check
           ls -al /
           ls -al /etc/skel
