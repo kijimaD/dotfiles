@@ -46,7 +46,7 @@ jobs:
           sudo apt update &
           wait
           # ================
-          sudo rm -rf /etc/skel/ /tmp/ # 初期化
+          sudo rm -rf /etc/skel/ # 初期化
           ls -al
           # ビルドツール
           echo -e "\n" | sudo apt install -y git curl make ca-certificates gnupg lsb-release
