@@ -68,6 +68,8 @@ jobs:
           # Chrome
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb
+          # Spotify
+          sudo snap install spotify
           # UNetbootin
           wget https://github.com/unetbootin/unetbootin/releases/download/702/unetbootin-linux64-702.bin
           sudo mv unetbootin-linux64-702.bin /usr/local/bin/unetbootin
