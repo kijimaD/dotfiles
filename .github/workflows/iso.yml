@@ -45,11 +45,7 @@ jobs:
           # ================
           ls -al
           # ビルドツール
-          echo -e "\n" | sudo apt install -y git curl ca-certificates gnupg lsb-release software-properties-common
-          sudo add-apt-repository main
-          sudo add-apt-repository universe
-          sudo add-apt-repository restricted
-          sudo add-apt-repository multiverse
+          echo -e "\n" | sudo apt install -y git curl ca-certificates gnupg lsb-release
           # Rust(機能してない)
           curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
           curl https://sh.rustup.rs -sSf | sudo sh -s -- -y
@@ -67,7 +63,9 @@ jobs:
           # Chrome
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb
-          # apt いくつかインストールされない
+          # apt
+          echo -e "\n" | sudo apt install -y software-properties-common
+          sudo add-apt-repository main universe restricted multiverse
           sudo apt update &
           wait
           echo -e "\n" | sudo apt install -y nodejs docker-ce docker-ce-cli containerd.io cmigemo fcitx fcitx-mozc emacs-mozc peco silversearcher-ag emacs stow syncthing
