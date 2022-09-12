@@ -65,6 +65,10 @@ jobs:
           # Chrome
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb
+          # UNetbootin
+          wget https://github.com/unetbootin/unetbootin/releases/download/702/unetbootin-linux64-702.bin
+          sudo mv unetbootin-linux64-702.bin /usr/local/bin/unetbootin
+          sudo chmod +x /usr/local/bin/unetbootin
           # apt
           echo -e "\n" | sudo apt install -y software-properties-common
           sudo add-apt-repository main
@@ -80,13 +84,13 @@ jobs:
           ls -al /root
           ls -al /tmp
           check_cmd_exist () {
-            echo $1
             type $1 >/dev/null 2>&1 && echo "$1 exists ✔"
           }
           check_cmd_exist git
           check_cmd_exist go
           check_cmd_exist syncthing
           check_cmd_exist google-chrome-stable
+          check_cmd_exist unetbootin
           # ================
           sudo apt clean && sudo rm -rf /tmp/* ~/.bash_history && sudo rm /etc/resolv.conf && sudo rm /var/lib/dbus/machine-id && sudo rm /sbin/initctl && sudo dpkg-divert --rename --remove /sbin/initctl
           sudo umount /proc || sudo umount -lf /proc && sudo umount /dev/pts
