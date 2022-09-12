@@ -45,7 +45,7 @@ jobs:
           # Rust(機能してない)
           curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
           curl https://sh.rustup.rs -sSf | sudo sh -s -- -y
-          mv .cargo /etc/skel # .cargoがないエラーになる
+          mv /root/.cargo /etc/skel
           curl -OL https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
           # Go
           sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
