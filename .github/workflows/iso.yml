@@ -37,7 +37,7 @@ jobs:
           cat << EOF | script -e -c 'sudo chroot edit'
           cd /tmp
           sudo mount -t proc none /proc && sudo mount -t devpts none /dev/pts
-          export HOME=/root && export LC_ALL=C
+          export HOME=/etc/skel && export LC_ALL=C
           dbus-uuidgen | sudo tee /var/lib/dbus/machine-id && sudo dpkg-divert --local --rename --add /sbin/initctl && sudo ln -s /bin/true /sbin/initctl
           sudo mv /etc/apt/apt.conf.d/90_zsys_system_autosnapshot /etc/apt/apt.conf.d/90_zsys_system_autosnapshot.disabled
           export DEBIAN_FRONTEND=noninteractive
@@ -46,13 +46,13 @@ jobs:
           sudo apt update &
           wait
           # ================
+          sudo rm -rf /etc/skel/ /tmp/ # 初期化
           ls -al
           # ビルドツール
           echo -e "\n" | sudo apt install -y git curl make ca-certificates gnupg lsb-release
           # Rust
           curl https://sh.rustup.rs -sSf | sudo sh -s -- -y
-          mv /root/.cargo /etc/skel
-          . /etc/skel/.cargo/env
+          . /etc/skel/.cargo/env # $HOMEの/etc/skelにインストールされる
           # Go
           curl -OL https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
           sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
@@ -100,6 +100,10 @@ jobs:
           # Cask install
           cd /etc/skel/.emacs.d
           yes | sudo /etc/skel/.cask/bin/cask
+          cd /tmp
+          # Stow
+          cd /etc/skel/dotfiles
+          stow .
           cd /tmp
           # Check
           ls -al /
