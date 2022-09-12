@@ -31,6 +31,8 @@ jobs:
       - name: bind
         run: sudo mount -o bind /run/ edit/run && sudo mount --bind /dev/ edit/dev
       - name: under chroot environment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cat << EOF | script -e -c 'sudo chroot edit'
           cd /tmp
@@ -79,6 +81,11 @@ jobs:
           sudo apt update &
           wait
           echo -e "\n" | sudo apt install -y cmigemo fcitx fcitx-mozc emacs-mozc peco silversearcher-ag stow syncthing
+          # clone
+          git clone https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/kijimaD/roam /etc/skel/roam
+          git clone https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/kijimaD/dotfiles /etc/skel/dotfiles
+          git clone https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/kijimaD/.emacs.d /etc/skel/.emacs.d
+          git clone https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/cask/cask /etc/skel/.cask
           # Check
           ls -al /
           ls -al /etc/skel
