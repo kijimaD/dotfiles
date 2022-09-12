@@ -47,9 +47,10 @@ jobs:
           ls -al
           # ビルドツール
           echo -e "\n" | sudo apt install -y git curl make ca-certificates gnupg lsb-release
-          # Rust(機能してない)
+          # Rust
           curl https://sh.rustup.rs -sSf | sudo sh -s -- -y
           mv /root/.cargo /etc/skel
+          . /etc/skel/.cargo/env"
           # Go
           curl -OL https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
           sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
@@ -78,14 +79,6 @@ jobs:
           sudo apt update &
           wait
           echo -e "\n" | sudo apt install -y cmigemo fcitx fcitx-mozc emacs-mozc peco silversearcher-ag stow syncthing
-          # cask
-          ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N ""
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git clone git@github.com:cask/cask.git /etc/skel/.cask
-          # my repos
-          git clone git@github.com:kijimaD/.emacs.d.git /etc/skel/.emacs.d
-          git clone git@github.com:kijimaD/dotfiles.git /etc/skel/dotfiles
-          git clone git@github.com:kijimaD/roam.git /etc/skel/roam
           # Check
           ls -al /
           ls -al /etc/skel
@@ -95,6 +88,7 @@ jobs:
             type $1 >/dev/null 2>&1 && echo "$1 exists ✔"
           }
           check_cmd_exist git
+          check_cmd_exist cargo
           check_cmd_exist go
           check_cmd_exist syncthing
           check_cmd_exist google-chrome-stable
