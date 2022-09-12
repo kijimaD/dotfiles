@@ -61,7 +61,7 @@ jobs:
           sudo dpkg -i google-chrome-stable_current_amd64.deb
           # apt-get いくつかインストールされない
           sudo apt-get update
-          echo -e "\n" | sudo apt install -y nodejs docker-ce docker-ce-cli containerd.io cmigemo fcitx fcitx-mozc emacs-mozc rbenv peco silversearcher-ag emacs stow syncthing
+          echo -e "\n" | sudo apt-get install -y nodejs docker-ce docker-ce-cli containerd.io cmigemo fcitx fcitx-mozc emacs-mozc peco silversearcher-ag emacs stow syncthing
           # ================
           ls -al
           ls -al /home
