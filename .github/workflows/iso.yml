@@ -50,7 +50,7 @@ jobs:
           # Rust
           curl https://sh.rustup.rs -sSf | sudo sh -s -- -y
           mv /root/.cargo /etc/skel
-          . /etc/skel/.cargo/env"
+          . /etc/skel/.cargo/env
           # Go
           curl -OL https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
           sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
