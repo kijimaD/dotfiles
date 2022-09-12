@@ -45,7 +45,7 @@ jobs:
           # ================
           ls -al
           # ビルドツール
-          echo -e "\n" | sudo apt install -y git curl ca-certificates gnupg lsb-release
+          echo -e "\n" | sudo apt install -y git curl make jq ca-certificates gnupg lsb-release
           # Rust(機能してない)
           curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
           curl https://sh.rustup.rs -sSf | sudo sh -s -- -y
@@ -68,7 +68,7 @@ jobs:
           sudo add-apt-repository main universe restricted multiverse
           sudo apt update &
           wait
-          echo -e "\n" | sudo apt install -y nodejs docker-ce docker-ce-cli containerd.io cmigemo fcitx fcitx-mozc emacs-mozc peco silversearcher-ag emacs stow syncthing
+          echo -e "\n" | sudo apt install -y nodejs docker-ce docker-ce-cli containerd.io cmigemo fcitx fcitx-mozc emacs-mozc peco silversearcher-ag emacs stow syncthing compton feh imagemagick dunst redshift polybar
           # ================
           ls -al
           ls -al /home
