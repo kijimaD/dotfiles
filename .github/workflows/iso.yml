@@ -45,7 +45,7 @@ jobs:
           # ================
           ls -al
           # ビルドツール
-          echo -e "\n" | sudo apt install -y git curl make jq ca-certificates gnupg lsb-release
+          echo -e "\n" | sudo apt install -y git curl make ca-certificates gnupg lsb-release
           # Rust(機能してない)
           curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
           curl https://sh.rustup.rs -sSf | sudo sh -s -- -y
@@ -57,6 +57,8 @@ jobs:
           # Docker
           curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
           echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+          sudo apt update
+          echo -e "\n" | sudo apt install -y docker-ce docker-ce-cli containerd.io
           # docker-compose
           sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
           sudo chmod +x /usr/local/bin/docker-compose
@@ -71,7 +73,7 @@ jobs:
           sudo add-apt-repository multiverse
           sudo apt update &
           wait
-          echo -e "\n" | sudo apt install -y nodejs docker-ce docker-ce-cli containerd.io cmigemo fcitx fcitx-mozc emacs-mozc peco silversearcher-ag emacs stow syncthing compton feh imagemagick dunst redshift polybar
+          echo -e "\n" | sudo apt install -y nodejs cmigemo fcitx fcitx-mozc emacs-mozc peco silversearcher-ag emacs stow syncthing compton feh imagemagick dunst redshift jq
           # ================
           ls -al
           ls -al /home
