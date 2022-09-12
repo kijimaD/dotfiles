@@ -83,7 +83,7 @@ jobs:
           sudo add-apt-repository ppa:kelleyk/emacs
           sudo apt update &
           wait
-          echo -e "\n" | sudo apt purge emacs # remove old version
+          echo -e "\n" | sudo apt purge -y emacs # remove old version
           echo -e "\n" | sudo apt install -y emacs28 emacs-mozc cmigemo fcitx fcitx-mozc peco silversearcher-ag stow syncthing
           # clone
           mkdir /etc/skel/Project
