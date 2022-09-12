@@ -70,6 +70,9 @@ jobs:
           sudo dpkg -i google-chrome-stable_current_amd64.deb
           # Spotify
           sudo snap install spotify
+          # Zoom
+          wget https://zoom.us/client/5.11.10.4400/zoom_amd64.deb
+          sudo apt install ./zoom_amd64.deb
           # UNetbootin
           wget https://github.com/unetbootin/unetbootin/releases/download/702/unetbootin-linux64-702.bin
           sudo mv unetbootin-linux64-702.bin /usr/local/bin/unetbootin
@@ -118,8 +121,10 @@ jobs:
           check_cmd_exist go
           check_cmd_exist emacs
           check_cmd_exist syncthing
+          check_cmd_exist stow
           check_cmd_exist google-chrome-stable
           check_cmd_exist spotify
+          check_cmd_exist zoom
           check_cmd_exist unetbootin
           emacs -nw --batch --eval '(message (emacs-version))' # check version
           # ================
