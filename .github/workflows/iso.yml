@@ -47,11 +47,10 @@ jobs:
           # ビルドツール
           echo -e "\n" | sudo apt install -y git curl make ca-certificates gnupg lsb-release
           # Rust(機能してない)
-          curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
           curl https://sh.rustup.rs -sSf | sudo sh -s -- -y
           mv /root/.cargo /etc/skel
-          curl -OL https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
           # Go
+          curl -OL https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
           sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
           export PATH=$PATH:/usr/local/go/bin
           # Docker
@@ -73,7 +72,7 @@ jobs:
           sudo add-apt-repository multiverse
           sudo apt update &
           wait
-          echo -e "\n" | sudo apt install -y nodejs cmigemo fcitx fcitx-mozc emacs-mozc peco silversearcher-ag emacs stow syncthing compton feh imagemagick dunst redshift jq
+          echo -e "\n" | sudo apt install -y cmigemo fcitx fcitx-mozc emacs-mozc peco silversearcher-ag stow syncthing
           # ================
           ls -al
           ls -al /home
