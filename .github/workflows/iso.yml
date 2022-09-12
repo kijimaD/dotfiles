@@ -5,13 +5,13 @@ on:
     # tags:
     #   - 'v*'
 
-name: Create Release
+name: Build
 env:
   CUSTOM_IMAGE_NAME: kd_ubuntu
   CUSTOM_IMAGE_ISO: ubuntu-kd-20.04.3-desktop-amd64.iso
 jobs:
   build:
-    name: Create Release
+    name: Build .iso image
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
