@@ -1,7 +1,9 @@
-Dotfiles managed with GNU Stow!
-[[./backgrounds/crate.png]]
+[[https://github.com/kijimaD/dotfiles/actions/workflows/iso.yml][https://github.com/kijimaD/dotfiles/actions/workflows/iso.yml/badge.svg]]
 
-I build our own system iso image by GitHub Actions to install my machine fast, robust, documented way.
+- Dotfiles managed with GNU Stow.
+- My own system iso image by GitHub Actions to install my machine fast, robust, documented way. 
+
+[[./backgrounds/crate.png]]
 
 * Main Tools
 
