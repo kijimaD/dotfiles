@@ -1,24 +1,36 @@
 Dotfiles managed with GNU Stow!
+[[./backgrounds/crate.png]]
 
-[[./backgrounds/20210813010651.png]]
+I build our own system iso image by GitHub Actions to install my machine fast, robust, documented way.
 
-* Tools
-- GNU Guix
+* Main Tools
+
+- GNU Linux(Ubuntu)
 - GNU Emacs
+- GNU Guix
 - GNU Stow
-- nyxt
-- i3-wm
+- EXWM(Emacs X Window Manager)
 - polybar
+
 * Install
+
+1 - Download ISO
+https://github.com/kijimaD/dotfiles/releases
+
+2 - concatenate ISO
 #+begin_src shell
-make batch
+cat ubuntu-kd-20.04.3-desktop-amd64.iso-* > ubuntu-kd-20.04.3-desktop-amd64.iso
 #+end_src
-* stow
-Set all file links.
-#+begin_src shell
-stow .
-#+end_src
+
+3 - Write the ISO to your USB stick
+
+4 - Start by live USB
+
+5 - Run ~ubiquity command~, install system on disk
+
 * Reference
+
 Great hacker settings.
+
 - https://github.com/daviwil/dotfiles
 - https://www.youtube.com/c/SystemCrafters
