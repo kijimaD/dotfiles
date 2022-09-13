@@ -41,7 +41,7 @@ jobs:
           mount -t sysfs none /sys
           mount -t devpts none /dev/pts
           export HOME=/etc/skel
-          export LC_ALL=C &&
+          export LC_ALL=C
           export DEBIAN_FRONTEND=noninteractive
           dbus-uuidgen | tee /var/lib/dbus/machine-id && dpkg-divert --local --rename --add /sbin/initctl && ln -s /bin/true /sbin/initctl
           mv /etc/apt/apt.conf.d/90_zsys_system_autosnapshot /etc/apt/apt.conf.d/90_zsys_system_autosnapshot.disabled
