@@ -128,6 +128,7 @@ jobs:
           check_cmd_exist zoom
           check_cmd_exist unetbootin
           emacs -nw --batch --eval '(message (emacs-version))' # check version
+          dpkg-query -W --showformat='${Installed-Size}\t${Package}\n' | sort -nr | head -n 100 # installed packages
           # ================
           sudo apt clean && sudo rm -rf /tmp/* ~/.bash_history && sudo rm /etc/resolv.conf && sudo rm /var/lib/dbus/machine-id && sudo rm /sbin/initctl && sudo dpkg-divert --rename --remove /sbin/initctl
           sudo umount /proc || sudo umount -lf /proc && sudo umount /dev/pts
