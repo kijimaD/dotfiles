@@ -88,7 +88,7 @@ jobs:
           sudo apt update &
           wait
           echo -e "\n" | sudo apt purge -y emacs* # remove old version
-          echo -e "\n" | sudo apt install -y emacs28 emacs-mozc cmigemo fcitx fcitx-mozc peco silversearcher-ag stow syncthing
+          echo -e "\n" | sudo apt install -y emacs28 emacs-mozc cmigemo fcitx fcitx-mozc peco silversearcher-ag stow syncthing compton
           # Clone repositories
           mkdir /etc/skel/Project
           mkdir /etc/skel/ProjectOrg
@@ -122,6 +122,7 @@ jobs:
           check_cmd_exist go
           check_cmd_exist emacs
           check_cmd_exist syncthing
+          check_cmd_exist compton
           check_cmd_exist stow
           check_cmd_exist google-chrome-stable
           check_cmd_exist spotify
