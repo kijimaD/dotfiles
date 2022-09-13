@@ -18,7 +18,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: pull base image
-        run: curl -LO http://releases.ubuntu.com/jammy/ubuntu-22.04.1-desktop-amd64.iso
+        run: curl -LO https://releases.ubuntu.com/jammy/ubuntu-22.04.1-desktop-amd64.iso
       - name: install essential package
         run: sudo apt install -y squashfs-tools genisoimage
       - name: mount base image
@@ -40,7 +40,6 @@ jobs:
           mount -t proc none /proc
           mount -t sysfs none /sys
           mount -t devpts none /dev/pts
-          ls -al /dev/pts
           export HOME=/etc/skel
           export LC_ALL=C &&
           export DEBIAN_FRONTEND=noninteractive
