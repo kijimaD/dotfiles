@@ -157,7 +157,7 @@ jobs:
       - name: mksquashfs
         run: sudo mksquashfs edit extract-cd/casper/filesystem.squashfs -b 4096
       - name: file size
-        run: printf $(du -sx --block-size=1 edit | cut -f1) | sudo tee extract-cd/casper/filesystem.size
+        run: printf $(sudo du -sx --block-size=1 edit | cut -f1) | sudo tee extract-cd/casper/filesystem.size
       - name: md5sum
         run: sudo rm md5sum.txt && find -type f -print0 | sudo xargs -0 md5sum | grep -v boot.catalog | sudo tee md5sum.txt
         working-directory: ./extract-cd
