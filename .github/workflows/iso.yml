@@ -38,6 +38,7 @@ jobs:
           cat << EOF | script -e -c 'sudo chroot edit'
           cd /tmp
           sudo mount -t proc none /proc
+          sudo mount -t sysfs none /sys
           sudo mount -t devpts none /dev/pts (rw,gid=5,mode=620)
           export HOME=/etc/skel
           export LC_ALL=C &&
@@ -140,6 +141,7 @@ jobs:
           sudo rm /sbin/initctl
           sudo dpkg-divert --rename --remove /sbin/initctl
           sudo umount /proc || sudo umount -lf /proc
+          sudo umount /sys
           sudo umount /dev/pts
           exit
           EOF
