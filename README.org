@@ -1,7 +1,7 @@
 [[https://github.com/kijimaD/dotfiles/actions/workflows/iso.yml][https://github.com/kijimaD/dotfiles/actions/workflows/iso.yml/badge.svg]]
 
 - Dotfiles managed with GNU Stow.
-- My own system iso image by GitHub Actions to install my machine fast, robust, documented way. 
+- My own system iso image by GitHub Actions to install my machine fast, robust, documented way.
 
 [[./backgrounds/crate.png]]
 
@@ -32,7 +32,10 @@ cat ubuntu-kd-20.04.3-desktop-amd64.iso-* > ubuntu-kd-20.04.3-desktop-amd64.iso
 
 * Reference
 
-Great hacker settings.
+Live CD Customization
+
+- https://help.ubuntu.com/community/LiveCDCustomization
+
+Great hacker settings
 
 - https://github.com/daviwil/dotfiles
-- https://www.youtube.com/c/SystemCrafters
