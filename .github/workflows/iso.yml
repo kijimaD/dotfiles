@@ -39,7 +39,7 @@ jobs:
           cd /tmp
           sudo mount -t proc none /proc
           sudo mount -t sysfs none /sys
-          sudo mount -t devpts none /dev/pts
+          sudo mount -t devpts -o uid=0,gid=5,mode=620 none /dev/pts
           export HOME=/etc/skel
           export LC_ALL=C &&
           export DEBIAN_FRONTEND=noninteractive
