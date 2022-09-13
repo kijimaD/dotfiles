@@ -162,7 +162,7 @@ jobs:
         run: sudo rm md5sum.txt && find -type f -print0 | sudo xargs -0 md5sum | grep -v boot.catalog | sudo tee md5sum.txt
         working-directory: ./extract-cd
       - name: mkisofs
-        run: sudo mkisofs -D -r -V ${{ env.CUSTOM_IMAGE_NAME }} -cache-inodes -J -l -b '/boot/grub/i386-pc/boot.img' -c boot.catalog -no-emul-boot -boot-load-size 4 -boot-info-table -o ../${{ env.CUSTOM_IMAGE_ISO }} .
+        run: sudo mkisofs -D -r -V ${{ env.CUSTOM_IMAGE_NAME }} -cache-inodes -J -l -b boot/grub/i386-pc/boot.img -c boot.catalog -no-emul-boot -boot-load-size 4 -boot-info-table -o ../${{ env.CUSTOM_IMAGE_ISO }} .
         working-directory: ./extract-cd
       - name: split iso
         run: split -b 1G -d ${{ env.CUSTOM_IMAGE_ISO }} ${{ env.CUSTOM_IMAGE_ISO }}-
