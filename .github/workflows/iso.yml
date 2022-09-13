@@ -132,7 +132,6 @@ jobs:
           check_cmd_exist zoom
           check_cmd_exist unetbootin
           emacs -nw --batch --eval '(message (emacs-version))' # check version
-          dpkg-query -W --showformat='${Installed-Size}\t${Package}\n' | sort -nr | head -n 100 # installed packages
           # ================
           apt clean
           rm -rf /tmp/* ~/.bash_history
@@ -147,6 +146,8 @@ jobs:
           EOF
       - name: chmod
         run: chmod +w extract-cd/casper/filesystem.manifest
+      - name: installed packages
+        run: sudo dpkg-query -W --showformat='${Installed-Size}\t${Package}\n' | sort -nr | head -n 100
       - name: renew manifest
         run: sudo dpkg-query -W --showformat='${Package} ${Version}\n' > extract-cd/casper/filesystem.manifest
       - name: modify file
