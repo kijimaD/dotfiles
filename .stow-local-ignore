@@ -4,15 +4,16 @@
 \.site
 ^/.*\.org
 
-archive
-backgrounds
-LICENSE
 .authinfo
 .gitconfig
 .guile
 Dockerfile
-docker-compose.yml
-crontab
+LICENSE
+Makefile
+archive
+backgrounds
 cloner
+crontab
+docker-compose.yml
 
 /.config/guix/system\.scm
