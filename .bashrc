@@ -140,22 +140,24 @@ export QT_SCALE_FACTOR=2
 export PROMPT_COMMAND='history -a;history -c;history -r'
 
 # non-system Guix settings ================
-GUIX_PROFILE="$HOME/.guix-profile"
-. "$GUIX_PROFILE/etc/profile"
-GUIX_PROFILE="$HOME/.config/guix/current"
-. "$GUIX_PROFILE/etc/profile"
-export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+if [ -d "$HOME/.guix-profile" ] ; then
+    GUIX_PROFILE="$HOME/.guix-profile"
+    . "$GUIX_PROFILE/etc/profile"
+    GUIX_PROFILE="$HOME/.config/guix/current"
+    . "$GUIX_PROFILE/etc/profile"
+    export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 
-source "$HOME/.guix-profile/etc/profile"
-source "$HOME/.config/guix/current/etc/profile"
+    source "$HOME/.guix-profile/etc/profile"
+    source "$HOME/.config/guix/current/etc/profile"
 
-export PATH="$HOME/.config/guix/current/bin:$PATH"
-export INFOPATH="$HOME/.config/guix/current/share/info:$INFOPATH"
+    export PATH="$HOME/.config/guix/current/bin:$PATH"
+    export INFOPATH="$HOME/.config/guix/current/share/info:$INFOPATH"
 
-export SSL_CERT_DIR="$HOME/.guix-profile/etc/ssl/certs"
-export SSL_CERT_FILE="$HOME/.guix-profile/etc/ssl/certs/ca-certificates.crt"
-export GIT_SSL_CAINFO="$SSL_CERT_FILE"
-export CURL_CA_BUNDLE="$HOME/.guix-profile/etc/ssl/certs/ca-certificates.crt"
+    export SSL_CERT_DIR="$HOME/.guix-profile/etc/ssl/certs"
+    export SSL_CERT_FILE="$HOME/.guix-profile/etc/ssl/certs/ca-certificates.crt"
+    export GIT_SSL_CAINFO="$SSL_CERT_FILE"
+    export CURL_CA_BUNDLE="$HOME/.guix-profile/etc/ssl/certs/ca-certificates.crt"
+fi
 
 # System Guix ================
 # # japanese input settings
