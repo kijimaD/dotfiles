@@ -37,62 +37,62 @@ jobs:
         run: |
           cat << EOF | script -e -c 'sudo chroot edit'
           cd /tmp
-          sudo mount -t proc none /proc
-          sudo mount -t sysfs none /sys
+          mount -t proc none /proc
+          mount -t sysfs none /sys
           mount -t devpts none /dev/pts
           ls -al /dev/pts
           export HOME=/etc/skel
           export LC_ALL=C &&
           export DEBIAN_FRONTEND=noninteractive
-          dbus-uuidgen | sudo tee /var/lib/dbus/machine-id && sudo dpkg-divert --local --rename --add /sbin/initctl && sudo ln -s /bin/true /sbin/initctl
-          sudo mv /etc/apt/apt.conf.d/90_zsys_system_autosnapshot /etc/apt/apt.conf.d/90_zsys_system_autosnapshot.disabled
-          sudo apt upgrade -y &
+          dbus-uuidgen | tee /var/lib/dbus/machine-id && dpkg-divert --local --rename --add /sbin/initctl && ln -s /bin/true /sbin/initctl
+          mv /etc/apt/apt.conf.d/90_zsys_system_autosnapshot /etc/apt/apt.conf.d/90_zsys_system_autosnapshot.disabled
+          apt upgrade -y &
           wait
-          sudo apt update &
+          apt update &
           wait
           # ================
-          sudo rm -rf /etc/skel/ # 初期化
+          rm -rf /etc/skel/ # 初期化
           ls -al
           # ビルドツール
-          echo -e "\n" | sudo apt install -y git curl make ca-certificates gnupg lsb-release
+          echo -e "\n" | apt install -y git curl make ca-certificates gnupg lsb-release
           # Rust
-          curl https://sh.rustup.rs -sSf | sudo sh -s -- -y
+          curl https://sh.rustup.rs -sSf | sh -s -- -y
           . /etc/skel/.cargo/env # $HOMEの/etc/skelにインストールされる
           # Go
           curl -OL https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
-          sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
+          tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
           export PATH=$PATH:/usr/local/go/bin
           # Docker
-          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-          sudo apt update
-          echo -e "\n" | sudo apt install -y docker-ce docker-ce-cli containerd.io
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+          apt update
+          echo -e "\n" | apt install -y docker-ce docker-ce-cli containerd.io
           # docker-compose
-          sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-          sudo chmod +x /usr/local/bin/docker-compose
+          curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+          chmod +x /usr/local/bin/docker-compose
           # Chrome
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo dpkg -i google-chrome-stable_current_amd64.deb
+          dpkg -i google-chrome-stable_current_amd64.deb
           # Spotify
-          sudo snap install spotify
+          snap install spotify
           # Zoom
           wget https://zoom.us/client/5.11.10.4400/zoom_amd64.deb
-          sudo apt install ./zoom_amd64.deb
+          apt install ./zoom_amd64.deb
           # UNetbootin
           wget https://github.com/unetbootin/unetbootin/releases/download/702/unetbootin-linux64-702.bin
-          sudo mv unetbootin-linux64-702.bin /usr/local/bin/unetbootin
-          sudo chmod +x /usr/local/bin/unetbootin
+          mv unetbootin-linux64-702.bin /usr/local/bin/unetbootin
+          chmod +x /usr/local/bin/unetbootin
           # apt
-          echo -e "\n" | sudo apt install -y software-properties-common
-          sudo add-apt-repository -y main
-          sudo add-apt-repository -y universe
-          sudo add-apt-repository -y restricted
-          sudo add-apt-repository -y multiverse
-          sudo add-apt-repository -y ppa:kelleyk/emacs
-          sudo apt update &
+          echo -e "\n" | apt install -y software-properties-common
+          add-apt-repository -y main
+          add-apt-repository -y universe
+          add-apt-repository -y restricted
+          add-apt-repository -y multiverse
+          add-apt-repository -y ppa:kelleyk/emacs
+          apt update &
           wait
-          echo -e "\n" | sudo apt purge -y emacs* # remove old version
-          echo -e "\n" | sudo apt install -y emacs28 emacs-mozc cmigemo fcitx fcitx-mozc peco silversearcher-ag stow syncthing compton
+          echo -e "\n" | apt purge -y emacs* # remove old version
+          echo -e "\n" | apt install -y emacs28 emacs-mozc cmigemo fcitx fcitx-mozc peco silversearcher-ag stow syncthing compton
           # Clone repositories
           mkdir /etc/skel/Project
           mkdir /etc/skel/ProjectOrg
@@ -107,7 +107,7 @@ jobs:
           cd /tmp
           # Cask install
           cd /etc/skel/.emacs.d
-          yes | sudo /etc/skel/.cask/bin/cask
+          yes | /etc/skel/.cask/bin/cask
           cd /tmp
           # Stow
           cd /etc/skel/dotfiles
@@ -135,15 +135,15 @@ jobs:
           emacs -nw --batch --eval '(message (emacs-version))' # check version
           dpkg-query -W --showformat='${Installed-Size}\t${Package}\n' | sort -nr | head -n 100 # installed packages
           # ================
-          sudo apt clean
-          sudo rm -rf /tmp/* ~/.bash_history
-          sudo rm /etc/resolv.conf
-          sudo rm /var/lib/dbus/machine-id
-          sudo rm /sbin/initctl
-          sudo dpkg-divert --rename --remove /sbin/initctl
-          sudo umount /proc || sudo umount -lf /proc
-          sudo umount /sys
-          sudo umount /dev/pts
+          apt clean
+          rm -rf /tmp/* ~/.bash_history
+          rm /etc/resolv.conf
+          rm /var/lib/dbus/machine-id
+          rm /sbin/initctl
+          dpkg-divert --rename --remove /sbin/initctl
+          umount /proc || umount -lf /proc
+          umount /sys
+          umount /dev/pts
           exit
           EOF
       - name: chmod
