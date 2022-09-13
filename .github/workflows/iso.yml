@@ -159,10 +159,12 @@ jobs:
       - name: file size
         run: printf $(du -sx --block-size=1 edit | cut -f1) | sudo tee extract-cd/casper/filesystem.size
       - name: md5sum
-        run: sudo rm md5sum.txt && find -type f -print0 | sudo xargs -0 md5sum | grep -v isolinux/boot.cat | sudo tee md5sum.txt
+        run: sudo rm md5sum.txt && find -type f -print0 | sudo xargs -0 md5sum | grep -v boot.catalog | sudo tee md5sum.txt
         working-directory: ./extract-cd
+      - name: install isolinux
+        run: sudo apt install -y isolinux
       - name: mkisofs
-        run: sudo mkisofs -D -r -V ${{ env.CUSTOM_IMAGE_NAME }} -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ../${{ env.CUSTOM_IMAGE_ISO }} .
+        run: sudo mkisofs -D -r -V ${{ env.CUSTOM_IMAGE_NAME }} -cache-inodes -J -l -b /usr/lib/ISOLINUX/isolinux.bin -c boot.catalog -no-emul-boot -boot-load-size 4 -boot-info-table -o ../${{ env.CUSTOM_IMAGE_ISO }} .
         working-directory: ./extract-cd
       - name: split iso
         run: split -b 1G -d ${{ env.CUSTOM_IMAGE_ISO }} ${{ env.CUSTOM_IMAGE_ISO }}-
