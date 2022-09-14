@@ -89,7 +89,7 @@ jobs:
           sudo apt update &
           wait
           echo -e "\n" | sudo apt purge -y emacs* # remove old version
-          echo -e "\n" | sudo apt install -y emacs28 emacs-mozc cmigemo fcitx fcitx-mozc peco silversearcher-ag stow syncthing compton
+          echo -e "\n" | sudo apt install -y emacs28 emacs-mozc cmigemo fcitx fcitx-mozc peco silversearcher-ag stow syncthing compton xfce4
           # Clone repositories
           mkdir /etc/skel/Project
           mkdir /etc/skel/ProjectOrg
