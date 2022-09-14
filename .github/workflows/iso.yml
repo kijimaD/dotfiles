@@ -108,7 +108,7 @@ jobs:
           yes | /etc/skel/.cask/bin/cask
           cd /tmp
           # Stow
-          rm -rf /etc/skel/.profile /etc/skel/.bash_logout /etc/skel/.bash_rc
+          rm -rf /etc/skel/.profile
           cd /etc/skel/dotfiles
           stow .
           cd /tmp
