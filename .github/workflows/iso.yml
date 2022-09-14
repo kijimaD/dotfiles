@@ -112,6 +112,7 @@ jobs:
           cd /tmp
           # add user
           useradd -m guest
+          echo "guest:guest" | chpasswd
           # Check
           ls -al /
           ls -al /etc/skel
