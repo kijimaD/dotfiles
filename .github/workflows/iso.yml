@@ -38,10 +38,11 @@ jobs:
           cat << EOF | script -e -c 'sudo chroot edit'
           cd /tmp
           sudo mount -t proc none /proc && sudo mount -t devpts none /dev/pts
-          export HOME=/etc/skel && export LC_ALL=C
+          export HOME=/etc/skel
+          export LC_ALL=C
+          export DEBIAN_FRONTEND=noninteractive
           dbus-uuidgen | sudo tee /var/lib/dbus/machine-id && sudo dpkg-divert --local --rename --add /sbin/initctl && sudo ln -s /bin/true /sbin/initctl
           sudo mv /etc/apt/apt.conf.d/90_zsys_system_autosnapshot /etc/apt/apt.conf.d/90_zsys_system_autosnapshot.disabled
-          export DEBIAN_FRONTEND=noninteractive
           sudo apt upgrade -y &
           wait
           sudo apt update &
@@ -70,10 +71,10 @@ jobs:
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb
           # Spotify
-          sudo snap install spotify
+          sudo snap install -y spotify
           # Zoom
           wget https://zoom.us/client/5.11.10.4400/zoom_amd64.deb
-          sudo apt install ./zoom_amd64.deb
+          sudo apt install -y ./zoom_amd64.deb
           # UNetbootin
           wget https://github.com/unetbootin/unetbootin/releases/download/702/unetbootin-linux64-702.bin
           sudo mv unetbootin-linux64-702.bin /usr/local/bin/unetbootin
