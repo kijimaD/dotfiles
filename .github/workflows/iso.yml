@@ -117,8 +117,8 @@ jobs:
           stow .
           cd /tmp
           # remove
-          echo -e "\n" | sudo apt purge -y build-essential # build-essentialが残っているとubiquityが止まる
-          echo -e "\n" | sudo apt purge -y libreoffice* thunderbird* build-essential
+          # echo -e "\n" | sudo apt purge -y build-essential # build-essentialが残っているとubiquityが止まる
+          # echo -e "\n" | sudo apt purge -y libreoffice* thunderbird*
           # Check
           ls -al /
           ls -al /etc/skel
