@@ -49,10 +49,9 @@ jobs:
           wait
           # ================
           sudo rm -rf /etc/skel/ # 初期化
-          echo -e "\n" | sudo apt purge -y libreoffice* thunderbird
           ls -al
           # ビルドツール
-          echo -e "\n" | sudo apt install -y git curl make ca-certificates gnupg lsb-release
+          echo -e "\n" | sudo apt install -y git curl make cmake ca-certificates gnupg lsb-release
           # Rust
           curl https://sh.rustup.rs -sSf | sudo -E sh -s -- -y
           . /etc/skel/.cargo/env # $HOMEの/etc/skelにインストールされる
@@ -113,6 +112,8 @@ jobs:
           cd /etc/skel/dotfiles
           stow .
           cd /tmp
+          # remove
+          echo -e "\n" | sudo apt purge -y libreoffice* thunderbird*
           # Check
           ls -al /
           ls -al /etc/skel
