@@ -141,9 +141,9 @@ export PROMPT_COMMAND='history -a;history -c;history -r'
 
 # non-system Guix settings ================
 if [ -d "$HOME/.guix-profile" ] ; then
-    GUIX_PROFILE="$HOME/.guix-profile"
+    export GUIX_PROFILE="$HOME/.guix-profile"
     . "$GUIX_PROFILE/etc/profile"
-    GUIX_PROFILE="$HOME/.config/guix/current"
+    export GUIX_PROFILE="$HOME/.config/guix/current"
     . "$GUIX_PROFILE/etc/profile"
     export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 
