@@ -106,6 +106,7 @@ jobs:
           # Cask install
           cd /etc/skel/.emacs.d
           yes | sudo -E /etc/skel/.cask/bin/cask
+          emacs -nw -l init.el --batch --eval '(message "Done install packages🎉")'
           cd /tmp
           # Stow
           rm -rf /etc/skel/.profile
