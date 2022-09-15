@@ -102,6 +102,10 @@ jobs:
           git clone https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/cask/cask /etc/skel/.cask
           cd /etc/skel/.cask && git remote set-url origin git@github.com:kijimaD/.cask.git
           cd /tmp
+          # emacsql-sqlite compile
+          echo -e "\n" | sudo apt install -y build-essential
+          # vterm compile
+          echo -e "\n" | sudo apt install -y cmake libtool libtool-bin
           # Cask install
           cd /etc/skel/.emacs.d
           yes | sudo -E /etc/skel/.cask/bin/cask
@@ -112,10 +116,9 @@ jobs:
           cd /etc/skel/dotfiles
           stow .
           cd /tmp
-          # vterm compile
-          echo -e "\n" | sudo apt install -y cmake libtool libtool-bin
           # remove
-          echo -e "\n" | sudo apt purge -y libreoffice* thunderbird*
+          echo -e "\n" | sudo apt purge -y build-essential # build-essentialが残っているとubiquityが止まる
+          echo -e "\n" | sudo apt purge -y libreoffice* thunderbird* build-essential
           # Check
           ls -al /
           ls -al /etc/skel
