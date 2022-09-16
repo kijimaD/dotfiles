@@ -108,7 +108,7 @@ jobs:
           cd /tmp
           # Cask install 遅いのでタグが打たれたときだけ実行する
           cd /etc/skel/.emacs.d
-          if [ -n ${{ startsWith(github.ref, 'refs/tags/v') }} ]; then
+          if [ ${{ startsWith(github.ref, 'refs/tags/v') != false }} ]; then
             yes | sudo -E /etc/skel/.cask/bin/cask
           fi
           cd /tmp
