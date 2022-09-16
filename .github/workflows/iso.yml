@@ -48,7 +48,7 @@ jobs:
           sudo apt autoremove -y
           # ================
           sudo rm -rf /etc/skel/ # 初期化
-          echo -e "\n" | sudo apt purge -y libreoffice* thunderbird*
+          # echo -e "\n" | sudo apt purge -y libreoffice* thunderbird*
           # ビルドツール
           ls -al
           echo -e "\n" | sudo apt install -y git curl make ca-certificates gnupg lsb-release
