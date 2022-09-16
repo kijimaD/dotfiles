@@ -20,7 +20,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: pull base image
-        run: curl -LO ${{ env.CUSTOM_IMAGE_URL }}
+        run: curl -LO ${{ env.ORIGIN_IMAGE_URL }}
       - name: install essential package
         run: sudo apt install -y squashfs-tools genisoimage
       - name: mount base image
