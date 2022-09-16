@@ -88,6 +88,7 @@ ifeq ($(TEST),1)
 else
 	make init_guix;
 endif
+
 init_guix:
 	cd /tmp && \
 	wget https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh && \
@@ -107,6 +108,11 @@ ifeq ($(TEST),1)
 else
 	cd ~/.emacs.d && ~/.cask/bin/cask
 endif
+
+# ユーザをdockerグループに追加する。dockerをsudoなしで実行させるために必要
+add_docker_group:
+	sudo gpasswd -a $(shell whoami) docker
+	id $(shell whoami)
 
 # ================================
 
