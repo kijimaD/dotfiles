@@ -161,3 +161,6 @@ restart_bt:
 
 restart_wm:
 	sudo systemctl restart display-manager
+
+init_git:
+	git config --global user.email "norimaking777@gmail.com"

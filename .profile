@@ -45,6 +45,10 @@ if [ -d "$HOME/go" ] ; then
     export PATH=$PATH:$GOBIN
 fi
 
+if [ -d "/usr/local/go/bin" ] ; then
+    PATH="/usr/local/go/bin:$PATH"
+fi
+
 if [ -d "$HOME/.rbenv" ] ; then
     eval "$(rbenv init -)"
     PATH="$HOME/.rbenv/bin:$PATH"
