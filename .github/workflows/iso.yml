@@ -51,14 +51,14 @@ jobs:
           wait
           # ================
           sudo rm -rf /etc/skel/ # 初期化
-          echo -e "\n" | sudo apt purge -y libreoffice* thunderbird
+          # echo -e "\n" | sudo apt purge -y libreoffice* thunderbird
           ls -al
           # ビルドツール
           echo -e "\n" | sudo apt install -y git curl make ca-certificates gnupg lsb-release
           # Rust
           # `cargo install`のコンパイル時、build-essential等のCコンパイラが必要だが、インストールするとubiquityが起動しなくなるため諦めた
-          curl https://sh.rustup.rs -sSf | sudo -E sh -s -- -y # -Eオプションをつけてsudoで環境変数を読み込む
-          . /etc/skel/.cargo/env # cargoは$HOMEの/etc/skelにインストールされる
+          # curl https://sh.rustup.rs -sSf | sudo -E sh -s -- -y # -Eオプションをつけてsudoで環境変数を読み込む
+          # . /etc/skel/.cargo/env # cargoは$HOMEの/etc/skelにインストールされる
           # Go
           curl -OL https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
           sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
@@ -75,7 +75,7 @@ jobs:
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb
           # Spotify
-          sudo snap install -y spotify
+          # sudo snap install spotify
           # Zoom
           # wget https://zoom.us/client/5.11.10.4400/zoom_amd64.deb
           # sudo apt install -y ./zoom_amd64.deb
