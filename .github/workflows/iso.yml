@@ -75,10 +75,7 @@ jobs:
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb
           # Spotify
-          sudo snap install -y spotify
-          # Zoom
-          wget https://zoom.us/client/5.11.10.4400/zoom_amd64.deb
-          sudo apt install -y ./zoom_amd64.deb
+          sudo snap install spotify
           # UNetbootin
           wget https://github.com/unetbootin/unetbootin/releases/download/702/unetbootin-linux64-702.bin
           sudo mv unetbootin-linux64-702.bin /usr/local/bin/unetbootin
@@ -106,9 +103,13 @@ jobs:
           git clone https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/cask/cask /etc/skel/.cask
           cd /etc/skel/.cask && git remote set-url origin git@github.com:kijimaD/.cask.git
           cd /tmp
-          # Cask install
+          # Cask install 遅いのでタグが打たれたときだけ実行する
           cd /etc/skel/.emacs.d
-          yes | sudo -E /etc/skel/.cask/bin/cask
+          if [ ! ${{ startsWith(github.ref, 'refs/tags/v') }} ]; then
+            yes | sudo /etc/skel/.cask/bin/cask
+          else
+            echo Skip
+          fi
           cd /tmp
           # Stow
           rm -rf /etc/skel/.profile
