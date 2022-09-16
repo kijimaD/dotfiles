@@ -10,6 +10,7 @@ name: Build
 env:
   CUSTOM_IMAGE_NAME: kd_ubuntu
   CUSTOM_IMAGE_ISO: ubuntu-kd-20.04.3-desktop-amd64.iso
+  CUSTOM_IMAGE_URL: https://releases.ubuntu.com/20.04.3/ubuntu-20.04.3-desktop-amd64.iso
 jobs:
   build:
     name: Build .iso image
@@ -18,11 +19,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: pull base image
-        run: curl -LO https://releases.ubuntu.com/20.04.3/ubuntu-20.04.3-desktop-amd64.iso
+        run: curl -LO ${{ env.CUSTOM_IMAGE_URL }}
       - name: install essential package
         run: sudo apt install -y squashfs-tools genisoimage
       - name: mount base image
-        run: mkdir mnt && sudo mount -o loop ./ubuntu-20.04.3-desktop-amd64.iso mnt
+        run: mkdir mnt && sudo mount -o loop ./${{ env.CUSTOM_IMAGE_ISO }} mnt
       - name: rsync
         run: mkdir extract-cd && rsync --exclude=mnt/casper/filesystem.squashfs -a mnt/ extract-cd
       - name: unsquash
@@ -162,6 +163,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           path: ./${{ env.CUSTOM_IMAGE_ISO }}-*
+          name: ${{ github.sha }}_${{ github.ref }}
 
       - name: Create Release
         if: startsWith(github.ref, 'refs/tags/v')
