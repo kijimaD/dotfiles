@@ -109,7 +109,7 @@ jobs:
           BOOLEAN=true
           if $BOOLEAN; then
             yes | sudo /etc/skel/.cask/bin/cask
-            emacs -nw -l init.el --batch --eval '(message "Done install packages🎉")'
+            sudo emacs -nw -l init.el --batch --eval '(message "Done install packages🎉")'
           else
             echo Skip
           fi
