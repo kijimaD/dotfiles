@@ -105,7 +105,7 @@ jobs:
           cd /tmp
           # Cask install 遅いのでタグが打たれたときだけ実行する
           cd /etc/skel/.emacs.d
-          readonly boolean=${{ startsWith(github.ref, 'refs/tags/v') }}
+          boolean=${{ startsWith(github.ref, 'refs/tags/v') }}
           if "${boolean}"; then
             yes | sudo /etc/skel/.cask/bin/cask
           else
