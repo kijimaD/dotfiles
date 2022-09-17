@@ -2,7 +2,6 @@ name: run
 
 on:
   push:
-  pull_request:
 
 jobs:
   ubuntu-test:
