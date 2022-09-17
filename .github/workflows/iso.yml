@@ -56,9 +56,9 @@ jobs:
           # ビルドツール
           echo -e "\n" | sudo apt install -y git curl make ca-certificates gnupg lsb-release build-essential
           # Rust
-          # `cargo install`のコンパイル時、build-essential等のCコンパイラが必要だが、インストールするとubiquityが起動しなくなるため諦めた
           curl https://sh.rustup.rs -sSf | sudo -E sh -s -- -y # -Eオプションをつけてsudoで環境変数を読み込む
           . /etc/skel/.cargo/env # cargoは$HOMEの/etc/skelにインストールされる
+          cargo install cloner
           # Go
           curl -OL https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
           sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
