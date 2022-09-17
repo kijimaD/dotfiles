@@ -54,7 +54,7 @@ jobs:
           echo -e "\n" | sudo apt purge -y libreoffice* thunderbird
           ls -al
           # ビルドツール
-          echo -e "\n" | sudo apt install -y git curl make ca-certificates gnupg lsb-release
+          echo -e "\n" | sudo apt install -y git curl make ca-certificates gnupg lsb-release build-essential
           # Rust
           # `cargo install`のコンパイル時、build-essential等のCコンパイラが必要だが、インストールするとubiquityが起動しなくなるため諦めた
           curl https://sh.rustup.rs -sSf | sudo -E sh -s -- -y # -Eオプションをつけてsudoで環境変数を読み込む
@@ -103,13 +103,13 @@ jobs:
           git clone https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/cask/cask /etc/skel/.cask
           cd /etc/skel/.cask && git remote set-url origin git@github.com:kijimaD/.cask.git
           cd /tmp
+          # for vterm compiling
+          echo -e "\n" | sudo apt install -y cmake libtool-bin
           # Cask install 遅いのでタグが打たれたときだけ実行する
           cd /etc/skel/.emacs.d
           BOOLEAN=${{ startsWith(github.ref, 'refs/tags/v') }}
-          if $BOOLEAN; then
+          if [ "$BOOLEAN" = true ] ; then
             yes | sudo /etc/skel/.cask/bin/cask
-          else
-            echo Skip
           fi
           cd /tmp
           # Stow
