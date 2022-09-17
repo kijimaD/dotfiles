@@ -105,13 +105,14 @@ jobs:
           cd /tmp
           # Cask install 遅いのでタグが打たれたときだけ実行する
           cd /etc/skel/.emacs.d
-          BOOLEAN=${{ startsWith(github.ref, 'refs/tags/v') }}
+          # BOOLEAN=${{ startsWith(github.ref, 'refs/tags/v') }}
+          BOOLEAN=true
           if $BOOLEAN; then
             yes | sudo /etc/skel/.cask/bin/cask
+            emacs -nw -l init.el --batch --eval '(message "Done install packages🎉")'
           else
             echo Skip
           fi
-          emacs -nw -l init.el --batch --eval '(message "Done install packages🎉")'
           cd /tmp
           # Stow
           rm -rf /etc/skel/.profile
