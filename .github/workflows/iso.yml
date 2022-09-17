@@ -108,8 +108,8 @@ jobs:
           # BOOLEAN=${{ startsWith(github.ref, 'refs/tags/v') }}
           BOOLEAN=true
           if $BOOLEAN; then
-            yes | sudo /etc/skel/.cask/bin/cask
-            sudo emacs -nw -l init.el --batch --eval '(message "Done install packages🎉")'
+            yes | sudo /etc/skel/.cask/bin/cask # カレントディレクトリの.caskにインストールされるので、環境変数の指定は不要
+            sudo -E emacs -nw -l init.el --batch --eval '(message "Done install packages🎉")' # ホームディレクトリのcask実行系を読み込もうとするため環境変数の指定が必要
           else
             echo Skip
           fi
