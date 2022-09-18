@@ -63,8 +63,9 @@ jobs:
           curl -OL https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
           sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
           export PATH=$PATH:/usr/local/go/bin
-          sudo -E go install golang.org/x/tools/gopls@latest # LSP
-          sudo -E go install github.com/go-delve/delve/cmd/dlv@latest # debugger
+          export GOPATH=/etc/skel
+          go install golang.org/x/tools/gopls@latest # LSP
+          go install github.com/go-delve/delve/cmd/dlv@latest # debugger
           # Docker
           curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
           echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
