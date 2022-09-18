@@ -1,6 +1,8 @@
 # ================================
 
 # build system
+# ベースイメージで実行していることを前提にしている。
+# https://github.com/kijimaD/dotfiles/releases
 
 # ================================
 
@@ -26,6 +28,8 @@ install: cp_sensitive_files \
 	init_crontab \
 	init_guix \
 	add_docker_group \
+	init_run_emacs \
+	init_go \
 	clone_repos
 
 # Git管理しないファイルを初期化する
@@ -63,6 +67,13 @@ else
 	cd ~/dotfiles && \
 	make init_packages
 endif
+
+init_run_emacs:
+	emacs -nw --batch --load ~/.emacs.d/init.el --eval '(all-the-icons-install-fonts t)'
+
+init_go:
+	go install golang.org/x/tools/gopls@latest # LSP
+	go install github.com/go-delve/delve/cmd/dlv@latest # debugger
 
 # ユーザをdockerグループに追加する。dockerをsudoなしで実行させるために必要
 add_docker_group:
