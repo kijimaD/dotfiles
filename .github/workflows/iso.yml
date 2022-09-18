@@ -155,7 +155,8 @@ jobs:
           # -c: アーカイブを新規に作成
           # -C: アーカイブの本のファイルのディレクトリを指定する
           docker image tag ghcr.io/kijimad/system:latest ghcr.io/kijimad/system:${{ github.sha }}
-          docker push ghcr.io/kijimad/system:latest ghcr.io/kijimad/system:${{ github.sha }}
+          docker push ghcr.io/kijimad/system:latest
+          docker push ghcr.io/kijimad/system:${{ github.sha }}
           docker image rm ghcr.io/kijimad/system:latest ghcr.io/kijimad/system:${{ github.sha }}
       - name: mksquashfs
         # mksquashfs [圧縮対象ファイル] ... [出力squashfsイメージ名]
