@@ -1,4 +1,4 @@
-name: run
+name: run(ignored)
 
 on:
   push:
@@ -28,6 +28,6 @@ jobs:
     #     bash ${GITHUB_WORKSPACE}/.bashrc 2> error.log; cat error.log
     #     if [ -s error.log ]; then false; fi
 
-    - name: run
-      run: |
-        make test
+    # - name: run
+    #   run: |
+    #     make test
