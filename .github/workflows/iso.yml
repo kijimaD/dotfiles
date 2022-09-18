@@ -148,7 +148,12 @@ jobs:
         run: sudo cp extract-cd/casper/filesystem.manifest extract-cd/casper/filesystem.manifest-desktop && sudo sed -i '/ubiquity/d' extract-cd/casper/filesystem.manifest-desktop && sudo sed -i '/casper/d' extract-cd/casper/filesystem.manifest-desktop
       - name: remove file
         run: sudo rm extract-cd/casper/filesystem.squashfs
+      - name: docker
+        # -c: アーカイブを新規に作成
+        # -C: アーカイブの本のファイルのディレクトリを指定する
+        run: sudo tar -C edit -c . | docker import - kijimad/system && ls -al && docker images
       - name: mksquashfs
+        # mksquashfs [圧縮対象ファイル] ... [出力squashfsイメージ名]
         run: sudo mksquashfs edit extract-cd/casper/filesystem.squashfs -b 4096
       - name: file size
         run: printf $(du -sx --block-size=1 edit | cut -f1) | sudo tee extract-cd/casper/filesystem.size
