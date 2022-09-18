@@ -9,7 +9,6 @@
 .guile
 Dockerfile
 LICENSE
-Makefile
 archive
 backgrounds
 cloner

@@ -126,3 +126,18 @@ restart_bt:
 # 再起動する
 restart_wm:
 	sudo systemctl restart display-manager
+
+# GitHubからダウンロードしたartifact.zipからisoを展開して、qemuで起動する
+run_artifacts:
+	cd ~/Downloads && \
+	unzip artifact.zip && \
+	rm -f build.iso && \
+	(cat ./kd-ubuntu-20.04.3-desktop-amd64.iso-* > ./build.iso) && \
+	rm -rf kd-ubuntu-20.04.3-desktop-amd64* artifact.zip && \
+	qemu-system-x86_64 -boot d -cdrom ./build.iso -enable-kvm -m 4096
+
+run_releases:
+	cd ~/Downloads && \
+	(cat ./kd-ubuntu-20.04.3-desktop-amd64.iso-* > ./build.iso) && \
+	rm -rf kd-ubuntu-20.04.3-desktop-amd64* artifact.zip && \
+	qemu-system-x86_64 -boot d -cdrom ./build.iso -enable-kvm -m 4096
