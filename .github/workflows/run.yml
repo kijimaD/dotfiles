@@ -1,4 +1,4 @@
-name: run
+name: run(ignored)
 
 on:
   push:
@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     # - name: Load .bash_profile
     #   run: bash ${GITHUB_WORKSPACE}/.bash_profile
@@ -28,6 +28,6 @@ jobs:
     #     bash ${GITHUB_WORKSPACE}/.bashrc 2> error.log; cat error.log
     #     if [ -s error.log ]; then false; fi
 
-    - name: make batch
-      run: |
-        make ci
+    # - name: run
+    #   run: |
+    #     make test
