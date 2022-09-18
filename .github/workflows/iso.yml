@@ -151,7 +151,10 @@ jobs:
       - name: docker
         # -c: アーカイブを新規に作成
         # -C: アーカイブの本のファイルのディレクトリを指定する
-        run: sudo tar -C edit -c . | docker import - kijimad/system && ls -al && docker images
+        run: |
+          echo ${{ secrets.WRITE_PACKAGE }} | docker login https://ghcr.io -u kijimad --password-stdin
+          sudo tar -C edit -c . | docker import - ghcr.io/kijimad/system
+          docker push ghcr.io/kijimad/system:latest
       - name: mksquashfs
         # mksquashfs [圧縮対象ファイル] ... [出力squashfsイメージ名]
         run: sudo mksquashfs edit extract-cd/casper/filesystem.squashfs -b 4096
