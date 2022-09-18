@@ -158,6 +158,7 @@ jobs:
           docker push ghcr.io/kijimad/system:latest
           docker push ghcr.io/kijimad/system:${{ github.sha }}
           docker image rm ghcr.io/kijimad/system:latest ghcr.io/kijimad/system:${{ github.sha }}
+          docker logout
       - name: mksquashfs
         # mksquashfs [圧縮対象ファイル] ... [出力squashfsイメージ名]
         run: sudo mksquashfs edit extract-cd/casper/filesystem.squashfs -b 4096
