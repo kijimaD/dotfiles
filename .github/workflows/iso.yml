@@ -120,10 +120,6 @@ jobs:
           stow .
           cd /tmp
           # Check
-          ls -al /
-          ls -al /etc/skel
-          ls -al /root
-          ls -al /tmp
           check_cmd_exist () {
             type $1 >/dev/null 2>&1 && echo "$1 exists ✔"
           }
@@ -139,7 +135,11 @@ jobs:
           check_cmd_exist unetbootin
           emacs -nw --batch --eval '(message (emacs-version))' # check version
           # ================
-          sudo apt clean && sudo rm -rf /tmp/* ~/.bash_history && sudo rm /etc/resolv.conf && sudo rm /var/lib/dbus/machine-id && sudo rm /sbin/initctl && sudo dpkg-divert --rename --remove /sbin/initctl
+          sudo apt clean && sudo rm -rf /tmp/* ~/.bash_history ~/.wget-hsts /etc/skel/.cache /root/.cache && sudo rm /etc/resolv.conf && sudo rm /var/lib/dbus/machine-id && sudo rm /sbin/initctl && sudo dpkg-divert --rename --remove /sbin/initctl
+          ls -al /
+          ls -al /etc/skel
+          ls -al /root
+          ls -al /tmp
           sudo umount /proc || sudo umount -lf /proc && sudo umount /dev/pts
           exit
           EOF
