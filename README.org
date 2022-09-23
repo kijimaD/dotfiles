@@ -1,9 +1,11 @@
 [[https://github.com/kijimaD/dotfiles/actions/workflows/iso.yml][https://github.com/kijimaD/dotfiles/actions/workflows/iso.yml/badge.svg]]
 
+* dotfiles
+
 - Dotfiles managed with GNU Stow.
 - My own system iso image built by GitHub Actions to install my machine fast, robust, documented way.
 
-[[./backgrounds/crate.png]]
+#+html: <img src="./backgrounds/crate.png" width="40%" align=right>
 
 * Main Tools
 
@@ -12,7 +14,10 @@
 - GNU Guix
 - GNU Stow
 - EXWM(Emacs X Window Manager)
-- polybar
+- Polybar
+- Docker
+- Go
+- Rust
 
 * install machine
 
