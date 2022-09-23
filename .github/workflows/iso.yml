@@ -58,7 +58,7 @@ jobs:
           # Rust
           curl https://sh.rustup.rs -sSf | sudo -E sh -s -- -y # -Eオプションをつけてsudoで環境変数を読み込む
           . /etc/skel/.cargo/env # cargoは$HOMEの/etc/skelにインストールされる
-          cargo install cloner
+          cargo install rg
           # Go
           curl -OL https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
           sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
@@ -66,6 +66,7 @@ jobs:
           export GOPATH=/etc/skel/go
           go install golang.org/x/tools/gopls@latest # LSP
           go install github.com/go-delve/delve/cmd/dlv@latest # debugger
+          go install github.com/kijimaD/gclone@main
           # Docker
           curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
           echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null

@@ -1,0 +1,66 @@
+jobs:
+  - dest: '~/Project'
+    repos:
+      - git@github.com:kijimaD/my_go.git
+      - git@github.com:kijimaD/digger_rs.git
+      - git@github.com:kijimaD/cloner.git
+      - git@github.com:kijimaD/gclone.git
+  - dest: '~/ProjectOrg'
+    repos:
+      # Emacs
+      - git@github.com:kd-collective/emacs
+      - git@github.com:kd-collective/corfu
+      - git@github.com:kd-collective/crux
+      - git@github.com:kd-collective/magit
+      - git@github.com:kd-collective/git-link
+      - git@github.com:kd-collective/forge
+      - git@github.com:kd-collective/melpa
+      - git@github.com:kd-collective/org-roam
+      - git@github.com:kd-collective/projectile
+      - git@github.com:kd-collective/vterm-toggle
+      - git@github.com:kd-collective/hydra
+      - git@github.com:kd-collective/docker.el
+      # Rust
+      - git@github.com:kd-collective/rust
+      - git@github.com:kd-collective/specs
+      - git@github.com:kd-collective/shellexpand
+      - git@github.com:kd-collective/dirs
+      - git@github.com:kd-collective/bracket-lib
+      - git@github.com:kd-collective/cargo
+      - git@github.com:kd-collective/nushell
+
+      # C++
+      - git@github.com:kd-collective/polybar
+      - git@github.com:kd-collective/simutrans
+
+      # C
+      - git@github.com:kd-collective/curl
+
+      # Ruby
+      - git@github.com:kd-collective/ruby
+      - git@github.com:kd-collective/doctree
+      - git@github.com:kd-collective/puma
+      - git@github.com:kd-collective/rubocop
+      - git@github.com:kd-collective/rubygems
+
+      # Ruby on Rails
+      - git@github.com:kd-collective/rails
+      - git@github.com:kd-collective/forem
+      - git@github.com:kd-collective/gitlabhq
+      - git@github.com:kd-collective/mastodon
+
+      # TypeScript
+      - git@github.com:kd-collective/login-action
+
+      # Go
+      - git@github.com:kd-collective/go
+      - git@github.com:kd-collective/ecspresso
+      - git@github.com:kd-collective/compose
+      - git@github.com:kd-collective/cli
+      - git@github.com:kd-collective/buildx
+      - git@github.com:kd-collective/moby
+      - git@github.com:kd-collective/build-push-action
+      - git@github.com:kd-collective/color
+      - git@github.com:kd-collective/echo
+      - git@github.com:kd-collective/godotenv
+      - git@github.com:kd-collective/spinner
