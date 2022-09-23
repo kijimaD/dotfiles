@@ -1,7 +1,7 @@
 [[https://github.com/kijimaD/dotfiles/actions/workflows/iso.yml][https://github.com/kijimaD/dotfiles/actions/workflows/iso.yml/badge.svg]]
 
 - Dotfiles managed with GNU Stow.
-- My own system iso image by GitHub Actions to install my machine fast, robust, documented way.
+- My own system iso image built by GitHub Actions to install my machine fast, robust, documented way.
 
 [[./backgrounds/crate.png]]
 
@@ -14,21 +14,46 @@
 - EXWM(Emacs X Window Manager)
 - polybar
 
-* Install
+* install machine
 
-1 - Download ISO
+1 - Download iso files
 https://github.com/kijimaD/dotfiles/releases
 
-2 - concatenate ISO
+2 - Concatenate files
 #+begin_src shell
-cat ubuntu-kd-20.04.3-desktop-amd64.iso-* > ubuntu-kd-20.04.3-desktop-amd64.iso
+cat kd-ubuntu-20.04.3-desktop-amd64.iso-* > kd-ubuntu-20.04.3-desktop-amd64.iso
 #+end_src
 
-3 - Write the ISO to your USB stick
+3 - Write the iso file to your USB stick([[https://unetbootin.github.io/][UNetbootin]] and so on)
 
-4 - Start by live USB
+4 - Boot system by liveUSB
 
 5 - Run ~ubiquity~ command, install system on disk
+
+* try image by QEMU system emulation
+
+1 - Download iso files
+https://github.com/kijimaD/dotfiles/releases
+
+2 - Concatenate files
+#+begin_src shell
+cat kd-ubuntu-20.04.3-desktop-amd64.iso-* > kd-ubuntu-20.04.3-desktop-amd64.iso
+#+end_src
+
+3 - Run qemu
+#+begin_src shell
+sudo apt install qemu-kvm
+qemu-system-x86_64 -boot d -cdrom ./build.iso -enable-kvm -m 4096
+#+end_src
+
+
+* try image by Docker
+
+caution: very big image!(7G~8G)
+
+#+begin_src shell
+docker run --rm -it ghcr.io/kijimad/system:latest /bin/sh
+#+end_src
 
 * Reference
 
