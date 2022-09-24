@@ -75,12 +75,12 @@ add_docker_group:
 	sudo gpasswd -a $(shell whoami) docker
 	id $(shell whoami)
 
-# clonerを使って、ファイルを基に明示的にcloneする
+# gcloneを使って、ファイルを基に明示的にcloneする
 clone_repos:
 ifeq ($(TEST),1)
 	echo "not run"
 else
-	which cloner && cloner ./cloner/project.toml && cloner ./cloner/project_org.toml
+	which gclone && gclone -f ~/dotfiles/gclone/config.yml install
 endif
 
 # ================================

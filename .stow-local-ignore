@@ -11,7 +11,7 @@ Dockerfile
 LICENSE
 archive
 backgrounds
-cloner
+gclone
 crontab
 docker-compose.yml
 
