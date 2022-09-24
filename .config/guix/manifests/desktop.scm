@@ -2,10 +2,10 @@
 
 (specifications->manifest
  '(;; code
-   "git"
+   ;; "git"
    "gcc-toolchain"
    "glibc-locales"
-   "make"
+   ;; "make"
    "jq"
    "pkg-config"
    "texinfo"
@@ -14,65 +14,65 @@
    "clang"
    "file"
    "elfutils"
-   "stow"
+   ;; "stow"
    "shepherd"
-   "ripgrep"
+   ;; "ripgrep"
 
    ;; language
-   "go"
+   ;; "go"
    "ruby"
 
    ;; package system
    "node"
 
    ;; network
-   "openssh"
-   "curl"
-   "nss-certs"
+   ;; "openssh"
+   ;; "curl"
+   ;; "nss-certs"
 
    ;; lock
-   "xautolock"
-   "xset"
+   ;; "xautolock"
+   ;; "xset"
 
    ;; docker
-   "docker"
-   "docker-cli"
-   "docker-compose"
+   ;; "docker"
+   ;; "docker-cli"
+   ;; "docker-compose"
 
    ;; desktop
-   "syncthing"
+   ;; "syncthing"
    "polybar"
-   "qutebrowser"
-   "nyxt"
+   ;; "qutebrowser"
+   ;; "nyxt"
    "redshift"
    "obs"
 
    ;; japanese input
-   "ibus"
-   "ibus-anthy"
+   ;; "ibus"
+   ;; "ibus-anthy"
    "font-adobe-source-han-sans"
 
    ;; emacs
-   "emacs"
-   "emacs-emacsql"
-   "emacs-vterm"
-   "emacs-org-roam"
-   "cmake"
-   "libtool"
-   "libvterm"
+   ;; "emacs"
+   ;; "emacs-emacsql"
+   ;; "emacs-vterm"
+   ;; "emacs-org-roam"
+   ;; "cmake"
+   ;; "libtool"
+   ;; "libvterm"
 
    ;; backup
-   "deja-dup"
+   ;; "deja-dup"
 
    ;; polybar
-   "compton"
+   ;; "compton"
    "feh"
    "font-awesome"
-   "imagemagick"
+   ;; "imagemagick"
 
    ;; notification
    "dunst"
 
    ;; for spotify
-   "flatpak"
+   ;; "flatpak"
    ))
