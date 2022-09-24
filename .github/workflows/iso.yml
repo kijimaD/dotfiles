@@ -117,6 +117,7 @@ jobs:
           cd /tmp
           # Stow
           rm -rf /etc/skel/.profile
+          mkdir -p /etc/skel/.config # 先に作っておかないと、ディレクトリ自体にシンボリックリンクが貼られて汚くなる
           cd /etc/skel/dotfiles
           stow .
           cd /tmp
