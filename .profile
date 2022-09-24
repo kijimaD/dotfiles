@@ -61,5 +61,4 @@ fi
 # Firefoxのスクロール
 export MOZ_USE_XINPUT2=1
 
-setxkbmap -option ctrl:swapcaps
-xmodmap ~/dotfiles/.Xmodmap
+# setxkbmap -option ctrl:swapcaps
