@@ -64,3 +64,4 @@ jobs:
       - git@github.com:kd-collective/echo
       - git@github.com:kd-collective/godotenv
       - git@github.com:kd-collective/spinner
+      - git@github.com:hhatto/gocloc.git
