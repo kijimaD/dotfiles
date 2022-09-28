@@ -80,7 +80,7 @@ clone_repos:
 ifeq ($(TEST),1)
 	echo "not run"
 else
-	which gclone && gclone -f ~/dotfiles/gclone/config.yml install
+	which gclone && gclone -f ~/dotfiles/gclone/config.yml
 endif
 
 # ================================
