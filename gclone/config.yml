@@ -1,10 +1,10 @@
 groups:
   - dest: '~/Project'
     repos:
-      - git@github.com:kijimaD/my_go.git
-      - git@github.com:kijimaD/digger_rs.git
-      - git@github.com:kijimaD/cloner.git
-      - git@github.com:kijimaD/gclone.git
+      - git@github.com:kijimaD/my_go
+      - git@github.com:kijimaD/digger_rs
+      - git@github.com:kijimaD/cloner
+      - git@github.com:kijimaD/gclone
   - dest: '~/ProjectOrg'
     repos:
       # Emacs
@@ -64,4 +64,9 @@ groups:
       - git@github.com:kd-collective/echo
       - git@github.com:kd-collective/godotenv
       - git@github.com:kd-collective/spinner
-      - git@github.com:hhatto/gocloc.git
+      - git@github.com:kd-collective/gocloc
+      - git@github.com:kd-collective/octocov
+      - git@github.com:kd-collective/go-github
+
+      # Python
+      - git@github.com:kd-collective/guake
