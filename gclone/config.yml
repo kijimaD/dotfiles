@@ -5,9 +5,8 @@ groups:
       - git@github.com:kijimaD/digger_rs
       - git@github.com:kijimaD/cloner
       - git@github.com:kijimaD/gclone
-  - dest: '~/ProjectOrg'
+  - dest: '~/ProjectOrg/emacs'
     repos:
-      # Emacs
       - git@github.com:kd-collective/emacs
       - git@github.com:kd-collective/corfu
       - git@github.com:kd-collective/crux
@@ -20,7 +19,8 @@ groups:
       - git@github.com:kd-collective/vterm-toggle
       - git@github.com:kd-collective/hydra
       - git@github.com:kd-collective/docker.el
-      # Rust
+  - dest: '~/ProjectOrg/rust'
+    repos:
       - git@github.com:kd-collective/rust
       - git@github.com:kd-collective/specs
       - git@github.com:kd-collective/shellexpand
@@ -28,31 +28,31 @@ groups:
       - git@github.com:kd-collective/bracket-lib
       - git@github.com:kd-collective/cargo
       - git@github.com:kd-collective/nushell
-
-      # C++
+  - dest: '~/ProjectOrg/cpp'
+    repos:
       - git@github.com:kd-collective/polybar
       - git@github.com:kd-collective/simutrans
-
-      # C
+  - dest: '~/ProjectOrg/c'
+    repos:
       - git@github.com:kd-collective/curl
-
-      # Ruby
+  - dest: '~/ProjectOrg/ruby'
+    repos:
       - git@github.com:kd-collective/ruby
       - git@github.com:kd-collective/doctree
       - git@github.com:kd-collective/puma
       - git@github.com:kd-collective/rubocop
       - git@github.com:kd-collective/rubygems
-
-      # Ruby on Rails
+  - dest: '~/ProjectOrg/rails'
+    repos:
       - git@github.com:kd-collective/rails
       - git@github.com:kd-collective/forem
       - git@github.com:kd-collective/gitlabhq
       - git@github.com:kd-collective/mastodon
-
-      # TypeScript
+  - dest: '~/ProjectOrg/ts'
+    repos:
       - git@github.com:kd-collective/login-action
-
-      # Go
+  - dest: '~/ProjectOrg/go'
+    repos:
       - git@github.com:kd-collective/go
       - git@github.com:kd-collective/ecspresso
       - git@github.com:kd-collective/compose
@@ -67,6 +67,6 @@ groups:
       - git@github.com:kd-collective/gocloc
       - git@github.com:kd-collective/octocov
       - git@github.com:kd-collective/go-github
-
-      # Python
+  - dest: '~/ProjectOrg/python'
+    repos:
       - git@github.com:kd-collective/guake
