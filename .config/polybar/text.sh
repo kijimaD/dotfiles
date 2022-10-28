@@ -1,1 +1,1 @@
-echo "量を目標にする"
+echo "animalistic"
