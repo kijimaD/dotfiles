@@ -40,9 +40,10 @@ if [ -d "$HOME/.cargo" ] ; then
 fi
 
 if [ -d "$HOME/go" ] ; then
-    export GOPATH=$HOME/go
-    export GOBIN=$GOPATH/bin
-    export PATH=$PATH:$GOBIN
+    # export PATH=$HOME/Project/go/bin:$PATH # 処理系
+
+    export GOBIN=$HOME/go/bin
+    export PATH=$GOBIN:$PATH # ライブラリのバイナリ
 fi
 
 if [ -d "$HOME/.rbenv" ] ; then
