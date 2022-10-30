@@ -40,10 +40,13 @@ if [ -d "$HOME/.cargo" ] ; then
 fi
 
 if [ -d "$HOME/go" ] ; then
-    # export PATH=$HOME/Project/go/bin:$PATH # 処理系
-
     export GOBIN=$HOME/go/bin
     export PATH=$GOBIN:$PATH # ライブラリのバイナリ
+fi
+
+# 開発版ビルドが存在するときはそっちを使う
+if [ -d "$HOME/Project/go/bin" ] ; then
+    export PATH=$HOME/Project/go/bin:$PATH
 fi
 
 if [ -d "$HOME/.rbenv" ] ; then
@@ -57,5 +60,3 @@ fi
 
 # Firefoxのスクロール
 export MOZ_USE_XINPUT2=1
-
-# setxkbmap -option ctrl:swapcaps
