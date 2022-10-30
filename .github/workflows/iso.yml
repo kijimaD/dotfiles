@@ -178,6 +178,8 @@ jobs:
         working-directory: ./extract-cd
       - name: split iso
         run: split -b 1G -d ${{ env.CUSTOM_IMAGE_ISO }} ${{ env.CUSTOM_IMAGE_ISO }}-
+      - name: remove original size iso
+        run: rm ./${{ env.CUSTOM_IMAGE_ISO }}
 
       - name: upload artifacts
         uses: actions/upload-artifact@v2
