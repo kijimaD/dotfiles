@@ -58,7 +58,7 @@ jobs:
           # Rust
           curl https://sh.rustup.rs -sSf | sudo -E sh -s -- -y # -Eオプションをつけてsudoで環境変数を読み込む
           . /etc/skel/.cargo/env # cargoは$HOMEの/etc/skelにインストールされる
-          cargo install rg
+          cargo install ripgrep
           # Go
           curl -OL https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
           sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
