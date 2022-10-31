@@ -26,10 +26,10 @@ test:
 install: cp_sensitive_files \
 	init_inotify \
 	init_crontab \
-	init_guix \
 	add_docker_group \
 	init_run_emacs \
-	clone_repos
+	clone_repos \
+	init_guix
 
 # Git管理しないファイルを初期化する
 cp_sensitive_files:
