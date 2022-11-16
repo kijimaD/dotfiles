@@ -28,7 +28,7 @@
    ;; network
    ;; "openssh"
    ;; "curl"
-   ;; "nss-certs"
+   "nss-certs"
 
    ;; lock
    ;; "xautolock"
