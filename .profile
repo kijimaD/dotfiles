@@ -39,15 +39,20 @@ if [ -d "$HOME/.cargo" ] ; then
     . "$HOME/.cargo/env"
 fi
 
+# go公式のディレクトリ
+if [ -d "/usr/local/go/bin" ] ; then
+    export PATH=$PATH:/usr/local/go/bin
+fi
+
 if [ -d "$HOME/go" ] ; then
     export GOBIN=$HOME/go/bin
     export PATH=$GOBIN:$PATH # ライブラリのバイナリ
 fi
 
 # 開発版ビルドが存在するときはそっちを使う
-if [ -d "$HOME/Project/go/bin" ] ; then
-    export PATH=$HOME/Project/go/bin:$PATH
-fi
+# if [ -d "$HOME/Project/go/bin" ] ; then
+#     export PATH=$HOME/Project/go/bin:$PATH
+# fi
 
 if [ -d "$HOME/.rbenv" ] ; then
     eval "$(rbenv init -)"

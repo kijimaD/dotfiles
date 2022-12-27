@@ -5,8 +5,12 @@ groups:
       - git@github.com:kijimaD/digger_rs
       - git@github.com:kijimaD/gclone
       - git@github.com:kijimaD/my_go
+      - git@github.com:kijimaD/go_skel
+      - git@github.com:kijimaD/my_elisp
+      - git@github.com:golang/go
   - dest: '~/ProjectOrg/emacs'
     repos:
+      - git@github.com:kd-collective/cask
       - git@github.com:kd-collective/corfu
       - git@github.com:kd-collective/crux
       - git@github.com:kd-collective/docker.el
@@ -69,9 +73,12 @@ groups:
       - git@github.com:kd-collective/hugo
       - git@github.com:kd-collective/moby
       - git@github.com:kd-collective/octocov
+      - git@github.com:kd-collective/pkgsite
       - git@github.com:kd-collective/spinner
       - git@github.com:kd-collective/svgo
       - git@github.com:kd-collective/tablewriter
+      - git@github.com:kd-collective/tools
+      - git@github.com:kd-collective/make2help
   - dest: '~/ProjectOrg/python'
     repos:
       - git@github.com:kd-collective/guake
