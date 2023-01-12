@@ -13,16 +13,39 @@ groups:
       - git@github.com:kd-collective/cask
       - git@github.com:kd-collective/corfu
       - git@github.com:kd-collective/crux
+      - git@github.com:kd-collective/dash.el
+      - git@github.com:kd-collective/define-word
+      - git@github.com:kd-collective/denote
+      - git@github.com:kd-collective/devdocs
       - git@github.com:kd-collective/docker.el
+      - git@github.com:kd-collective/elfeed
       - git@github.com:kd-collective/emacs
+      - git@github.com:kd-collective/emacs-google-this
+      - git@github.com:kd-collective/emacs-which-key
+      - git@github.com:kd-collective/exwm
       - git@github.com:kd-collective/forge
       - git@github.com:kd-collective/git-link
+      - git@github.com:kd-collective/git-timemachine
+      - git@github.com:kd-collective/goto-chg
       - git@github.com:kd-collective/hydra
+      - git@github.com:kd-collective/lsp-mode
       - git@github.com:kd-collective/magit
       - git@github.com:kd-collective/melpa
+      - git@github.com:kd-collective/org-alert
+      - git@github.com:kd-collective/org-journal
+      - git@github.com:kd-collective/org-pomodoro
       - git@github.com:kd-collective/org-roam
+      - git@github.com:kd-collective/org-super-agenda
+      - git@github.com:kd-collective/org-superstar-mode
+      - git@github.com:kd-collective/package-lint
       - git@github.com:kd-collective/projectile
+      - git@github.com:kd-collective/rubocop-emacs
+      - git@github.com:kd-collective/snow.el
+      - git@github.com:kd-collective/speed-type
+      - git@github.com:kd-collective/swiper
       - git@github.com:kd-collective/vterm-toggle
+      - git@github.com:kd-collective/xelb
+      - git@github.com:kd-collective/yasnippet
   - dest: '~/ProjectOrg/rust'
     repos:
       - git@github.com:kd-collective/bracket-lib
