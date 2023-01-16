@@ -23,7 +23,7 @@
    "ruby"
 
    ;; package system
-   "node"
+   ;; "node"
 
    ;; network
    ;; "openssh"

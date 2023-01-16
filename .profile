@@ -44,7 +44,7 @@ if [ -d "/usr/local/go/bin" ] ; then
     export PATH=$PATH:/usr/local/go/bin
 fi
 
-if [ -d "$HOME/go" ] ; then
+if [ -d "$HOME/go/bin" ] ; then
     export GOBIN=$HOME/go/bin
     export PATH=$GOBIN:$PATH # ライブラリのバイナリ
 fi
