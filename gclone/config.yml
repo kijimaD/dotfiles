@@ -94,14 +94,15 @@ groups:
       - git@github.com:kd-collective/godotenv
       - git@github.com:kd-collective/goreleaser.git
       - git@github.com:kd-collective/hugo
+      - git@github.com:kd-collective/make2help
       - git@github.com:kd-collective/moby
       - git@github.com:kd-collective/octocov
       - git@github.com:kd-collective/pkgsite
       - git@github.com:kd-collective/spinner
       - git@github.com:kd-collective/svgo
       - git@github.com:kd-collective/tablewriter
+      - git@github.com:kd-collective/testify.git
       - git@github.com:kd-collective/tools
-      - git@github.com:kd-collective/make2help
   - dest: '~/ProjectOrg/python'
     repos:
       - git@github.com:kd-collective/guake
