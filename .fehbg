@@ -1,7 +1,4 @@
 #!/bin/sh
 
 # Mountain
-# feh --no-fehbg --bg-fill ~/dotfiles/backgrounds/pexels-aarti-vijay-2693529.jpg
-
-# Sea
-feh --no-fehbg --bg-fill ~/dotfiles/backgrounds/pexels-travis-blessing-1363876.jpg
+feh --no-fehbg --bg-fill ~/dotfiles/backgrounds/rnoguier_java.jpg
