@@ -60,15 +60,15 @@ jobs:
           . /etc/skel/.cargo/env # cargoは$HOMEの/etc/skelにインストールされる
           cargo install ripgrep
           # Go
-          curl -OL https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
-          sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
+          curl -OL https://go.dev/dl/go1.20.1.linux-amd64.tar.gz
+          sudo tar -C /usr/local -xzf go1.20.1.linux-amd64.tar.gz
           export PATH=$PATH:/usr/local/go/bin
           export GOPATH=/etc/skel/go
           go install github.com/kijimaD/gclone@main
           go install golang.org/x/tools/gopls@latest # LSP
           go install github.com/go-delve/delve/cmd/dlv@latest # debugger
           go install github.com/nsf/gocode@latest # Emacs eldoc
-          go install golang.org/x/tools/cmd/godoc # docs
+          go install golang.org/x/tools/cmd/godoc@latest # docs
           go install golang.org/x/tools/cmd/goimports@latest # auto import
           # Docker
           curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg

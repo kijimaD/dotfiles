@@ -81,6 +81,7 @@ groups:
   - dest: '~/ProjectOrg/go'
     repos:
       - git@github.com:kd-collective/build-push-action
+      - git@github.com:kd-collective/buildkit.git
       - git@github.com:kd-collective/buildx
       - git@github.com:kd-collective/cli
       - git@github.com:kd-collective/color
