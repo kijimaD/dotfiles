@@ -16,7 +16,7 @@ groups:
       - git@github.com:kd-collective/dash.el
       - git@github.com:kd-collective/define-word
       - git@github.com:kd-collective/denote
-      - git@github.com:kd-collective/devdocs
+      - git@github.com:kd-collective/devdocs.el
       - git@github.com:kd-collective/docker.el
       - git@github.com:kd-collective/elfeed
       - git@github.com:kd-collective/emacs
@@ -93,6 +93,7 @@ groups:
       - git@github.com:kd-collective/go-github
       - git@github.com:kd-collective/gocloc
       - git@github.com:kd-collective/godotenv
+      - git@github.com:kd-collective/golangci-lint
       - git@github.com:kd-collective/goreleaser.git
       - git@github.com:kd-collective/hugo
       - git@github.com:kd-collective/make2help
