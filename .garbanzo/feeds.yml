@@ -1,0 +1,21 @@
+- title: RFC
+  url: https://www.rfc-editor.org/rfcrss.xml
+- title: Zenn Go
+  url: https://zenn.dev/topics/go/feed
+- title: techracho
+  url: https://techracho.bpsinc.jp/feed
+- title: Evil Martians
+  url: https://evilmartians.com/chronicles.atom
+- title: t-wada
+  url: http://b.hatena.ne.jp/t-wada/rss
+- title: azuブログ
+  url: https://efcl.info/feed/
+- title: go
+  url: https://dev.to/feed/go
+- title: mattnブログ
+  url: https://mattn.kaoriya.net/index.rss
+- title: mtx2s<マネジメント>
+  url: https://mtx2s.hatenablog.com/feed
+# リバースプロキシ経由だと500エラーになる
+# - title: medium
+#   url: https://medium.com/feed/tag/golang

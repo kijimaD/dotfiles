@@ -99,6 +99,7 @@ groups:
       - git@github.com:kd-collective/make2help
       - git@github.com:kd-collective/moby
       - git@github.com:kd-collective/octocov
+      - git@github.com:kd-collective/peco
       - git@github.com:kd-collective/pkgsite
       - git@github.com:kd-collective/spinner
       - git@github.com:kd-collective/svgo
