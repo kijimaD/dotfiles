@@ -8,14 +8,37 @@
   url: https://evilmartians.com/chronicles.atom
 - desc: t-wada
   url: http://b.hatena.ne.jp/t-wada/rss
-- desc: azuブログ
+- desc: azu blog
   url: https://efcl.info/feed/
 - desc: go
   url: https://dev.to/feed/go
-- desc: mattnブログ
+- desc: mattn blog
   url: https://mattn.kaoriya.net/index.rss
-- desc: mtx2sブログ
+- desc: mtx2s blog
   url: https://mtx2s.hatenablog.com/feed
+- desc: Steve Purcell blog
+  url: https://www.sanityinc.com/feed.xml
+- desc: sachachua blog
+  url: https://sachachua.com/blog/category/weekly/feed/
+- desc: ruby weekly
+  url: https://cprss.s3.amazonaws.com/rubyweekly.com.xml
+- desc: go blog
+  url: https://go.dev/blog/feed.atom?format=xml
+- desc: hash node
+  url: https://hashnode.com/n/go/rss
+- desc: system crafters
+  url: https://systemcrafters.net/rss/news.xml
+- desc: go release
+  url: https://github.com/golang/go/releases.atom
+- desc: moby release
+  url: https://github.com/moby/moby/releases.atom
+- desc: emacs release
+  url: https://github.com/emacs-mirror/emacs/releases.atom
+- desc: hsaki
+  url: https://zenn.dev/hsaki/feed
+- desc: tenten
+  url: https://qiita.com/tenntenn/feed
+
 # リバースプロキシ経由だと500エラーになる
 # - desc: medium
 #   url: https://medium.com/feed/tag/golang
