@@ -56,7 +56,7 @@ font-3 = "Fira Mono:size=10;-3"
 
 modules-left = exwm-workspace
 modules-center = pomodoro
-modules-right = text date battery
+modules-right = wlan date battery
 ; eth
 
 ; override-redirect = true
@@ -121,11 +121,11 @@ interval = 3.0
 format-connected = <ramp-signal><label-connected>
 ; format-connected-prefix = " "
 ; format-connected = <label-connected>
-format-connected-underline = ${xrdb:color11:#9f78e1}
+format-connected-underline = ${xrdb:color11:#990000}
 
 # The text
-; label-connected = %essid% ↑%upspeed% ↓%downspeed%
-label-connected = %{A1:nm-connection-editor:}%essid%%{A} ↑%upspeed% ↓%downspeed%
+; label-connected = %{A1:nm-connection-editor:}%essid%%{A} ↑%upspeed% ↓%downspeed%
+label-connected = %{F#990000}live%{F-}
 label-font = 1
 label-connected-background = ${colors.background}
 label-connected-padding = 0
@@ -138,10 +138,11 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-5 = 
 ramp-signal-padding = 1
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-foreground = ${xrdb:color11:#990000}
 ; ramp-signal-background = ${colors.background-alt}
 
-format-disconnected =
+format-disconnected = %{F#008000}focus%{F-}
+format-disconnected-underline = ${xrdb:color11:#008000}
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
