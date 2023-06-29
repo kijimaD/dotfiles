@@ -5,7 +5,6 @@
 ^/.*\.org
 
 .authinfo
-.gitconfig
 .guile
 Dockerfile
 LICENSE
