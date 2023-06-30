@@ -38,6 +38,8 @@
   url: https://zenn.dev/hsaki/feed
 - desc: tenten
   url: https://qiita.com/tenntenn/feed
+- desc: hatena Go
+  url: https://b.hatena.ne.jp/q/go%E8%A8%80%E8%AA%9E?target=text&sort=recent&users=3&safe=on&mode=rss
 
 # リバースプロキシ経由だと500エラーになる
 # - desc: medium
