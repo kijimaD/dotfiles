@@ -1,45 +1,68 @@
+# official
 - desc: RFC
   url: https://www.rfc-editor.org/rfcrss.xml
-- desc: Zenn Go
-  url: https://zenn.dev/topics/go/feed
+- desc: go blog
+  url: https://go.dev/blog/feed.atom?format=xml
+- desc: ruby weekly
+  url: https://cprss.s3.amazonaws.com/rubyweekly.com.xml
+
+# tech blog
 - desc: techracho
   url: https://techracho.bpsinc.jp/feed
 - desc: Evil Martians
   url: https://evilmartians.com/chronicles.atom
-- desc: t-wada
-  url: http://b.hatena.ne.jp/t-wada/rss
 - desc: azu blog
   url: https://efcl.info/feed/
-- desc: go
-  url: https://dev.to/feed/go
 - desc: mattn blog
   url: https://mattn.kaoriya.net/index.rss
-- desc: mtx2s blog
-  url: https://mtx2s.hatenablog.com/feed
 - desc: Steve Purcell blog
   url: https://www.sanityinc.com/feed.xml
 - desc: sachachua blog
   url: https://sachachua.com/blog/category/weekly/feed/
-- desc: ruby weekly
-  url: https://cprss.s3.amazonaws.com/rubyweekly.com.xml
-- desc: go blog
-  url: https://go.dev/blog/feed.atom?format=xml
 - desc: hash node
   url: https://hashnode.com/n/go/rss
 - desc: system crafters
   url: https://systemcrafters.net/rss/news.xml
+- desc: Russ Cox Blog
+  url: https://research.swtch.com/feed.atom
+
+# github
 - desc: go release
   url: https://github.com/golang/go/releases.atom
 - desc: moby release
   url: https://github.com/moby/moby/releases.atom
 - desc: emacs release
   url: https://github.com/emacs-mirror/emacs/releases.atom
+
+# zen
 - desc: hsaki
   url: https://zenn.dev/hsaki/feed
+- desc: Zenn Go
+  url: https://zenn.dev/topics/go/feed
+
+# qiita
 - desc: tenten
   url: https://qiita.com/tenntenn/feed
+- desc: qiita Go
+  url: https://qiita.com/tags/go/feed
+- desc: qiita Emacs
+  url: https://qiita.com/talgs/emacs/feed
+
+# hatena
+- desc: mtx2s blog
+  url: https://mtx2s.hatenablog.com/feed
+- desc: t-wada
+  url: http://b.hatena.ne.jp/t-wada/rss
 - desc: hatena Go
   url: https://b.hatena.ne.jp/q/go%E8%A8%80%E8%AA%9E?target=text&sort=recent&users=3&safe=on&mode=rss
+
+# dev.to
+- desc: go
+  url: https://dev.to/feed/go
+
+# oreilly
+- desc: oreilly ebook soon
+  url: https://www.oreilly.co.jp/ebook/new_release.atom
 
 # リバースプロキシ経由だと500エラーになる
 # - desc: medium
