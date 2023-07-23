@@ -70,3 +70,6 @@ fi
 
 # Firefoxのスクロール
 export MOZ_USE_XINPUT2=1
+
+# Node17でエラーが出ることがある
+export NODE_OPTIONS=--openssl-legacy-provider

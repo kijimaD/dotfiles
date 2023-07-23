@@ -1,13 +1,10 @@
 groups:
   - dest: '~/Project'
     repos:
-      - git@github.com:kijimaD/cloner
-      - git@github.com:kijimaD/digger_rs
       - git@github.com:kijimaD/gclone
       - git@github.com:kijimaD/my_go
       - git@github.com:kijimaD/go_skel
       - git@github.com:kijimaD/my_elisp
-      - git@github.com:golang/go
   - dest: '~/ProjectOrg/emacs'
     repos:
       - git@github.com:kd-collective/cask
