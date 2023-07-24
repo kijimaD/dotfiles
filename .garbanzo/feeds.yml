@@ -25,6 +25,10 @@
   url: https://systemcrafters.net/rss/news.xml
 - desc: Russ Cox Blog
   url: https://research.swtch.com/feed.atom
+- desc: keen Blog
+  url: https://keens.github.io/index.xml
+- desc: technology podcast
+  url: https://feeds.rebuild.fm/rebuildfm
 
 # github
 - desc: go release

@@ -59,6 +59,7 @@ groups:
   - dest: '~/ProjectOrg/c'
     repos:
       - git@github.com:kd-collective/curl
+      - git@github.com:kd-collective/minilisp
   - dest: '~/ProjectOrg/ruby'
     repos:
       - git@github.com:kd-collective/doctree
