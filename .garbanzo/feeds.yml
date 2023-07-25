@@ -1,13 +1,13 @@
 # official
 - desc: RFC
   url: https://www.rfc-editor.org/rfcrss.xml
-- desc: go blog
+- desc: Go blog
   url: https://go.dev/blog/feed.atom?format=xml
-- desc: ruby weekly
+- desc: Ruby Weekly
   url: https://cprss.s3.amazonaws.com/rubyweekly.com.xml
 
 # tech blog
-- desc: techracho
+- desc: Techracho
   url: https://techracho.bpsinc.jp/feed
 - desc: Evil Martians
   url: https://evilmartians.com/chronicles.atom
@@ -23,19 +23,21 @@
   url: https://hashnode.com/n/go/rss
 - desc: system crafters
   url: https://systemcrafters.net/rss/news.xml
-- desc: Russ Cox Blog
+- desc: Russ Cox blog
   url: https://research.swtch.com/feed.atom
-- desc: keen Blog
+- desc: keen blog
   url: https://keens.github.io/index.xml
 - desc: technology podcast
   url: https://feeds.rebuild.fm/rebuildfm
+- desc: Rui Ueyama blog
+  url: https://note.com/ruiu/rss
 
 # github
-- desc: go release
+- desc: Go release
   url: https://github.com/golang/go/releases.atom
-- desc: moby release
+- desc: Moby release
   url: https://github.com/moby/moby/releases.atom
-- desc: emacs release
+- desc: Emacs release
   url: https://github.com/emacs-mirror/emacs/releases.atom
 
 # zen
