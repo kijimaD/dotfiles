@@ -1,10 +1,12 @@
 groups:
   - dest: '~/Project'
     repos:
+      - git@github.com:kijimaD/garbanzo.git
       - git@github.com:kijimaD/gclone
-      - git@github.com:kijimaD/my_go
+      - git@github.com:kijimaD/ghfetcher.git
       - git@github.com:kijimaD/go_skel
       - git@github.com:kijimaD/my_elisp
+      - git@github.com:kijimaD/my_go
   - dest: '~/ProjectOrg/emacs'
     repos:
       - git@github.com:kd-collective/cask
@@ -60,6 +62,7 @@ groups:
     repos:
       - git@github.com:kd-collective/curl
       - git@github.com:kd-collective/minilisp
+      - git@github.com:kd-collective/8cc
   - dest: '~/ProjectOrg/ruby'
     repos:
       - git@github.com:kd-collective/doctree
