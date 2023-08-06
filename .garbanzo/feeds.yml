@@ -49,8 +49,6 @@
 # qiita
 - desc: tenten
   url: https://qiita.com/tenntenn/feed
-- desc: qiita Go
-  url: https://qiita.com/tags/go/feed
 - desc: qiita Emacs
   url: https://qiita.com/talgs/emacs/feed
 
