@@ -1,17 +1,20 @@
-\.git
-\.github
-\.gitignore
-\.site
 ^/.*\.org
 
+.git
+.github
+.gitignore
+.site
 .authinfo
 .guile
+
 Dockerfile
 LICENSE
 archive
 backgrounds
-gclone
+chrome
 crontab
 docker-compose.yml
+gclone
+self.png
 
 /.config/guix/system\.scm
