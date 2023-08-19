@@ -19,8 +19,6 @@
   url: https://www.sanityinc.com/feed.xml
 - desc: sachachua blog
   url: https://sachachua.com/blog/category/weekly/feed/
-- desc: hash node
-  url: https://hashnode.com/n/go/rss
 - desc: system crafters
   url: https://systemcrafters.net/rss/news.xml
 - desc: Russ Cox blog
