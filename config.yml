@@ -1,3 +1,5 @@
+# gclone config
+
 groups:
   - dest: '~/Project'
     repos:
