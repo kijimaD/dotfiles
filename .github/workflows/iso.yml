@@ -98,7 +98,7 @@ jobs:
           sudo apt update &
           wait
           echo -e "\n" | sudo apt purge -y emacs* # remove old version
-          echo -e "\n" | sudo -E apt install -y emacs28 emacs-mozc cmigemo fcitx fcitx-mozc peco silversearcher-ag stow syncthing compton qemu-kvm
+          echo -e "\n" | sudo -E apt install -y emacs28 emacs-mozc cmigemo fcitx fcitx-mozc peco silversearcher-ag stow syncthing compton qemu-kvm libsqlite3-dev
           # cinnamon-desktop-environment
           # Clone repositories
           mkdir /etc/skel/Project
@@ -163,7 +163,7 @@ jobs:
           echo ${{ secrets.WRITE_PACKAGE }} | docker login https://ghcr.io -u kijimad --password-stdin
           sudo tar -C edit -c . | docker import - ghcr.io/kijimad/system:latest
           # -c: アーカイブを新規に作成
-          # -C: アーカイブの本のファイルのディレクトリを指定する
+          # -C: アーカイブ元のファイルのディレクトリを指定する
           docker image tag ghcr.io/kijimad/system:latest ghcr.io/kijimad/system:${{ github.sha }}
           docker push ghcr.io/kijimad/system:latest
           docker push ghcr.io/kijimad/system:${{ github.sha }}
