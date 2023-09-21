@@ -34,7 +34,6 @@ install: cp_sensitive_files \
 # Git管理しないファイルを初期化する
 cp_sensitive_files:
 	cp -n ~/dotfiles/.authinfo ~/
-	cp -n ~/dotfiles/.gitconfig ~/
 
 # サーバ起動でエラーになることがあるのでinotifyの数を増やす
 init_inotify:
@@ -80,7 +79,7 @@ clone_repos:
 ifeq ($(TEST),1)
 	echo "not run"
 else
-	which gclone && gclone -f ~/dotfiles/gclone/config.yml
+	which gclone && gclone -f ~/dotfiles/gclone.yml
 endif
 
 # ================================

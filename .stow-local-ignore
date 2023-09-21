@@ -4,6 +4,7 @@
 .github
 .gitignore
 .site
+.ssh
 .authinfo
 .guile
 
