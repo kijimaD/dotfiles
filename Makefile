@@ -92,7 +92,7 @@ endif
 init_guix_system:
 	sudo -E guix system reconfigure ~/.config/guix/system.scm
 
-# Guixでファイルに基にパッケージをインストールする
+# Guixでファイルを基にパッケージをインストールする
 init_packages:
 	guix package -m ~/dotfiles/.config/guix/manifests/desktop.scm
 
@@ -107,15 +107,6 @@ reload_ja_input:
 # # ディレクトリを英語化する
 en_dir:
 	LANG=C xdg-user-dirs-gtk-update
-
-# 100ごとにclone。多すぎて使いにくい
-clone_all_user_projects:
-	cd ~/Project && curl https://api.github.com/users/kijimaD/repos?per_page=100 | jq .[].ssh_url | xargs -n 1 git clone
-
-# 100ごとにclone。多すぎて使いにくい
-PAGE=1
-clone_all_org_projects:
-	cd ~/ProjectOrg && curl "https://api.github.com/orgs/kd-collective/repos?per_page=100&page=$(PAGE)"  | jq .[].ssh_url | xargs -n 1 git clone
 
 # 不要なファイルを削除する
 clean:
