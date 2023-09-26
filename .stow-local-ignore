@@ -17,5 +17,6 @@ crontab
 docker-compose.yml
 gclone
 self.png
+silver
 
 /.config/guix/system\.scm

@@ -3,9 +3,8 @@
 groups:
   - dest: '~/Project'
     repos:
-      - git@github.com:kijimaD/garbanzo.git
+      - git@github.com:kijimaD/garbanzo
       - git@github.com:kijimaD/gclone
-      - git@github.com:kijimaD/ghfetcher.git
       - git@github.com:kijimaD/go_skel
       - git@github.com:kijimaD/my_elisp
       - git@github.com:kijimaD/my_go
@@ -63,7 +62,6 @@ groups:
   - dest: '~/ProjectOrg/c'
     repos:
       - git@github.com:kd-collective/curl
-      - git@github.com:kd-collective/minilisp
       - git@github.com:kd-collective/8cc
   - dest: '~/ProjectOrg/ruby'
     repos:
@@ -84,7 +82,7 @@ groups:
   - dest: '~/ProjectOrg/go'
     repos:
       - git@github.com:kd-collective/build-push-action
-      - git@github.com:kd-collective/buildkit.git
+      - git@github.com:kd-collective/buildkit
       - git@github.com:kd-collective/buildx
       - git@github.com:kd-collective/cli
       - git@github.com:kd-collective/color
@@ -97,7 +95,7 @@ groups:
       - git@github.com:kd-collective/gocloc
       - git@github.com:kd-collective/godotenv
       - git@github.com:kd-collective/golangci-lint
-      - git@github.com:kd-collective/goreleaser.git
+      - git@github.com:kd-collective/goreleaser
       - git@github.com:kd-collective/hugo
       - git@github.com:kd-collective/make2help
       - git@github.com:kd-collective/moby
@@ -107,7 +105,7 @@ groups:
       - git@github.com:kd-collective/spinner
       - git@github.com:kd-collective/svgo
       - git@github.com:kd-collective/tablewriter
-      - git@github.com:kd-collective/testify.git
+      - git@github.com:kd-collective/testify
       - git@github.com:kd-collective/tools
   - dest: '~/ProjectOrg/python'
     repos:

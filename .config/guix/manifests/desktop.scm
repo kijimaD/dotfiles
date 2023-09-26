@@ -1,11 +1,12 @@
 ;; desktop settings
 
 (specifications->manifest
- '(;; code
-   ;; "git"
+ '(
+   ;; code
+   "git"
    ;; "gcc-toolchain"
    "glibc-locales"
-   ;; "make"
+   "make"
    "jq"
    "pkg-config"
    "texinfo"
@@ -14,20 +15,20 @@
    ;; "clang"
    "file"
    "elfutils"
-   ;; "stow"
+   "stow"
    "shepherd"
-   ;; "ripgrep"
+   "ripgrep"
 
    ;; language
    ;; "go"
    "ruby"
 
    ;; package system
-   ;; "node"
+   "node"
 
    ;; network
    ;; "openssh"
-   ;; "curl"
+   "curl"
    "nss-certs"
 
    ;; lock
@@ -40,7 +41,7 @@
    ;; "docker-compose"
 
    ;; desktop
-   ;; "syncthing"
+   "syncthing"
    "polybar"
    ;; "qutebrowser"
    ;; "nyxt"
@@ -51,15 +52,16 @@
    ;; "ibus"
    ;; "ibus-anthy"
    "font-adobe-source-han-sans"
+   "fcitx"
 
    ;; emacs
    ;; "emacs"
    ;; "emacs-emacsql"
    ;; "emacs-vterm"
    ;; "emacs-org-roam"
-   ;; "cmake"
-   ;; "libtool"
-   ;; "libvterm"
+   "cmake"
+   "libtool"
+   "libvterm"
 
    ;; backup
    ;; "deja-dup"

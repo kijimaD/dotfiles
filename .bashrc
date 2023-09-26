@@ -123,7 +123,7 @@ function peco-select-history() {
     READLINE_POINT=${#READLINE_LINE}
 }
 
-# FIXME: インストールしてない場合は押せなくなるのでどうにかしたい
+# FIXME: pecoをインストールしてない場合は押せなくなるのでどうにかしたい
 bind -x '"\C-r": peco-select-history'
 
 alias sshp='ssh $(grep Host ~/.ssh/config | grep -v HostName | cut -d" " -f2 | peco)'
