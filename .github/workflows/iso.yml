@@ -188,13 +188,13 @@ jobs:
           path: ./${{ env.CUSTOM_IMAGE_ISO }}-*
           name: artifact
 
-      - name: Create Release
-        if: startsWith(github.ref, 'refs/tags/v')
-        run: |
-            gh release create ${GITHUB_REF##*/} -t "Releases ${GITHUB_REF##*/}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Create Release
+      #   if: startsWith(github.ref, 'refs/tags/v')
+      #   run: |
+      #       gh release create ${GITHUB_REF##*/} -t "Releases ${GITHUB_REF##*/}"
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload Release Asset
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
