@@ -72,18 +72,15 @@ jobs:
           go install golang.org/x/tools/cmd/godoc@latest # docs
           go install golang.org/x/tools/cmd/goimports@latest # auto import
           # Docker
-          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-          sudo apt update
-          echo -e "\n" | sudo apt install -y docker-ce docker-ce-cli containerd.io
+          # curl -fsSL https://get.docker.com -o get-docker.sh
+          # sudo sh get-docker.sh
           # docker-compose
           sudo curl -L https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
           sudo chmod +x /usr/local/bin/docker-compose
           # # Chrome
           # wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           # sudo dpkg -i google-chrome-stable_current_amd64.deb
-          # # Spotify
-          # sudo snap install spotify
+
           # # UNetbootin
           # wget https://github.com/unetbootin/unetbootin/releases/download/702/unetbootin-linux64-702.bin
           sudo mv unetbootin-linux64-702.bin /usr/local/bin/unetbootin
@@ -94,7 +91,7 @@ jobs:
           sudo add-apt-repository -y universe
           sudo add-apt-repository -y restricted
           sudo add-apt-repository -y multiverse
-          sudo add-apt-repository -y ppa:kelleyk/emacs
+          sudo add-apt-repository -y ppa:kelleyk/emacs # does not have release file
           sudo apt update &
           wait
           echo -e "\n" | sudo apt purge -y emacs* # remove old version

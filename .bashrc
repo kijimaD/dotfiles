@@ -109,9 +109,9 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 export LC_CTYPE=ja_JP.UTF-8
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
 
 # peco ================
 function peco-select-history() {
@@ -123,7 +123,7 @@ function peco-select-history() {
     READLINE_POINT=${#READLINE_LINE}
 }
 
-# FIXME: インストールしてない場合は押せなくなるのでどうにかしたい
+# FIXME: pecoをインストールしてない場合は押せなくなるのでどうにかしたい
 bind -x '"\C-r": peco-select-history'
 
 alias sshp='ssh $(grep Host ~/.ssh/config | grep -v HostName | cut -d" " -f2 | peco)'
@@ -142,8 +142,6 @@ export PROMPT_COMMAND='history -a;history -c;history -r'
 # non-system Guix settings ================
 if [ -d "$HOME/.guix-profile" ] ; then
     export GUIX_PROFILE="$HOME/.guix-profile"
-    . "$GUIX_PROFILE/etc/profile"
-    export GUIX_PROFILE="$HOME/.config/guix/current"
     . "$GUIX_PROFILE/etc/profile"
     export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 
