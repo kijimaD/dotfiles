@@ -23,7 +23,7 @@ jobs:
   #       run: yarn semantic-release
 
   goreleaser:
-    needs: semantic-release
+    # needs: semantic-release
     runs-on: ubuntu-latest
     steps:
       -
