@@ -104,7 +104,7 @@ func initDocker() silver.Task {
 // Goをインストールする
 // TODO: インストールしたあとにパスを通すのはどうしよう。ほかのコマンドに波及するのだろうか?
 func initGo() silver.Task {
-	const GoVersion = "1.20.1"
+	const GoVersion = "1.21.3"
 
 	t := silver.NewTask("initialize Go")
 	t.SetFuncs(silver.ExecFuncParam{

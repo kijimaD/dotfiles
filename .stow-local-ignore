@@ -12,10 +12,12 @@ Dockerfile
 LICENSE
 archive
 backgrounds
+build
 chrome
 crontab
 docker-compose.yml
 gclone
+gclone.yml
 self.png
 silver
 
