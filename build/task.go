@@ -11,6 +11,7 @@ import (
 	"github.com/kijimad/silver"
 )
 
+// 自分のdotfilesをクローンする
 func getDotfiles() silver.Task {
 	t := silver.NewTask("clone dotfiles")
 	t.SetFuncs(silver.ExecFuncParam{
@@ -63,6 +64,7 @@ func expandInotify() silver.Task {
 	return t
 }
 
+// crontabを実行する
 func initCrontab() silver.Task {
 	t := silver.NewTask("initialize crontab")
 	t.SetFuncs(silver.ExecFuncParam{
@@ -101,28 +103,36 @@ func initDocker() silver.Task {
 	return t
 }
 
-// Goをインストールする
-// TODO: インストールしたあとにパスを通すのはどうしよう。ほかのコマンドに波及するのだろうか?
-func initGo() silver.Task {
-	const GoVersion = "1.21.3"
-
-	t := silver.NewTask("initialize Go")
+// Goをビルド+インストールする
+// バージョン指定するためにビルドしてる。guixの設定ファイルで書けそう...
+func instGo() silver.Task {
+	const GoVersion = "1.20.2"
+	t := silver.NewTask("install Go")
 	t.SetFuncs(silver.ExecFuncParam{
 		TargetCmd: func() bool { return silver.IsExistCmd("go") },
-		DepCmd:    func() bool { return silver.IsExistCmd("curl") },
+		DepCmd:    func() bool { return silver.IsExistCmd("guix") },
 		InstCmd: func() error {
-			// 処理系 ================
-			curlcmd := fmt.Sprintf("curl -OL https://go.dev/dl/go%s.linux-amd64.tar.gz", GoVersion)
-			err := t.Exec(curlcmd)
+			err := t.Exec(fmt.Sprintf("guix build go@%s", GoVersion))
 			if err != nil {
 				return err
 			}
-			tarcmd := fmt.Sprintf("sudo tar -C /usr/local -xzf go%s.linux-amd64.tar.gz", GoVersion)
-			err = t.Exec(tarcmd)
+			err = t.Exec(fmt.Sprintf("guix package -i go@%s", GoVersion))
 			if err != nil {
 				return err
 			}
-			// packages ================
+			return nil
+		},
+	})
+	return t
+}
+
+// Go packageをインストールする
+func instGoPackages() silver.Task {
+	t := silver.NewTask("install Go package")
+	t.SetFuncs(silver.ExecFuncParam{
+		TargetCmd: nil,
+		DepCmd:    func() bool { return silver.IsExistCmd("go") },
+		InstCmd: func() error {
 			repos := []string{
 				"github.com/kijimaD/gclone@main",
 				"github.com/kijimaD/garbanzo@main",
@@ -136,7 +146,7 @@ func initGo() silver.Task {
 			}
 			for _, repo := range repos {
 				cmd := fmt.Sprintf("go install %s", repo)
-				err = t.Exec(cmd)
+				err := t.Exec(cmd)
 				if err != nil {
 					log.Fatal(err)
 				}
@@ -147,6 +157,7 @@ func initGo() silver.Task {
 	return t
 }
 
+// stowを実行して設定ファイルをホームディレクトリに展開する
 func runStow() silver.Task {
 	t := silver.NewTask("run stow")
 	t.SetFuncs(silver.ExecFuncParam{
@@ -165,6 +176,7 @@ func runStow() silver.Task {
 	return t
 }
 
+// aptで管理しているパッケージをインストールする
 func installApt() silver.Task {
 	t := silver.NewTask("install apt")
 	t.SetFuncs(silver.ExecFuncParam{
@@ -198,6 +210,7 @@ func installApt() silver.Task {
 	return t
 }
 
+// gcloneを実行してリポジトリをクローンする
 func runGclone() silver.Task {
 	t := silver.NewTask("run gclone")
 	t.SetFuncs(silver.ExecFuncParam{
@@ -220,6 +233,7 @@ func runGclone() silver.Task {
 	return t
 }
 
+// Guixをインストールする
 func initGuix() silver.Task {
 	t := silver.NewTask("initialize guix")
 	t.SetFuncs(silver.ExecFuncParam{
@@ -234,9 +248,7 @@ func initGuix() silver.Task {
 	sudo systemctl daemon-reload && \
 	sudo systemctl restart guix-daemon && \
 	guix pull && \
-	hash guix && \
-	cd ~/dotfiles && \
-	make init_packages
+	hash guix
 `
 			err := t.Exec(cmd)
 			if err != nil {
