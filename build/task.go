@@ -126,6 +126,7 @@ func initGo() silver.Task {
 			repos := []string{
 				"github.com/kijimaD/gclone@main",
 				"github.com/kijimaD/garbanzo@main",
+				"github.com/kijimaD/wei@main",
 				"golang.org/x/tools/gopls@latest",
 				"github.com/go-delve/delve/cmd/dlv@latest",
 				"github.com/nsf/gocode@latest",
