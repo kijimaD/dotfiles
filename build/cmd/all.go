@@ -23,6 +23,9 @@ func all(ctx *cli.Context) error {
 		CmdInstGoPackages.Action,
 		CmdRunStow.Action,
 		CmdInstallApt.Action,
+		CmdRunGclone.Action,
+		CmdInitGuix.Action,
+		CmdRunGuixInstall.Action,
 	}
 	for _, task := range tasks {
 		err := task(ctx)

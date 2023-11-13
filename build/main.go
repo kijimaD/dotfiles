@@ -9,19 +9,7 @@ import (
 
 // env
 // - LONG: 長い時間がかかるコマンドは環境変数LONGを必須にしておいて、LONGをつけない場合は実行をスキップする
-
-// 途中で終わったら即終了するか、継続するか制御したい
 func main() {
-	// tasks := []silver.Task{
-	// 	instGo(),
-	// 	instGoPackages(),
-	// 	runStow(),
-	// 	installApt(),
-	// 	runGclone(),
-	// 	initGuix(),
-	// 	runGuixInstall(),
-	// }
-
 	app := cmd.NewApp()
 	_ = cmd.RunApp(app, os.Args...)
 

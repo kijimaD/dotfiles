@@ -26,6 +26,9 @@ func NewApp() *cli.App {
 		CmdInstGoPackages,
 		CmdRunStow,
 		CmdInstallApt,
+		CmdRunGclone,
+		CmdInitGuix,
+		CmdRunGuixInstall,
 	}
 
 	return app
