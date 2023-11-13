@@ -22,6 +22,10 @@ func NewApp() *cli.App {
 		CmdGetDotfiles,
 		CmdInitCrontab,
 		CmdInitDocker,
+		CmdInstGo,
+		CmdInstGoPackages,
+		CmdRunStow,
+		CmdInstallApt,
 	}
 
 	return app

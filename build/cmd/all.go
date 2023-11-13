@@ -14,11 +14,15 @@ var CmdAll = &cli.Command{
 
 func all(ctx *cli.Context) error {
 	tasks := []func(*cli.Context) error{
-		cpSensitiveFile,
-		expandInotify,
-		getDotfiles,
-		initCrontab,
-		initDocker,
+		CmdCpSensitiveFile.Action,
+		CmdExpandInotify.Action,
+		CmdGetDotfiles.Action,
+		CmdInitCrontab.Action,
+		CmdInitDocker.Action,
+		CmdInstGo.Action,
+		CmdInstGoPackages.Action,
+		CmdRunStow.Action,
+		CmdInstallApt.Action,
 	}
 	for _, task := range tasks {
 		err := task(ctx)
