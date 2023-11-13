@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/dotfiles/silver/cmd"
+	"github.com/dotfiles/cube/cmd"
 	"github.com/kijimad/silver"
 )
 
