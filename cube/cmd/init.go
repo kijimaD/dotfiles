@@ -8,6 +8,8 @@ import (
 var RegisterTasks []silver.Task
 
 var cmds = []*cli.Command{
+	CmdPreCheck,
+
 	// 依存なし
 	CmdCpSensitiveFile,
 	CmdExpandInotify,
