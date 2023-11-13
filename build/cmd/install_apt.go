@@ -10,7 +10,7 @@ import (
 
 var CmdInstallApt = &cli.Command{
 	Name:        "InstallApt",
-	Usage:       "",
+	Usage:       "stowを実行して設定ファイルをホームディレクトリに展開する",
 	Description: "stowを実行して設定ファイルをホームディレクトリに展開する",
 	Action:      installApt,
 	Flags:       []cli.Flag{},

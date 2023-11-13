@@ -6,7 +6,7 @@ import (
 
 var CmdAll = &cli.Command{
 	Name:        "All",
-	Usage:       "",
+	Usage:       "すべてのタスクを実行する",
 	Description: "すべてのタスクを実行する",
 	Action:      all,
 	Flags:       []cli.Flag{},

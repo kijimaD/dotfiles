@@ -9,7 +9,7 @@ import (
 
 var CmdInitCrontab = &cli.Command{
 	Name:        "InitCrontab",
-	Usage:       "",
+	Usage:       "crontabをセットする",
 	Description: "crontabをセットする",
 	Action:      initCrontab,
 	Flags:       []cli.Flag{},

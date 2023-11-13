@@ -10,7 +10,7 @@ import (
 
 var CmdCpSensitiveFile = &cli.Command{
 	Name:        "CpSensitiveFile",
-	Usage:       "",
+	Usage:       "機微なファイルをコピーする",
 	Description: "機微なファイルをコピーする",
 	Action:      cpSensitiveFile,
 	Flags:       []cli.Flag{},

@@ -10,7 +10,7 @@ import (
 
 var CmdRunGclone = &cli.Command{
 	Name:        "RunGclone",
-	Usage:       "",
+	Usage:       "gcloneを実行してリポジトリをクローンする",
 	Description: "gcloneを実行してリポジトリをクローンする",
 	Action:      runGclone,
 	Flags:       []cli.Flag{},

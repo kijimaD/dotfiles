@@ -10,7 +10,7 @@ import (
 
 var CmdInstGoPackages = &cli.Command{
 	Name:        "InstGoPackages",
-	Usage:       "",
+	Usage:       "Go packageをインストールする",
 	Description: "Go packageをインストールする",
 	Action:      instGoPackages,
 	Flags:       []cli.Flag{},

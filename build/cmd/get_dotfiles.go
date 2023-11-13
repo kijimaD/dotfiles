@@ -9,7 +9,7 @@ import (
 
 var CmdGetDotfiles = &cli.Command{
 	Name:        "GetDotfiles",
-	Usage:       "",
+	Usage:       "dotfilesリポジトリをcloneする",
 	Description: "dotfilesリポジトリをcloneする",
 	Action:      getDotfiles,
 	Flags:       []cli.Flag{},

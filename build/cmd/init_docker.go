@@ -10,7 +10,7 @@ import (
 
 var CmdInitDocker = &cli.Command{
 	Name:        "InitDocker",
-	Usage:       "",
+	Usage:       "dockerをsudoなしで使えるようにする",
 	Description: "dockerをsudoなしで使えるようにする",
 	Action:      initDocker,
 	Flags:       []cli.Flag{},

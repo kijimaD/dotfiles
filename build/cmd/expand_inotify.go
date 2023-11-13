@@ -7,7 +7,7 @@ import (
 
 var CmdExpandInotify = &cli.Command{
 	Name:        "ExpandInotify",
-	Usage:       "",
+	Usage:       "inotifyを増やす",
 	Description: "inotifyを増やす",
 	Action:      expandInotify,
 	Flags:       []cli.Flag{},

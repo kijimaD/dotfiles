@@ -9,7 +9,7 @@ import (
 
 var CmdInstGo = &cli.Command{
 	Name:        "InstGo",
-	Usage:       "",
+	Usage:       "Goをビルド+インストールする",
 	Description: "Goをビルド+インストールする",
 	Action:      instGo,
 	Flags:       []cli.Flag{},

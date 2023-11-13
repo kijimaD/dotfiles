@@ -9,7 +9,7 @@ import (
 
 var CmdRunGuixInstall = &cli.Command{
 	Name:        "RunGuixInstall",
-	Usage:       "",
+	Usage:       "desktop.scmに記載されているパッケージをインストールする",
 	Description: "desktop.scmに記載されているパッケージをインストールする",
 	Action:      runGuixInstall,
 	Flags:       []cli.Flag{},

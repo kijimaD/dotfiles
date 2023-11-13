@@ -7,7 +7,7 @@ import (
 
 var CmdInitGuix = &cli.Command{
 	Name:        "InitGuix",
-	Usage:       "",
+	Usage:       "Guixをインストールする",
 	Description: "Guixをインストールする",
 	Action:      initGuix,
 	Flags:       []cli.Flag{},

@@ -9,7 +9,7 @@ import (
 
 var CmdRunStow = &cli.Command{
 	Name:        "RunStow",
-	Usage:       "",
+	Usage:       "stowを実行して設定ファイルをホームディレクトリに展開する",
 	Description: "stowを実行して設定ファイルをホームディレクトリに展開する",
 	Action:      runStow,
 	Flags:       []cli.Flag{},
