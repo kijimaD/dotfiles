@@ -13,11 +13,6 @@ import (
 // 途中で終わったら即終了するか、継続するか制御したい
 func main() {
 	// tasks := []silver.Task{
-	// 	getDotfiles(),
-	// 	cpSensitiveFile(),
-	// 	expandInotify(),
-	// 	initCrontab(),
-	// 	initDocker(),
 	// 	instGo(),
 	// 	instGoPackages(),
 	// 	runStow(),

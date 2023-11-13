@@ -45,8 +45,9 @@ if [ -d "/usr/local/go/bin" ] ; then
 fi
 
 if [ -d "$HOME/go/bin" ] ; then
-    export GOBIN=$HOME/go/bin
-    export PATH=$GOBIN:$PATH # ライブラリのバイナリ
+    export GOPATH=$HOME/go
+    export GOBIN=$GOPATH/bin
+    export PATH=$PATH:$GOBIN
 fi
 
 # 開発版ビルドが存在するときはそっちを使う

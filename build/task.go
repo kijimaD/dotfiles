@@ -1,107 +1,13 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 	"log"
 	"os"
-	"os/user"
 	"strings"
 
 	"github.com/kijimad/silver"
 )
-
-// 自分のdotfilesをクローンする
-func getDotfiles() silver.Task {
-	t := silver.NewTask("clone dotfiles")
-	t.SetFuncs(silver.ExecFuncParam{
-		TargetCmd: func() bool { return silver.IsExistFile("~/dotfiles") },
-		DepCmd:    func() bool { return silver.IsExistCmd("ssh") },
-		InstCmd: func() error {
-			targetDir := silver.HomeDir() + "/dotfiles"
-			cmd := fmt.Sprintf("git clone https://github.com/kijimaD/dotfiles.git %s", targetDir)
-			return t.Exec(cmd)
-		},
-	})
-	return t
-}
-
-// バージョン管理に入れないがテンプレートは用意したいファイルをコピーする
-func cpSensitiveFile() silver.Task {
-	t := silver.NewTask("copy sensitive file")
-	t.SetFuncs(silver.ExecFuncParam{
-		TargetCmd: func() bool { return silver.IsExistFile("~/.ssh/config") },
-		DepCmd:    nil,
-		InstCmd: func() error {
-			// .sshディレクトリがない場合は作成する
-			sshdir := silver.HomeDir() + "/.ssh/"
-			if _, err := os.Stat(sshdir); errors.Is(err, os.ErrNotExist) {
-				err := os.Mkdir(sshdir, os.ModePerm)
-				if err != nil {
-					return err
-				}
-			}
-			_, err := silver.Copy("~/dotfiles/.ssh/config", "~/.ssh/config")
-			if err != nil {
-				return err
-			}
-
-			return nil
-		},
-	})
-	return t
-}
-
-// inotifyを増やす
-// ホストマシンだけで実行する。コンテナからは/procに書き込みできないためエラーになる
-func expandInotify() silver.Task {
-	t := silver.NewTask("expand inotify")
-	t.SetFuncs(silver.ExecFuncParam{
-		TargetCmd: nil,
-		DepCmd:    func() bool { return !silver.OnContainer() },
-		InstCmd:   func() error { return t.Exec("echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf") },
-	})
-	return t
-}
-
-// crontabを実行する
-func initCrontab() silver.Task {
-	t := silver.NewTask("initialize crontab")
-	t.SetFuncs(silver.ExecFuncParam{
-		TargetCmd: nil,
-		DepCmd:    func() bool { return !silver.OnContainer() },
-		InstCmd: func() error {
-			targetDir := silver.HomeDir() + "/dotfiles/crontab"
-			cmd := fmt.Sprintf("crontab %s", targetDir)
-			err := t.Exec(cmd)
-			if err != nil {
-				return err
-			}
-			return nil
-		},
-	})
-	return t
-}
-
-// グループに追加してsudoなしで使えるようにする
-func initDocker() silver.Task {
-	t := silver.NewTask("initialize docker")
-	t.SetFuncs(silver.ExecFuncParam{
-		TargetCmd: func() bool { return silver.IsExistCmd("docker") },
-		DepCmd:    func() bool { return !silver.OnContainer() },
-		InstCmd: func() error {
-			currentUser, err := user.Current()
-			if err != nil {
-				return err
-			}
-			username := currentUser.Username
-			cmd := fmt.Sprint("sudo gpasswd -a %s docker", username)
-			err = t.Exec(cmd)
-			return nil
-		},
-	})
-	return t
-}
 
 // Goをビルド+インストールする
 // バージョン指定するためにビルドしてる。guixの設定ファイルで書けそう...
@@ -143,6 +49,7 @@ func instGoPackages() silver.Task {
 				"golang.org/x/tools/cmd/godoc@latest",
 				"golang.org/x/tools/cmd/goimports@latest",
 				"mvdan.cc/gofumpt@latest",
+				"github.com/golangci/golangci-lint/cmd/golangci-lint@v1.55.2",
 			}
 			for _, repo := range repos {
 				cmd := fmt.Sprintf("go install %s", repo)

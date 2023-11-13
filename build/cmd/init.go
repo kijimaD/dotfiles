@@ -17,16 +17,21 @@ func NewApp() *cli.App {
 	app.DefaultCommand = CmdAll.Name
 	app.Commands = []*cli.Command{
 		CmdAll,
-		CmdGetDotfiles,
 		CmdCpSensitiveFile,
+		CmdExpandInotify,
+		CmdGetDotfiles,
+		CmdInitCrontab,
+		CmdInitDocker,
 	}
+
 	return app
 }
 
 func RunApp(app *cli.App, args ...string) error {
 	err := app.Run(args)
-	if err == nil {
-		return nil
+	if err != nil {
+		return err
 	}
+
 	return err
 }

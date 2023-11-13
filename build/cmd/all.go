@@ -7,19 +7,24 @@ import (
 var CmdAll = &cli.Command{
 	Name:        "All",
 	Usage:       "",
-	Description: "すべて実行する",
+	Description: "すべてのタスクを実行する",
 	Action:      all,
 	Flags:       []cli.Flag{},
 }
 
 func all(ctx *cli.Context) error {
-	err := getDotfiles(ctx)
-	if err != nil {
-		return err
+	tasks := []func(*cli.Context) error{
+		cpSensitiveFile,
+		expandInotify,
+		getDotfiles,
+		initCrontab,
+		initDocker,
 	}
-	err = cpSensitiveFile(ctx)
-	if err != nil {
-		return err
+	for _, task := range tasks {
+		err := task(ctx)
+		if err != nil {
+			return err
+		}
 	}
 	return nil
 }
