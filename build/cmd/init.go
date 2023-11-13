@@ -8,18 +8,25 @@ import (
 var RegisterTasks []silver.Task
 
 var cmds = []*cli.Command{
+	// 依存なし
 	CmdCpSensitiveFile,
 	CmdExpandInotify,
-	CmdGetDotfiles,
 	CmdInitCrontab,
-	CmdInitDocker,
-	CmdInstGo,
-	CmdInstGoPackages,
-	CmdRunStow,
 	CmdInstallApt,
-	CmdRunGclone,
 	CmdInitGuix,
 	CmdRunGuixInstall,
+
+	// SSH設定が必要
+	CmdGetDotfiles,
+
+	// Dockerが必要
+	CmdInitDocker,
+
+	// 依存あり
+	CmdRunStow,
+	CmdRunGclone,
+	CmdInstGo,
+	CmdInstGoPackages,
 }
 
 func NewApp() *cli.App {
