@@ -7,6 +7,21 @@ import (
 
 var RegisterTasks []silver.Task
 
+var cmds = []*cli.Command{
+	CmdCpSensitiveFile,
+	CmdExpandInotify,
+	CmdGetDotfiles,
+	CmdInitCrontab,
+	CmdInitDocker,
+	CmdInstGo,
+	CmdInstGoPackages,
+	CmdRunStow,
+	CmdInstallApt,
+	CmdRunGclone,
+	CmdInitGuix,
+	CmdRunGuixInstall,
+}
+
 func NewApp() *cli.App {
 	app := &cli.App{}
 	app.Name = "build"
@@ -15,21 +30,8 @@ func NewApp() *cli.App {
 	app.Version = "v0.0.0"
 	app.EnableBashCompletion = true
 	app.DefaultCommand = CmdAll.Name
-	app.Commands = []*cli.Command{
-		CmdAll,
-		CmdCpSensitiveFile,
-		CmdExpandInotify,
-		CmdGetDotfiles,
-		CmdInitCrontab,
-		CmdInitDocker,
-		CmdInstGo,
-		CmdInstGoPackages,
-		CmdRunStow,
-		CmdInstallApt,
-		CmdRunGclone,
-		CmdInitGuix,
-		CmdRunGuixInstall,
-	}
+	all := append(cmds, CmdAll)
+	app.Commands = all
 
 	return app
 }

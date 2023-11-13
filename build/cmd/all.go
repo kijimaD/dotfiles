@@ -13,19 +13,9 @@ var CmdAll = &cli.Command{
 }
 
 func all(ctx *cli.Context) error {
-	tasks := []func(*cli.Context) error{
-		CmdCpSensitiveFile.Action,
-		CmdExpandInotify.Action,
-		CmdGetDotfiles.Action,
-		CmdInitCrontab.Action,
-		CmdInitDocker.Action,
-		CmdInstGo.Action,
-		CmdInstGoPackages.Action,
-		CmdRunStow.Action,
-		CmdInstallApt.Action,
-		CmdRunGclone.Action,
-		CmdInitGuix.Action,
-		CmdRunGuixInstall.Action,
+	var tasks []func(*cli.Context) error
+	for _, c := range cmds {
+		tasks = append(tasks, c.Action)
 	}
 	for _, task := range tasks {
 		err := task(ctx)
