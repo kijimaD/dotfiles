@@ -42,7 +42,7 @@ jobs:
         with:
           version: v1.19.1
           args: release --rm-dist
-          workdir: build
+          workdir: cube
         env:
           GITHUB_TOKEN: ${{ github.token }}
           TAP_GITHUB_TOKEN: ${{ secrets.TAP_GITHUB_TOKEN }}
