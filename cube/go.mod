@@ -1,4 +1,4 @@
-module github.com/dotfiles/silver
+module github.com/dotfiles/cube
 
 go 1.20
 

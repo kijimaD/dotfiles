@@ -8,21 +8,25 @@ import (
 var RegisterTasks []silver.Task
 
 var cmds = []*cli.Command{
+	CmdPreCheck,
+
 	// 依存なし
-	CmdCpSensitiveFile,
 	CmdExpandInotify,
-	CmdInitCrontab,
 	CmdInstallApt,
 	CmdInitGuix,
-	CmdRunGuixInstall,
 
-	// SSH設定が必要
+	// Dotfiles
 	CmdGetDotfiles,
+	CmdCpSensitiveFile,
+	CmdRunGuixInstall,
+	CmdInitCrontab,
 
 	// Dockerが必要
 	CmdInitDocker,
 
-	// 依存あり
+	// Emacs
+	CmdInstEmacs,
+	CmdInitEmacs,
 	CmdRunStow,
 	CmdRunGclone,
 	CmdInstGo,
