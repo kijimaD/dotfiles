@@ -28,6 +28,7 @@ func installApt(ctx *cli.Context) error {
 				return err
 			}
 			packages := []string{
+				"git",
 				"emacs-mozc",
 				"cmigemo",
 				"fcitx-mozc",
