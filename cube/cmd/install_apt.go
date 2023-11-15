@@ -22,7 +22,7 @@ func installApt(ctx *cli.Context) error {
 		TargetCmd: nil,
 		DepCmd:    func() bool { return silver.IsExistCmd("apt") },
 		InstCmd: func() error {
-			updatecmd := "sudo apt update"
+			updatecmd := "sudo apt update -y"
 			err := t.Exec(updatecmd)
 			if err != nil {
 				return err
