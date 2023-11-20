@@ -107,6 +107,9 @@ groups:
       - git@github.com:kd-collective/tablewriter
       - git@github.com:kd-collective/testify
       - git@github.com:kd-collective/tools
+      - git@github.com:x-hgg-x/goecsengine
+      - git@github.com:x-hgg-x/sokoban-go
+      - git@github.com:openflagr/flagr
   - dest: '~/ProjectOrg/python'
     repos:
       - git@github.com:kd-collective/guake
