@@ -16,7 +16,7 @@ var CmdInstGo = &cli.Command{
 }
 
 func instGo(ctx *cli.Context) error {
-	const GoVersion = "1.20.2"
+	const GoVersion = "1.21.5"
 	t := silver.NewTask("install Go")
 	t.SetFuncs(silver.ExecFuncParam{
 		TargetCmd: func() bool { return silver.IsExistCmd("go") },
