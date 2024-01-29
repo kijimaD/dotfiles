@@ -3,8 +3,16 @@
   url: https://www.rfc-editor.org/rfcrss.xml
 - desc: Go blog
   url: https://go.dev/blog/feed.atom?format=xml
+
+# weekly
+- desc: Golang Weekly
+  url: https://cprss.s3.amazonaws.com/golangweekly.com.xml
 - desc: Ruby Weekly
   url: https://cprss.s3.amazonaws.com/rubyweekly.com.xml
+- desc: Awesome Go Weekly
+  url: https://go.libhunt.com/newsletter/feed
+- desc: BITFIELD CONSULTING
+  url: https://bitfieldconsulting.com/golang?format=rss
 
 # tech blog
 - desc: Techracho
@@ -21,10 +29,10 @@
   url: https://systemcrafters.net/rss/news.xml
 - desc: Russ Cox blog
   url: https://research.swtch.com/feed.atom
+- desc: Dave Cheney
+  url: https://dave.cheney.net/feed
 - desc: keen blog
   url: https://keens.github.io/index.xml
-- desc: technology podcast
-  url: https://feeds.rebuild.fm/rebuildfm
 - desc: Rui Ueyama blog
   url: https://note.com/ruiu/rss
 - desc: YAMADAS Essay
@@ -41,14 +49,10 @@
 # zen
 - desc: hsaki
   url: https://zenn.dev/hsaki/feed
-- desc: Zenn Go
-  url: https://zenn.dev/topics/go/feed
 
 # qiita
 - desc: tenten
   url: https://qiita.com/tenntenn/feed
-- desc: qiita Emacs
-  url: https://qiita.com/talgs/emacs/feed
 
 # hatena
 - desc: mtx2s blog
@@ -58,10 +62,20 @@
 - desc: hatena Go
   url: https://b.hatena.ne.jp/q/go%E8%A8%80%E8%AA%9E?target=text&sort=recent&users=3&safe=on&mode=rss
 
+# medium
+- desc: medium
+  url: https://medium.com/feed/tag/golang
+
 # oreilly
 - desc: oreilly ebook soon
   url: https://www.oreilly.co.jp/ebook/new_release.atom
 
-# リバースプロキシ経由だと500エラーになる
-# - desc: medium
-#   url: https://medium.com/feed/tag/golang
+# podcast
+- desc: The Go Time podcast
+  url: https://changelog.com/gotime/feed
+- desc: Cup o' Go
+  url: https://feeds.transistor.fm/cup-o-go
+- desc: ゆるコンピュータ科学ラジオ
+  url: https://anchor.fm/s/7cd923f4/podcast/rss
+# - desc: Rebuild
+#   url: https://feeds.rebuild.fm/rebuildfm
