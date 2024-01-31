@@ -62,10 +62,6 @@
 - desc: hatena Go
   url: https://b.hatena.ne.jp/q/go%E8%A8%80%E8%AA%9E?target=text&sort=recent&users=3&safe=on&mode=rss
 
-# medium
-- desc: medium
-  url: https://medium.com/feed/tag/golang
-
 # oreilly
 - desc: oreilly ebook soon
   url: https://www.oreilly.co.jp/ebook/new_release.atom
@@ -79,3 +75,6 @@
   url: https://anchor.fm/s/7cd923f4/podcast/rss
 # - desc: Rebuild
 #   url: https://feeds.rebuild.fm/rebuildfm
+
+- desc: 週刊スモールトーク
+  url: http://benedict.co.jp/feed/
