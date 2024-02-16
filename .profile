@@ -36,7 +36,7 @@ fi
 # PATH="/usr/local/heroku/bin:$PATH"
 
 if [ -d "$HOME/.cargo" ] ; then
-    . "$HOME/.cargo/env"
+    PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 # go公式のディレクトリ

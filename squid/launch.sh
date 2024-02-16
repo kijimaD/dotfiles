@@ -35,3 +35,5 @@ killall -q squid
 squid --foreground &
 
 echo "squid launched..."
+
+curl -o /dev/null https://pkg.go.dev
