@@ -24,7 +24,7 @@ margin-bottom = 0
 enable-ipc = true
 monitor = ${env:MONITOR:}
 width = 100%
-height = 22
+height = 26
 offset-x = 0
 offset-y = 0
 radius = 0
@@ -56,7 +56,7 @@ font-3 = "Fira Mono:size=10;-3"
 
 modules-left = exwm-workspace
 modules-center = pomodoro
-modules-right = wlan date battery
+modules-right = proxy date battery
 ; eth
 
 ; override-redirect = true
@@ -362,7 +362,12 @@ label-font = 4
 type = custom/script
 exec = ~/dotfiles/.config/polybar/text.sh
 interval = 10
+format-underline = ${colors.primary}
 
+[module/proxy]
+type = custom/script
+exec = ~/dotfiles/.config/polybar/proxy.sh
+interval = 4
 format-underline = ${colors.primary}
 
 ; https://colekillian.com/posts/org-pomodoro-and-polybar/
@@ -370,7 +375,6 @@ format-underline = ${colors.primary}
 type = custom/script
 exec = ~/dotfiles/.config/polybar/pomodoro-bar.sh
 interval = 5
-
 format-underline = ${colors.primary}
 
 ; https://github.com/daviwil/emacs-from-scratch/blob/master/show-notes/Emacs-Desktop-05.org
@@ -378,6 +382,5 @@ format-underline = ${colors.primary}
 type = custom/ipc
 hook-0 = emacsclient -e "(kd/polybar-exwm-workspace)" | sed -e 's/^"//' -e 's/"$//'
 initial = 1
-
 format-underline = ${colors.primary}
 format-padding = 1
