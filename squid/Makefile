@@ -3,15 +3,15 @@
 export ACL_MODE := "priv"
 
 .PHONY: build-image
-build-image:
+build-image: ## 指定されたモードに基づいてイメージをビルドする。指定しない場合は値privが使われる。priv || work || disable
 	docker build . -t mysquid --build-arg ACL_MODE=$(ACL_MODE)
 
 .PHONY: up
-up:
+up: ## コンテナを起動する
 	docker run --rm -itd --network host --name mysquid mysquid
 
 .PHONY: down
-down:
+down: ## コンテナを破棄する
 	docker stop mysquid
 	sleep 2
 
