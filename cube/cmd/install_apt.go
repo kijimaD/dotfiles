@@ -28,15 +28,16 @@ func installApt(ctx *cli.Context) error {
 				return err
 			}
 			packages := []string{
-				"git",
-				"emacs-mozc",
 				"cmigemo",
-				"fcitx-mozc",
-				"peco",
-				"silversearcher-ag",
 				"compton",
-				"qemu-kvm",
+				"emacs-mozc",
+				"fcitx-mozc",
+				"git",
 				"libsqlite3-dev", // roam用
+				"peco",
+				"qemu-kvm",
+				"silversearcher-ag",
+				"squid",
 			}
 			installcmd := fmt.Sprintf("sudo apt install -y %s", strings.Join(packages, " "))
 			err = t.Exec(installcmd)
