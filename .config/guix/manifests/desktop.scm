@@ -20,7 +20,6 @@
    "ripgrep"
 
    ;; language
-   ;; "go"
    "ruby"
 
    ;; package system
@@ -66,7 +65,7 @@
    ;; backup
    ;; "deja-dup"
 
-   ;; polybar
+   ;; "polybar"
    ;; "compton"
    "feh"
    "font-awesome"
@@ -75,6 +74,6 @@
    ;; notification
    "dunst"
 
-   ;; for spotify
-   ;; "flatpak"
+   ;; cmd media player
+   "playerctl"
    ))
