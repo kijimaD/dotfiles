@@ -13,18 +13,25 @@ title/ロシア/
 *://*.huffingtonpost.jp/*
 *://*.ismedia.jp/*
 *://*.j-town.net/*
+*://*.jbpress.ismedia.jp/*
+*://*.jp.wsj.com/*
 *://*.mynavi.jp/*
+*://*.news.ntv.co.jp/*
+*://*.newsdig.tbs.co.jp/*
 *://*.nhk.jp/*
 *://*.nhk.or.jp/*
 *://*.nikkan-spa.jp/*
+*://*.nikkansports.com/*
 *://*.nikkei.com/*
 *://*.president.jp/*
 *://*.sankei.com/*
 *://*.togetter.com/*
 *://*.tokyo-np.co.jp/*
 *://*.toyokeizai.net/*
+*://*.trafficnews.jp/*
 *://*.tv-asahi.co.jp/*
 *://*.twitter.com/*
+*://*.www3.nhk.or.jp/*
 *://*.yahoo.co.jp/*
 *://*.yomiuri.co.jp/*
 

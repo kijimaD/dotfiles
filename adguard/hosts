@@ -5,36 +5,43 @@
 127.0.0.1 steampowered.com
 
 # news ================
-127.0.0.1 news.yahoo.co.jp
-127.0.0.1 news.google.com
 127.0.0.1 asahi.com
 127.0.0.1 fnn.jp
+127.0.0.1 forbesjapan.com
 127.0.0.1 gendai.media
 127.0.0.1 gentosha-go.com
 127.0.0.1 huffingtonpost.jp
 127.0.0.1 ismedia.jp
 127.0.0.1 j-town.net
+127.0.0.1 jbpress.ismedia.jp
+127.0.0.1 jp.reuters.com
+127.0.0.1 jp.wsj.com
+127.0.0.1 mainichi.jp
 127.0.0.1 mynavi.jp
+127.0.0.1 news.google.com
+127.0.0.1 news.ntv.co.jp
+127.0.0.1 news.yahoo.co.jp
+127.0.0.1 newsdig.tbs.co.jp
 127.0.0.1 nhk.jp
 127.0.0.1 nhk.or.jp
 127.0.0.1 nikkan-spa.jp
+127.0.0.1 nikkansports.com
 127.0.0.1 nikkei.com
 127.0.0.1 president.jp
 127.0.0.1 sankei.com
 127.0.0.1 togetter.com
 127.0.0.1 tokyo-np.co.jp
 127.0.0.1 toyokeizai.net
+127.0.0.1 trafficnews.jp
 127.0.0.1 tv-asahi.co.jp
+127.0.0.1 www.bbc.com
+127.0.0.1 www.bloomberg.co.jp
+127.0.0.1 www.cnn.co.jp
+127.0.0.1 www.jiji.com
+127.0.0.1 www.newsweekjapan.jp
+127.0.0.1 www3.nhk.or.jp
 127.0.0.1 yahoo.co.jp
 127.0.0.1 yomiuri.co.jp
-127.0.0.1 www.bbc.com
-127.0.0.1 jp.reuters.com
-127.0.0.1 mainichi.jp
-127.0.0.1 www.bloomberg.co.jp
-127.0.0.1 www.jiji.com
-127.0.0.1 www.cnn.co.jp
-127.0.0.1 forbesjapan.com
-127.0.0.1 www.newsweekjapan.jp
 
 # adult ================
 127.0.0.1 20jav.com
