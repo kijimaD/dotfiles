@@ -68,13 +68,17 @@ title/(?=.*エロ)(?=.*体験談)/
 *://*.inkeitooppai.youblog.jp/*
 *://*.javym.net/*
 *://*.jp.xsz-av.com/*
+*://*.klmanga.is/*
 *://*.kusorape.com/*
+*://*.mangakoma.net/*
+*://*.mangaraw.ma/*
 *://*.mangarawjp.vip/*
 *://*.masutabe.info/*
 *://*.monsnode.com/*
 *://*.moudamepo.com/*
 *://*.niji-gazo.com/*
 *://*.nozokix.com/*
+*://*.nyaa.si/*
 *://*.okazuch.site/*
 *://*.oppai-av.com/*
 *://*.oppaisan.com/*
@@ -83,6 +87,7 @@ title/(?=.*エロ)(?=.*体験談)/
 *://*.po-kaki-to.com/*
 *://*.pornhub.com/*
 *://*.pornkai.com/*
+*://*.rawmanga.net/*
 *://*.shiroino.com/*
 *://*.sikopedia.com/*
 *://*.simozo.net/*
