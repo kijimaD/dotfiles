@@ -1,7 +1,6 @@
 # https://raw.githubusercontent.com/kijimaD/dotfiles/refs/heads/main/adguard/hosts
 
 # amuse ================
-127.0.0.1 youtube.com
 127.0.0.1 steampowered.com
 
 # news ================
