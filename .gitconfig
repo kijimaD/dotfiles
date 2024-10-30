@@ -8,3 +8,5 @@
 [alias]
 	# delete merged branch
 	dmb = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|main|master'|xargs git branch -d; };f && git fetch --prune;"
+[core]
+	quotepath = false
