@@ -104,11 +104,12 @@ filters:
     url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_2.txt
     name: AdAway Default Blocklist
     id: 2
+  - enabled: true
+    url: https://raw.githubusercontent.com/kijimaD/dotfiles/refs/heads/main/adguard/hosts
+    name: my hosts
+    id: 3
 whitelist_filters: []
-user_rules:
-  - 127.0.0.1 twivideo.net
-  - 127.0.0.1 steampowered.com
-  - 127.0.0.1 news.yahoo.co.jp
+user_rules: []
 dhcp:
   enabled: false
   interface_name: ""
