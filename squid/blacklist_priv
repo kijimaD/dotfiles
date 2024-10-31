@@ -1,43 +1,25 @@
 # focus
+# 常時遮断にはしたくないような、娯楽系やついチェックしてしまうサイトを記載する。
+# ポルノとニュースはすでにDNSフィルタリングでブロックしているので書かない。
 
+# LAN ================
+.192.168.0.1
+.192.168.0.145
+
+# amuse ================
 .amazon.co.jp
 .amazon.com
-.asahi.com
 .facebook.com
 .findy-code.io
-.fnn.jp
-.gendai.media
-.gentosha-go.com
+.github.com
+.google.com
 .homes.co.jp
-.huffingtonpost.jp
-.ismedia.jp
-.j-town.net
 .linkedin.com
 .mail.google.com
-.mynavi.jp
+.map.google.com
 .netflix.com
-.nhk.jp
-.nhk.or.jp
-.nikkan-spa.jp
-.nikkei.com
-.president.jp
-.sankei.com
-.togetter.com
-.tokyo-np.co.jp
-.toyokeizai.net
-.tv-asahi.co.jp
 .twitter.com
 .with.is
+.x.com
 .yahoo.co.jp
-.yahoo.com
 .yamaiga.com
-.yomiuri.co.jp
-.youtube.com
-.googleads.com
-.microad.jp
-.adnxs.com
-.doubleclick.net
-.criteo.com
-.media-amazon.com
-.ad-delivery.net
-.yimg.jp
