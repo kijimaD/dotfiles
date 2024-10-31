@@ -1,117 +1,118 @@
 # https://raw.githubusercontent.com/kijimaD/dotfiles/refs/heads/main/adguard/hosts
 
 # amuse ================
-127.0.0.1 steampowered.com
+||steampowered.com^
+||www.nicovideo.jp^
 
 # news ================
-127.0.0.1 asahi.com
-127.0.0.1 fnn.jp
-127.0.0.1 forbesjapan.com
-127.0.0.1 gendai.media
-127.0.0.1 gentosha-go.com
-127.0.0.1 huffingtonpost.jp
-127.0.0.1 ismedia.jp
-127.0.0.1 j-town.net
-127.0.0.1 jbpress.ismedia.jp
-127.0.0.1 jp.reuters.com
-127.0.0.1 jp.wsj.com
-127.0.0.1 mainichi.jp
-127.0.0.1 mynavi.jp
-127.0.0.1 news.google.com
-127.0.0.1 news.ntv.co.jp
-127.0.0.1 news.yahoo.co.jp
-127.0.0.1 newsdig.tbs.co.jp
-127.0.0.1 nhk.jp
-127.0.0.1 nhk.or.jp
-127.0.0.1 nikkan-spa.jp
-127.0.0.1 nikkansports.com
-127.0.0.1 nikkei.com
-127.0.0.1 president.jp
-127.0.0.1 sankei.com
-127.0.0.1 togetter.com
-127.0.0.1 tokyo-np.co.jp
-127.0.0.1 toyokeizai.net
-127.0.0.1 trafficnews.jp
-127.0.0.1 tv-asahi.co.jp
-127.0.0.1 www.bbc.com
-127.0.0.1 www.bloomberg.co.jp
-127.0.0.1 www.cnn.co.jp
-127.0.0.1 www.jiji.com
-127.0.0.1 www.newsweekjapan.jp
-127.0.0.1 www3.nhk.or.jp
-127.0.0.1 yahoo.co.jp
-127.0.0.1 yomiuri.co.jp
+||asahi.com^
+||fnn.jp^
+||forbesjapan.com^
+||gendai.media^
+||gentosha-go.com^
+||huffingtonpost.jp^
+||ismedia.jp^
+||j-town.net^
+||jbpress.ismedia.jp^
+||jp.reuters.com^
+||jp.wsj.com^
+||mainichi.jp^
+||mynavi.jp^
+||news.google.com^
+||news.ntv.co.jp^
+||news.yahoo.co.jp^
+||newsdig.tbs.co.jp^
+||nhk.jp^
+||nhk.or.jp^
+||nikkan-spa.jp^
+||nikkansports.com^
+||president.jp^
+||sankei.com^
+||togetter.com^
+||tokyo-np.co.jp^
+||toyokeizai.net^
+||trafficnews.jp^
+||tv-asahi.co.jp^
+||www.bbc.com^
+||www.bloomberg.co.jp^
+||www.cnn.co.jp^
+||www.jiji.com^
+||www.newsweekjapan.jp^
+||www.nikkei.com^
+||www3.nhk.or.jp^
+||yahoo.co.jp^
+||yomiuri.co.jp^
 
 # adult ================
-127.0.0.1 20jav.com
-127.0.0.1 2chopmt.blog.jp
-127.0.0.1 5ch-echiechi.doorblog.jp
-127.0.0.1 amateur-movie.com
-127.0.0.1 blogterest.net
-127.0.0.1 chooinkya.com
-127.0.0.1 elog-ch.net
-127.0.0.1 ero-otoko.com
-127.0.0.1 ero-video.fun
-127.0.0.1 ero-video.net
-127.0.0.1 erogazoufactory.com
-127.0.0.1 erogazounosuke.com
-127.0.0.1 erokolky.eromirus.com
-127.0.0.1 eromazofu.com
-127.0.0.1 eroterest.net
-127.0.0.1 gcolle.net
-127.0.0.1 girls2847.rssing.com
-127.0.0.1 grotty-monday.com
-127.0.0.1 heypo.net
-127.0.0.1 himasoku.com
-127.0.0.1 hobonichielog.com
-127.0.0.1 inkeitooppai.youblog.jp
-127.0.0.1 javym.net
-127.0.0.1 jp.xsz-av.com
-127.0.0.1 klmanga.is
-127.0.0.1 kusorape.com
-127.0.0.1 mangakoma.net
-127.0.0.1 mangaraw.ma
-127.0.0.1 mangarawjp.vip
-127.0.0.1 masutabe.info
-127.0.0.1 missav.com
-127.0.0.1 monsnode.com
-127.0.0.1 moudamepo.com
-127.0.0.1 niji-gazo.com
-127.0.0.1 nozokix.com
-127.0.0.1 nyaa.si
-127.0.0.1 okazuch.site
-127.0.0.1 oppai-av.com
-127.0.0.1 oppaisan.com
-127.0.0.1 otonabako.com
-127.0.0.1 pashalism.com
-127.0.0.1 pizapoteto.com
-127.0.0.1 po-kaki-to.com
-127.0.0.1 pornhub.com
-127.0.0.1 pornkai.com
-127.0.0.1 rawmanga.net
-127.0.0.1 shiroino.com
-127.0.0.1 sikopedia.com
-127.0.0.1 simozo.net
-127.0.0.1 smart-douga.mobi
-127.0.0.1 spankbang.com
-127.0.0.1 spankbang.party
-127.0.0.1 sukebei.nyaa.si
-127.0.0.1 tounavi.net
-127.0.0.1 tousatu1919.com
-127.0.0.1 twivideo.net
-127.0.0.1 uratv.net
-127.0.0.1 voyeurgeek.com
-127.0.0.1 www.dmm.co.jp
-127.0.0.1 www.nukistream.com
-127.0.0.1 www.tiktok.com
-127.0.0.1 www.tokyomotion.net
-127.0.0.1 www.uraaka-joshi.com
-127.0.0.1 www.xnxx.tv
-127.0.0.1 xnxx.com
-127.0.0.1 xvideos-amateur-movie.com
-127.0.0.1 xvideos.com
-127.0.0.1 xvideos2.com
-127.0.0.1 xvideos3.com
-127.0.0.1 yaruo.info
-127.0.0.1 youskbe.com
-127.0.0.1 zettai-ero.com
+||20jav.com^
+||2chopmt.blog.jp^
+||5ch-echiechi.doorblog.jp^
+||amateur-movie.com^
+||blogterest.net^
+||chooinkya.com^
+||elog-ch.net^
+||ero-otoko.com^
+||ero-video.fun^
+||ero-video.net^
+||erogazoufactory.com^
+||erogazounosuke.com^
+||erokolky.eromirus.com^
+||eromazofu.com^
+||eroterest.net^
+||gcolle.net^
+||girls2847.rssing.com^
+||grotty-monday.com^
+||heypo.net^
+||himasoku.com^
+||hobonichielog.com^
+||inkeitooppai.youblog.jp^
+||javym.net^
+||jp.xsz-av.com^
+||klmanga.is^
+||kusorape.com^
+||mangakoma.net^
+||mangaraw.ma^
+||mangarawjp.vip^
+||masutabe.info^
+||missav.com^
+||monsnode.com^
+||moudamepo.com^
+||niji-gazo.com^
+||nozokix.com^
+||nyaa.si^
+||okazuch.site^
+||oppai-av.com^
+||oppaisan.com^
+||otonabako.com^
+||pashalism.com^
+||pizapoteto.com^
+||po-kaki-to.com^
+||pornhub.com^
+||pornkai.com^
+||rawmanga.net^
+||shiroino.com^
+||sikopedia.com^
+||simozo.net^
+||smart-douga.mobi^
+||spankbang.com^
+||spankbang.party^
+||sukebei.nyaa.si^
+||tounavi.net^
+||tousatu1919.com^
+||twivideo.net^
+||uratv.net^
+||voyeurgeek.com^
+||www.dmm.co.jp^
+||www.nukistream.com^
+||www.tiktok.com^
+||www.tokyomotion.net^
+||www.uraaka-joshi.com^
+||www.xnxx.tv^
+||xnxx.com^
+||xvideos-amateur-movie.com^
+||xvideos.com^
+||xvideos2.com^
+||xvideos3.com^
+||yaruo.info^
+||youskbe.com^
+||zettai-ero.com^
