@@ -1,11 +1,14 @@
 # https://raw.githubusercontent.com/kijimaD/dotfiles/refs/heads/main/adguard/hosts
 
 # amuse ================
-||steampowered.com^
-||www.nicovideo.jp^
+||facebook.com^
+||nicovideo.jp^
 
 # news ================
 ||asahi.com^
+||bbc.com^
+||bloomberg.co.jp^
+||cnn.co.jp^
 ||fnn.jp^
 ||forbesjapan.com^
 ||gendai.media^
@@ -14,6 +17,7 @@
 ||ismedia.jp^
 ||j-town.net^
 ||jbpress.ismedia.jp^
+||jiji.com^
 ||jp.reuters.com^
 ||jp.wsj.com^
 ||mainichi.jp^
@@ -22,10 +26,13 @@
 ||news.ntv.co.jp^
 ||news.yahoo.co.jp^
 ||newsdig.tbs.co.jp^
+||newsweekjapan.jp^
 ||nhk.jp^
+||nhk.or.jp^
 ||nhk.or.jp^
 ||nikkan-spa.jp^
 ||nikkansports.com^
+||nikkei.com^
 ||president.jp^
 ||sankei.com^
 ||togetter.com^
@@ -33,13 +40,6 @@
 ||toyokeizai.net^
 ||trafficnews.jp^
 ||tv-asahi.co.jp^
-||www.bbc.com^
-||www.bloomberg.co.jp^
-||www.cnn.co.jp^
-||www.jiji.com^
-||www.newsweekjapan.jp^
-||www.nikkei.com^
-||www3.nhk.or.jp^
 ||yahoo.co.jp^
 ||yomiuri.co.jp^
 
