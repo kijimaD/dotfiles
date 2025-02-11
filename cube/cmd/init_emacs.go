@@ -33,7 +33,7 @@ func initEmacs(ctx *cli.Context) error {
 				// 削除
 				os.RemoveAll(emacsDir)
 				// clone
-				err := t.Exec(fmt.Sprintf("git clone https://github.com/kijimaD/.emacs.d.git %s", emacsDir))
+				err := t.Exec(fmt.Sprintf("git clone git@github.com:kijimaD/.emacs.d.git %s", emacsDir))
 				if err != nil {
 					return err
 				}
