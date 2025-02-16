@@ -37,7 +37,7 @@ func installApt(ctx *cli.Context) error {
 				"peco",
 				"qemu-kvm",
 				"silversearcher-ag",
-				"squid",
+				"vlc", // eradio
 			}
 			installcmd := fmt.Sprintf("sudo apt install -y %s", strings.Join(packages, " "))
 			err = t.Exec(installcmd)
