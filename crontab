@@ -4,4 +4,4 @@
 50 00 * * * ./dotfiles/scripts/notify.sh "Timebot" "Time for bed!"
 
 00 * * * * ./dotfiles/scripts/times.sh
-50 00 * * * ./dotfiles/scripts/ann.sh "Time for bed!"
+50 00 * * * ./dotfiles/scripts/ann.sh "Sleep time!"

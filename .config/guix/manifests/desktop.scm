@@ -16,6 +16,8 @@
    "file"
    "elfutils"
    "stow"
+   ;; FIXME: v1.0.0以上だとconfigエラーになる...
+   ;; guix install shepherd@0.10.5
    "shepherd"
    "ripgrep"
 

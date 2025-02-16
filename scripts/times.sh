@@ -11,8 +11,6 @@ export XDG_RUNTIME_DIR="/run/user/1000"
 cd `dirname $0`
 
 current_hour=$(date +"%H")
-text="$current_hour o'clock"
+text="now $current_hour"
 
-spd-say "$text"
-sleep 1
 spd-say "$text"
