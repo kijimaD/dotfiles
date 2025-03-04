@@ -133,9 +133,6 @@ alias grep='grep --color=auto'
 alias obs='QT_SCALE_FACTOR=2 obs' # scale up font
 
 # environment variabels ================
-# qute browser font size
-export QT_SCALE_FACTOR=2
-
 # save history
 export PROMPT_COMMAND='history -a;history -c;history -r'
 
