@@ -5,3 +5,6 @@
 
 00 * * * * ./dotfiles/scripts/times.sh
 50 00 * * * ./dotfiles/scripts/ann.sh "Sleep time!"
+
+00 * * * * XDG_RUNTIME_DIR="/run/user/1000" aplay ./dotfiles/sounds/winnt.wav
+30 * * * * XDG_RUNTIME_DIR="/run/user/1000" aplay ./dotfiles/sounds/winxp.wav
