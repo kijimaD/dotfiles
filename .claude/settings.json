@@ -1,0 +1,47 @@
+{
+  "permissions": {
+    "allow": [
+      "List(*)",
+      "Fetch(https://*)",
+      "Edit(*)",
+      "Bash(git:*)",
+      "Bash(npm:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)"
+    ]
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/dotfiles/scripts/notify.sh 'Claude: 通知'"
+          },
+          {
+            "type": "command",
+            "command": "XDG_RUNTIME_DIR='/run/user/1000' aplay ~/dotfiles/sounds/winxp.wav"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/dotfiles/scripts/notify.sh 'Claude: ストップ'"
+          },
+          {
+            "type": "command",
+            "command": "XDG_RUNTIME_DIR='/run/user/1000' aplay ~/dotfiles/sounds/winxp.wav"
+          }
+        ]
+      }
+    ]
+  }
+}
