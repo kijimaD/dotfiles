@@ -23,7 +23,7 @@
           },
           {
             "type": "command",
-            "command": "XDG_RUNTIME_DIR='/run/user/1000' aplay ~/dotfiles/sounds/winxp.wav"
+            "command": "XDG_RUNTIME_DIR='/run/user/1000' aplay ~/dotfiles/sounds/suzu.wav"
           }
         ]
       }
@@ -34,11 +34,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/dotfiles/scripts/notify.sh 'Claude: ストップ'"
+            "command": "~/dotfiles/scripts/notify.sh 'Claude: 終了'"
           },
           {
             "type": "command",
-            "command": "XDG_RUNTIME_DIR='/run/user/1000' aplay ~/dotfiles/sounds/winxp.wav"
+            "command": "XDG_RUNTIME_DIR='/run/user/1000' aplay ~/dotfiles/sounds/pickup.wav"
           }
         ]
       }
