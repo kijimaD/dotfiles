@@ -8,6 +8,10 @@ groups:
       - git@github.com:kijimaD/go_skel
       - git@github.com:kijimaD/my_elisp
       - git@github.com:kijimaD/my_go
+      - git@github.com:kijimaD/opv
+      - git@github.com:kijimaD/or
+      - git@github.com:kijimaD/ruins
+      - git@github.com:kijimaD/stand
   - dest: '~/ProjectOrg/emacs'
     repos:
       - git@github.com:kd-collective/cask
