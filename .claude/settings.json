@@ -9,7 +9,9 @@
       "Bash(ls:*)",
       "Bash(cat:*)",
       "Bash(mkdir:*)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Bash(go:*)",
+      "Bash(make:*)"
     ]
   },
   "hooks": {
