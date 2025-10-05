@@ -12,11 +12,7 @@
 
   # The home.packages option allows you to install Nix packages into your environment
   home.packages = with pkgs; [
-    # Add your packages here
-    # Example:
-    # htop
-    # ripgrep
-    # fd
+    nodejs_24
   ];
 
   # Home Manager can also manage your environment variables through
@@ -24,6 +20,11 @@
   home.sessionVariables = {
     # EDITOR = "nvim";
   };
+
+  # Prepend Nix profile to PATH
+  home.sessionPath = [
+    "$HOME/.nix-profile/bin"
+  ];
 
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
