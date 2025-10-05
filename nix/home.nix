@@ -28,12 +28,10 @@
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
 
-  # Git configuration example
-  # programs.git = {
-  #   enable = true;
-  #   userName = "Your Name";
-  #   userEmail = "your.email@example.com";
-  # };
+  # Git configuration
+  programs.git = {
+    enable = true;
+  };
 
   # Bash configuration example
   # programs.bash = {
