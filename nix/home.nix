@@ -37,6 +37,7 @@
     gotools
     jq
     libvterm
+    libtool
     nodejs_24
     openssh
     peco
