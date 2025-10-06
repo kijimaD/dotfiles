@@ -1,119 +1,29 @@
 # gclone config
 
 groups:
+  - dest: '~/'
+    repos:
+      - git@github.com:kijimaD/roam
   - dest: '~/Project'
     repos:
-      - git@github.com:kijimaD/garbanzo
-      - git@github.com:kijimaD/gclone
       - git@github.com:kijimaD/go_skel
-      - git@github.com:kijimaD/my_elisp
-      - git@github.com:kijimaD/my_go
-      - git@github.com:kijimaD/opv
-      - git@github.com:kijimaD/or
       - git@github.com:kijimaD/ruins
-      - git@github.com:kijimaD/stand
   - dest: '~/ProjectOrg/emacs'
     repos:
-      - git@github.com:kd-collective/cask
-      - git@github.com:kd-collective/corfu
-      - git@github.com:kd-collective/crux
-      - git@github.com:kd-collective/dash.el
-      - git@github.com:kd-collective/define-word
-      - git@github.com:kd-collective/denote
-      - git@github.com:kd-collective/devdocs.el
-      - git@github.com:kd-collective/docker.el
-      - git@github.com:kd-collective/elfeed
       - git@github.com:kd-collective/emacs
-      - git@github.com:kd-collective/emacs-google-this
-      - git@github.com:kd-collective/emacs-which-key
-      - git@github.com:kd-collective/exwm
-      - git@github.com:kd-collective/forge
-      - git@github.com:kd-collective/git-link
-      - git@github.com:kd-collective/git-timemachine
-      - git@github.com:kd-collective/goto-chg
-      - git@github.com:kd-collective/hydra
-      - git@github.com:kd-collective/lsp-mode
-      - git@github.com:kd-collective/magit
       - git@github.com:kd-collective/melpa
-      - git@github.com:kd-collective/org-alert
-      - git@github.com:kd-collective/org-journal
-      - git@github.com:kd-collective/org-pomodoro
-      - git@github.com:kd-collective/org-roam
-      - git@github.com:kd-collective/org-super-agenda
-      - git@github.com:kd-collective/org-superstar-mode
-      - git@github.com:kd-collective/package-lint
-      - git@github.com:kd-collective/projectile
-      - git@github.com:kd-collective/rubocop-emacs
-      - git@github.com:kd-collective/snow.el
-      - git@github.com:kd-collective/speed-type
-      - git@github.com:kd-collective/swiper
-      - git@github.com:kd-collective/vterm-toggle
-      - git@github.com:kd-collective/xelb
-      - git@github.com:kd-collective/yasnippet
-  - dest: '~/ProjectOrg/rust'
-    repos:
-      - git@github.com:kd-collective/bracket-lib
-      - git@github.com:kd-collective/cargo
-      - git@github.com:kd-collective/dirs
-      - git@github.com:kd-collective/nushell
-      - git@github.com:kd-collective/rust
-      - git@github.com:kd-collective/shellexpand
-      - git@github.com:kd-collective/specs
   - dest: '~/ProjectOrg/cpp'
     repos:
-      - git@github.com:kd-collective/polybar
       - git@github.com:kd-collective/simutrans
   - dest: '~/ProjectOrg/c'
     repos:
       - git@github.com:kd-collective/curl
       - git@github.com:kd-collective/8cc
-  - dest: '~/ProjectOrg/ruby'
-    repos:
-      - git@github.com:kd-collective/doctree
-      - git@github.com:kd-collective/puma
-      - git@github.com:kd-collective/rubocop
-      - git@github.com:kd-collective/ruby
-      - git@github.com:kd-collective/rubygems
-  - dest: '~/ProjectOrg/rails'
-    repos:
-      - git@github.com:kd-collective/forem
-      - git@github.com:kd-collective/gitlabhq
-      - git@github.com:kd-collective/mastodon
-      - git@github.com:kd-collective/rails
-  - dest: '~/ProjectOrg/ts'
-    repos:
-      - git@github.com:kd-collective/login-action
   - dest: '~/ProjectOrg/go'
     repos:
-      - git@github.com:kd-collective/build-push-action
       - git@github.com:kd-collective/buildkit
       - git@github.com:kd-collective/buildx
-      - git@github.com:kd-collective/cli
-      - git@github.com:kd-collective/color
-      - git@github.com:kd-collective/compose
-      - git@github.com:kd-collective/echo
-      - git@github.com:kd-collective/ecspresso
       - git@github.com:kd-collective/go
-      - git@github.com:kd-collective/go-git
-      - git@github.com:kd-collective/go-github
-      - git@github.com:kd-collective/gocloc
-      - git@github.com:kd-collective/godotenv
-      - git@github.com:kd-collective/golangci-lint
-      - git@github.com:kd-collective/goreleaser
-      - git@github.com:kd-collective/hugo
-      - git@github.com:kd-collective/make2help
-      - git@github.com:kd-collective/moby
-      - git@github.com:kd-collective/octocov
-      - git@github.com:kd-collective/peco
-      - git@github.com:kd-collective/pkgsite
-      - git@github.com:kd-collective/spinner
-      - git@github.com:kd-collective/svgo
-      - git@github.com:kd-collective/tablewriter
-      - git@github.com:kd-collective/testify
-      - git@github.com:kd-collective/tools
-      - git@github.com:x-hgg-x/goecsengine
-      - git@github.com:x-hgg-x/sokoban-go
-      - git@github.com:openflagr/flagr
   - dest: '~/ProjectOrg/python'
     repos:
       - git@github.com:kd-collective/guake

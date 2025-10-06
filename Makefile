@@ -96,9 +96,9 @@ init_guix_system:
 init_packages:
 	guix package -m ~/dotfiles/.config/guix/manifests/desktop.scm
 
-# dotfilesをホームディレクトリに配置する
+# dotfilesをホームディレクトリに配置する(強制適用)
 init_stow:
-	stow .
+	stow . --adopt
 
 # ibusの設定をリロードする
 reload_ja_input:
