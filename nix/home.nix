@@ -58,11 +58,11 @@
     # Custom Go packages
     (buildGoModule {
       pname = "gclone";
-      version = "unstable-2025-10-05";
+      version = "unstable-2025-10-07";
       src = fetchFromGitHub {
         owner = "kijimaD";
         repo = "gclone";
-        rev = "main";
+        rev = "f3cf7fc1b24fcc5097e7c48afe7af535ee3f5bc2";
         hash = "sha256-CVRh8dAVhNR3ceynvGxhJqSrDpuR+bT/nw2Oux3yoDI=";
       };
       vendorHash = "sha256-w3jHXjA/nYOn4CWJFZDwfClFy+ZYv/HFIYeqlfydPhQ=";
@@ -70,12 +70,12 @@
 
     (buildGoModule {
       pname = "xruler";
-      version = "unstable-2025-10-06";
+      version = "unstable-2025-10-07";
       src = fetchFromGitHub {
         owner = "kijimaD";
         repo = "xruler";
-        rev = "main";
-        hash = "sha256-tXvBDVBhM6o+me5cDOliKvdRxsRFgAGZWlxnZKGy2Tk=";
+        rev = "bc15469991039e6f844eaf9c1f05804346ccbd82";
+        hash = "sha256-IjYQD1SQYc7XkzwwSl81g81ARTexkeFKdlIE0UAiWGE=";
       };
       vendorHash = "sha256-u9Ex75kJOKoutkxibU2zJ21j270aIX6P/PVAT51urfI=";
     })
