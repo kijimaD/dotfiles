@@ -39,7 +39,6 @@
     libtool
     libvterm
     nodejs_24
-    openssh
     peco
     picom
     playerctl
@@ -67,6 +66,18 @@
         hash = "sha256-CVRh8dAVhNR3ceynvGxhJqSrDpuR+bT/nw2Oux3yoDI=";
       };
       vendorHash = "sha256-w3jHXjA/nYOn4CWJFZDwfClFy+ZYv/HFIYeqlfydPhQ=";
+    })
+
+    (buildGoModule {
+      pname = "xruler";
+      version = "unstable-2025-10-06";
+      src = fetchFromGitHub {
+        owner = "kijimaD";
+        repo = "xruler";
+        rev = "main";
+        hash = "sha256-tXvBDVBhM6o+me5cDOliKvdRxsRFgAGZWlxnZKGy2Tk=";
+      };
+      vendorHash = "sha256-u9Ex75kJOKoutkxibU2zJ21j270aIX6P/PVAT51urfI=";
     })
   ];
 
