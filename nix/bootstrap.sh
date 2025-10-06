@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# 環境変数のデフォルト値
+LONG="${LONG:-}"
+
 echo "=== Dotfiles Bootstrap ==="
 echo ""
 
