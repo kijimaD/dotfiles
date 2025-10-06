@@ -244,6 +244,15 @@ setup_emacs() {
     mv "$temp_dir" "$HOME/.emacs.d"
     echo "  Done: moved to final location"
 
+    # Clone cask
+    if [ -d "$HOME/.cask" ]; then
+        echo "  Skip: .cask already exists"
+    else
+        echo "  Cloning cask..."
+        git clone https://github.com/cask/cask.git "$HOME/.cask"
+        echo "  Done: cloned cask"
+    fi
+
     # Run cask install
     if ! command -v cask &> /dev/null; then
         echo "  Error: cask command not found"
