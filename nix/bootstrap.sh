@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -euox pipefail
 
 # 環境変数のデフォルト値
 LONG="${LONG:-}"
@@ -256,6 +256,8 @@ setup_emacs() {
     cd "$HOME/.emacs.d"
     cask install
     echo "  Done: cask install completed"
+
+    emacs -nw --batch --load "$HOME/.emacs.d/init.el" --eval '(all-the-icons-install-fonts t)'
 }
 
 # gclone でリポジトリを一括クローン（LONG環境変数が設定されている場合のみ）
