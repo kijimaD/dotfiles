@@ -4,10 +4,6 @@
   # Allow unfree packages (needed for google-chrome)
   nixpkgs.config.allowUnfree = true;
 
-  # Home Manager needs a bit of information about you and the paths it should manage
-  home.username = "violet";
-  home.homeDirectory = "/home/violet";
-
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -15,22 +11,28 @@
 
   # The home.packages option allows you to install Nix packages into your environment
   home.packages = with pkgs; [
+    cask
     claude-code
+    cmigemo
+    picom  # compton の後継
     curl
     delve
     docker
     docker-compose
     dunst
-    emacs30
     fcitx5
     fcitx5-gtk
     fcitx5-mozc
     gimp
+    git
+    gnumake
     go
     gocode-gomod
-    gotools
+    golangci-lint
     google-chrome
     gopls
+    gotools
+    jq
     libvterm
     nodejs_24
     peco
@@ -39,8 +41,11 @@
     python3
     qemu_kvm
     ripgrep
+    silver-searcher  # silversearcher-ag
+    sqlite  # libsqlite3-dev
     stow
     unetbootin
+    vlc
 
     # Custom Go packages
     (buildGoModule {
@@ -102,6 +107,15 @@
 
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
+
+  # Emacs configuration
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacs30;
+    extraPackages = epkgs: with epkgs; [
+      mozc
+    ];
+  };
 
   # Git configuration
   programs.git = {

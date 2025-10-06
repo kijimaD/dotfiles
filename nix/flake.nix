@@ -19,6 +19,22 @@
 
         modules = [
           ./home.nix
+          {
+            home.username = "violet";
+            home.homeDirectory = "/home/violet";
+          }
+        ];
+      };
+
+      homeConfigurations."gray" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        modules = [
+          ./home.nix
+          {
+            home.username = "gray";
+            home.homeDirectory = "/home/gray";
+          }
         ];
       };
     };
