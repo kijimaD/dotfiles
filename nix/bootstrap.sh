@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euox pipefail
 
+cd `dirname $0`
+cd .
+
 # 環境変数のデフォルト値
 LONG="${LONG:-}"
 

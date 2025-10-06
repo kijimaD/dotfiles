@@ -1,6 +1,10 @@
 ## 運用
 
 ```shell
+# 初回
+nix run home-manager -- switch --flake .#violet
+
+# 以降
 home-manager switch --flake .#violet
 ```
 
