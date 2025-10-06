@@ -11,6 +11,7 @@
 
   # The home.packages option allows you to install Nix packages into your environment
   home.packages = with pkgs; [
+    awscli2
     cask
     claude-code
     cmigemo
@@ -21,8 +22,10 @@
     docker-compose
     dunst
     fcitx5
+    fcitx5-configtool
     fcitx5-gtk
     fcitx5-mozc
+    gh
     gimp
     git
     gnumake
@@ -35,6 +38,7 @@
     jq
     libvterm
     nodejs_24
+    openssh
     peco
     playerctl
     polybar
@@ -44,6 +48,8 @@
     silver-searcher  # silversearcher-ag
     sqlite  # libsqlite3-dev
     stow
+    terraform
+    typora
     unetbootin
     vlc
 
@@ -103,6 +109,27 @@
       };
       Install.WantedBy = [ "graphical-session.target" ];
     };
+
+    picom = {
+      Unit.Description = "Picom compositor";
+      Unit.After = [ "graphical-session.target" ];
+      Service = {
+        ExecStart = "${pkgs.picom}/bin/picom";
+        Restart = "on-failure";
+      };
+      Install.WantedBy = [ "graphical-session.target" ];
+    };
+  };
+
+  # SSH key generation
+  home.activation = {
+    generateSshKey = config.lib.dag.entryAfter ["writeBoundary"] ''
+      if [ ! -f ~/.ssh/id_ed25519 ]; then
+        mkdir -p ~/.ssh
+        chmod 700 ~/.ssh
+        ${pkgs.openssh}/bin/ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519
+      fi
+    '';
   };
 
   # Let Home Manager install and manage itself
@@ -121,12 +148,4 @@
   programs.git = {
     enable = true;
   };
-
-  # Bash configuration example
-  # programs.bash = {
-  #   enable = true;
-  #   shellAliases = {
-  #     ll = "ls -la";
-  #   };
-  # };
 }
