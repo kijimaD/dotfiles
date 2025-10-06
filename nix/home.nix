@@ -16,7 +16,6 @@
     claude-code
     cmake
     cmigemo
-    picom  # compton の後継
     curl
     delve
     docker-compose
@@ -25,6 +24,7 @@
     fcitx5-configtool
     fcitx5-gtk
     fcitx5-mozc
+    font-awesome
     gh
     gimp
     git
@@ -36,18 +36,20 @@
     gopls
     gotools
     jq
-    libvterm
     libtool
+    libvterm
     nodejs_24
     openssh
     peco
+    picom
     playerctl
     polybar
     python3
     qemu_kvm
+    redshift
     ripgrep
-    silver-searcher  # silversearcher-ag
-    sqlite  # libsqlite3-dev
+    silver-searcher
+    sqlite
     stow
     terraform
     typora

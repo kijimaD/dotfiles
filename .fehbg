@@ -1,4 +1,0 @@
-#!/bin/sh
-
-# Mountain
-feh --no-fehbg --bg-fill ~/dotfiles/backgrounds/linuxmint-vanessa/navi_india.jpg
