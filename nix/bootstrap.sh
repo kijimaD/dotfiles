@@ -227,25 +227,14 @@ run_stow() {
 setup_emacs() {
     echo "Setting up Emacs..."
 
-    # Clone .emacs.d to temporary location first
-    local temp_dir="$HOME/.emacs.d.tmp"
-
-    if [ -d "$temp_dir/.git" ]; then
-        echo "  Updating existing .emacs.d clone..."
-        cd "$temp_dir"
-        git pull
+    # Clone .emacs.d
+    if [ -d "$HOME/.emacs.d/.git" ]; then
+        echo "  Skip: .emacs.d already exists"
     else
-        echo "  Cloning .emacs.d to temporary location..."
-        rm -rf "$temp_dir"
-        git clone git@github.com:kijimaD/.emacs.d.git "$temp_dir"
+        echo "  Cloning .emacs.d..."
+        git clone git@github.com:kijimaD/.emacs.d.git "$HOME/.emacs.d"
         echo "  Done: cloned .emacs.d"
     fi
-
-    # Move to final location (overwrite if exists)
-    echo "  Moving to $HOME/.emacs.d..."
-    rm -rf "$HOME/.emacs.d"
-    mv "$temp_dir" "$HOME/.emacs.d"
-    echo "  Done: moved to final location"
 
     # Clone cask
     if [ -d "$HOME/.cask" ]; then
