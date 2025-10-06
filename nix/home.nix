@@ -18,7 +18,6 @@
     picom  # compton の後継
     curl
     delve
-    docker
     docker-compose
     dunst
     fcitx5

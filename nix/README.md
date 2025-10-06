@@ -18,9 +18,9 @@ qemu-img create -f qcow2 ubuntu.qcow2 100G
 2. ISOからインストール:
 qemu-system-x86_64 \
   -enable-kvm -m 4096 \
-  -hda ubuntu.qcow2 \
-  -cdrom ubuntu-24.04.3-desktop-amd64.iso \
+  -hda mint.qcow2 \
+  -cdrom linuxmint-22.2-cinnamon-64bit.iso \
   -boot d
 
 3. ISOなしで起動する:
-qemu-system-x86_64 -enable-kvm -m 4096 -hda ubuntu.qcow2
+qemu-system-x86_64 -enable-kvm -m 4096 -hda mint.qcow2

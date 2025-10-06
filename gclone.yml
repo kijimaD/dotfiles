@@ -4,6 +4,7 @@ groups:
   - dest: '~/'
     repos:
       - git@github.com:kijimaD/roam
+      - git@github.com:cask/cask.git
   - dest: '~/Project'
     repos:
       - git@github.com:kijimaD/go_skel

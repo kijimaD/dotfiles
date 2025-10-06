@@ -112,18 +112,6 @@ setup_github_ssh() {
         echo "  Skip: already logged in to GitHub CLI"
     fi
 
-    # Add SSH key to GitHub
-    local hostname=$(hostname)
-    local key_title="dotfiles-${hostname}"
-    local public_key=$(cat "$HOME/.ssh/id_ed25519.pub")
-
-    if gh ssh-key list | grep -q "${public_key%% *}"; then
-        echo "  Skip: SSH key already registered on GitHub"
-    else
-        echo "  Adding SSH key to GitHub..."
-        gh ssh-key add "$HOME/.ssh/id_ed25519.pub" -t "$key_title"
-    fi
-
     # Test SSH connection
     if ssh -T -o StrictHostKeyChecking=no git@github.com 2>&1 | grep -q "successfully authenticated"; then
         echo "  Done: GitHub SSH connection successful"
@@ -198,42 +186,23 @@ init_crontab() {
     fi
 }
 
-# Docker をsudoなしで使えるように設定＆自動起動を有効化
+# Docker をインストールする(apt)
 init_docker() {
     echo "Initializing Docker..."
 
+    # Install Docker via apt if not installed
     if ! command -v docker &> /dev/null; then
-        echo "  Skip: docker not installed"
-        return 0
+        echo "  Installing Docker via apt..."
+        sudo apt-get update
+        sudo apt-get install -y docker.io
+        echo "  Done: Docker installed"
+    else
+        echo "  Skip: docker already installed"
     fi
 
     # Add user to docker group
-    local username=$(whoami)
-    if groups | grep -q docker; then
-        echo "  Skip: user already in docker group"
-    else
-        echo "  Adding user to docker group..."
-        sudo gpasswd -a "$username" docker
-        echo "  Done: added to docker group (re-login required)"
-    fi
-
-    # Enable docker service
-    if systemctl is-enabled docker &>/dev/null; then
-        echo "  Skip: docker service already enabled"
-    else
-        echo "  Enabling docker service..."
-        sudo systemctl enable docker
-        echo "  Done: docker service enabled"
-    fi
-
-    # Start docker service
-    if systemctl is-active docker &>/dev/null; then
-        echo "  Skip: docker service already running"
-    else
-        echo "  Starting docker service..."
-        sudo systemctl start docker
-        echo "  Done: docker service started"
-    fi
+    sudo gpasswd -a $(whoami) docker
+    id $(whoami)
 }
 
 # stow でシンボリックリンクを作成
