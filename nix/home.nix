@@ -14,6 +14,7 @@
     awscli2
     cask
     claude-code
+    cmake
     cmigemo
     picom  # compton の後継
     curl
