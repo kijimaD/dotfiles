@@ -9,11 +9,6 @@
   # introduces backwards incompatible changes.
   home.stateVersion = "24.05";
 
-  # Keyboard configuration - swap Caps Lock and Control
-  home.keyboard = {
-    options = [ "ctrl:swapcaps" ];
-  };
-
   # The home.packages option allows you to install Nix packages into your environment
   home.packages = with pkgs; [
     awscli2
@@ -101,6 +96,18 @@
 
   # User services
   systemd.user.services = {
+    # Swap Caps Lock and Control keys
+    setxkbmap = {
+      Unit.Description = "Set keyboard layout and swap Caps Lock with Control";
+      Unit.After = [ "graphical-session.target" ];
+      Service = {
+        Type = "oneshot";
+        ExecStart = "${pkgs.xorg.setxkbmap}/bin/setxkbmap -option ctrl:swapcaps";
+        RemainAfterExit = true;
+      };
+      Install.WantedBy = [ "graphical-session.target" ];
+    };
+
     syncthing = {
       Unit.Description = "Syncthing";
       Service = {
