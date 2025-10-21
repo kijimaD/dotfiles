@@ -25,6 +25,7 @@
     fcitx5-gtk
     fcitx5-mozc
     font-awesome
+    gemini-cli
     gh
     gimp
     git
@@ -70,11 +71,11 @@
 
     (buildGoModule {
       pname = "xruler";
-      version = "unstable-2025-10-07";
+      version = "unstable-2025-10-22";
       src = fetchFromGitHub {
         owner = "kijimaD";
         repo = "xruler";
-        rev = "bc15469991039e6f844eaf9c1f05804346ccbd82";
+        rev = "91c1f6d47ca15d9e3dc3ee334e7da4e5bf6f77f6";
         hash = "sha256-IjYQD1SQYc7XkzwwSl81g81ARTexkeFKdlIE0UAiWGE=";
       };
       vendorHash = "sha256-kAvsrEjz/0xb7/lizw+Ag+5YyVGYhnepKnVcnmStiS4=";
@@ -99,13 +100,13 @@
     # Swap Caps Lock and Control keys
     setxkbmap = {
       Unit.Description = "Set keyboard layout and swap Caps Lock with Control";
-      Unit.After = [ "graphical-session.target" ];
       Service = {
         Type = "oneshot";
         ExecStart = "${pkgs.xorg.setxkbmap}/bin/setxkbmap -option ctrl:swapcaps";
         RemainAfterExit = true;
+        Restart = "on-failure";
       };
-      Install.WantedBy = [ "graphical-session.target" ];
+      Install.WantedBy = [ "default.target" ];
     };
 
     syncthing = {
@@ -128,22 +129,29 @@
 
     dunst = {
       Unit.Description = "Dunst notification daemon";
-      Unit.After = [ "graphical-session.target" ];
       Service = {
         ExecStart = "${pkgs.dunst}/bin/dunst";
         Restart = "on-failure";
       };
-      Install.WantedBy = [ "graphical-session.target" ];
+      Install.WantedBy = [ "default.target" ];
     };
 
     picom = {
       Unit.Description = "Picom compositor";
-      Unit.After = [ "graphical-session.target" ];
       Service = {
         ExecStart = "${pkgs.picom}/bin/picom";
         Restart = "on-failure";
       };
-      Install.WantedBy = [ "graphical-session.target" ];
+      Install.WantedBy = [ "default.target" ];
+    };
+
+    polybar = {
+      Unit.Description = "Polybar status bar";
+      Service = {
+        ExecStart = "${pkgs.polybar}/bin/polybar top";
+        Restart = "on-failure";
+      };
+      Install.WantedBy = [ "default.target" ];
     };
   };
 

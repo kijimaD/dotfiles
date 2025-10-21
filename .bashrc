@@ -191,5 +191,3 @@ PROMPT_COMMAND='__show_status;'${PROMPT_COMMAND//__show_status;/}
 if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
   . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 fi
-
-~/dotfiles/.config/polybar/launch.sh
