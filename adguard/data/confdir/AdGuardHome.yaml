@@ -134,27 +134,30 @@ filtering:
     schedule:
       time_zone: Asia/Tokyo
       sun:
-        start: 19h
+        start: 17h
         end: 23h59m
       mon:
-        start: 19h
+        start: 17h
         end: 23h59m
       tue:
-        start: 19h
+        start: 17h
         end: 23h59m
       wed:
-        start: 19h
+        start: 17h
         end: 23h59m
       thu:
-        start: 19h
+        start: 17h
         end: 23h59m
       fri:
-        start: 19h
+        start: 17h
         end: 23h59m
       sat:
-        start: 19h
+        start: 17h
         end: 23h59m
-    ids: []
+    ids:
+      - twitter
+      - facebook
+      - linkedin
   protection_disabled_until: null
   safe_search:
     enabled: true
@@ -164,11 +167,13 @@ filtering:
     google: true
     pixabay: true
     yandex: true
-    youtube: true
+    youtube: false
   blocking_mode: default
   parental_block_host: family-block.dns.adguard.com
   safebrowsing_block_host: standard-block.dns.adguard.com
-  rewrites: []
+  rewrites:
+    - domain: '*.lan'
+      answer: 192.168.0.197
   safe_fs_patterns:
     - /opt/adguardhome/work/userfilters/*
   safebrowsing_cache_size: 1048576
@@ -179,7 +184,7 @@ filtering:
   blocked_response_ttl: 10
   filtering_enabled: true
   parental_enabled: true
-  safebrowsing_enabled: false
+  safebrowsing_enabled: true
   protection_enabled: true
 clients:
   runtime_sources:
