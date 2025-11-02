@@ -27,6 +27,7 @@
     font-awesome
     gemini-cli
     gh
+    tree
     gimp
     git
     gnumake
