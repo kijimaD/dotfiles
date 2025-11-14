@@ -10,7 +10,7 @@ home-manager switch --flake .#violet
 
 ```
 # 個別のハッシュを得るときは nix-prefetch-github を使うといいらしい
-nix-shell -p nix-prefetch-github --run "nix-prefetch-github kijimaD xruler --rev <COMMIT_SHA>"
+nix-shell -p nix-prefetch-github --run "nix-prefetch-github kijimad xruler --rev <COMMIT_SHA>"
 ```
 
 ## 仮想イメージで試す手順

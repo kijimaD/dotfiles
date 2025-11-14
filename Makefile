@@ -2,7 +2,7 @@
 
 # build system
 # ベースイメージで実行していることを前提にしている。
-# https://github.com/kijimaD/dotfiles/releases
+# https://github.com/kijimad/dotfiles/releases
 
 # ================================
 

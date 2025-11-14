@@ -1,4 +1,4 @@
-# https://raw.githubusercontent.com/kijimaD/dotfiles/main/chrome/uBlacklist.txt
+# https://raw.githubusercontent.com/kijimad/dotfiles/main/chrome/uBlacklist.txt
 
 # news ================
 

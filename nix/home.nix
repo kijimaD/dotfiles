@@ -62,7 +62,7 @@
       pname = "gclone";
       version = "unstable-2025-10-07";
       src = fetchFromGitHub {
-        owner = "kijimaD";
+        owner = "kijimad";
         repo = "gclone";
         rev = "f3cf7fc1b24fcc5097e7c48afe7af535ee3f5bc2";
         hash = "sha256-CVRh8dAVhNR3ceynvGxhJqSrDpuR+bT/nw2Oux3yoDI=";
@@ -74,7 +74,7 @@
       pname = "xruler";
       version = "unstable-2025-10-22";
       src = fetchFromGitHub {
-        owner = "kijimaD";
+        owner = "kijimad";
         repo = "xruler";
         rev = "91c1f6d47ca15d9e3dc3ee334e7da4e5bf6f77f6";
         hash = "sha256-IjYQD1SQYc7XkzwwSl81g81ARTexkeFKdlIE0UAiWGE=";

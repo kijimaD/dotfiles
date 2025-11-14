@@ -3,11 +3,11 @@
 groups:
   - dest: '~/'
     repos:
-      - git@github.com:kijimaD/roam
+      - git@github.com:kijimad/roam
   - dest: '~/Project'
     repos:
-      - git@github.com:kijimaD/go_skel
-      - git@github.com:kijimaD/ruins
+      - git@github.com:kijimad/go_skel
+      - git@github.com:kijimad/ruins
   - dest: '~/ProjectOrg/emacs'
     repos:
       - git@github.com:kd-collective/emacs

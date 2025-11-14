@@ -43,7 +43,7 @@ clone_dotfiles() {
     if [ -d "$HOME/dotfiles" ]; then
         echo "  Skip: already exists"
     else
-        git clone https://github.com/kijimaD/dotfiles.git "$HOME/dotfiles"
+        git clone https://github.com/kijimad/dotfiles.git "$HOME/dotfiles"
         echo "  Done"
     fi
 }
@@ -133,7 +133,7 @@ switch_remote_to_ssh() {
     local current_remote=$(git remote get-url origin)
 
     if [[ "$current_remote" == https://* ]]; then
-        git remote set-url origin git@github.com:kijimaD/dotfiles.git
+        git remote set-url origin git@github.com:kijimad/dotfiles.git
         echo "  Done: changed from HTTPS to SSH"
     else
         echo "  Skip: already using SSH"
@@ -235,7 +235,7 @@ setup_emacs() {
         echo "  Skip: .emacs.d already exists"
     else
         echo "  Cloning .emacs.d..."
-        git clone git@github.com:kijimaD/.emacs.d.git "$HOME/.emacs.d"
+        git clone git@github.com:kijimad/.emacs.d.git "$HOME/.emacs.d"
         echo "  Done: cloned .emacs.d"
     fi
 
