@@ -1,5 +1,7 @@
 # https://raw.githubusercontent.com/kijimad/dotfiles/main/chrome/uBlacklist.txt
 
+title/検索エンジン/
+
 # news ================
 
 title/ニュース/
@@ -87,6 +89,7 @@ title/(?=.*エロ)(?=.*体験談)/
 *://*.chomanga.org/*
 *://*.chooinkya.com/*
 *://*.cigs.canon/*
+*://*.coccoc.com/*
 *://*.drdinl.com/*
 *://*.duckduckgo.com/*
 *://*.elog-ch.net/*
@@ -98,6 +101,8 @@ title/(?=.*エロ)(?=.*体験談)/
 *://*.erokolky.eromirus.com/*
 *://*.eromazofu.com/*
 *://*.eroterest.net/*
+*://*.fc2ppv.livedoor.blog/*
+*://*.fc2ppv.me/*
 *://*.fufu.ame-plus.net/*
 *://*.gcolle.net/*
 *://*.girls2847.rssing.com/*
@@ -112,6 +117,7 @@ title/(?=.*エロ)(?=.*体験談)/
 *://*.jnobankisya.2chblog.jp/*
 *://*.jp.xsz-av.com/*
 *://*.klmanga.is/*
+*://*.korewaeroi.com/*
 *://*.kusorape.com/*
 *://*.love-hololive.blog.jp/*
 *://*.manga-mate.org/*
@@ -121,11 +127,14 @@ title/(?=.*エロ)(?=.*体験談)/
 *://*.mangaraw.ma/*
 *://*.mangarawjp.vip/*
 *://*.masutabe.info/*
+*://*.mmmvideos.com/*
 *://*.monsnode.com/*
 *://*.moudamepo.com/*
+*://*.n-works.link/*
 *://*.newmofu.doorblog.jp/*
 *://*.newsweekjapan.jp/*
 *://*.niji-gazo.com/*
+*://*.nijihorosokuvtubermatome.com/*
 *://*.nozokix.com/*
 *://*.nyaa.si/*
 *://*.okazuch.site/*
@@ -140,7 +149,9 @@ title/(?=.*エロ)(?=.*体験談)/
 *://*.rawlazy.is/*
 *://*.rawmanga.net/*
 *://*.rawuwu.com/*
+*://*.search.brave.com/*
 *://*.shiroino.com/*
+*://*.shirotovideo.com/*
 *://*.sikopedia.com/*
 *://*.simozo.net/*
 *://*.smart-douga.mobi/*
@@ -149,13 +160,20 @@ title/(?=.*エロ)(?=.*体験談)/
 *://*.spoilerplus.blog/*
 *://*.summary.fc2.com/*
 *://*.tounavi.net/*
+*://*.uc-shop.by/*
 *://*.uratv.net/*
 *://*.voyeurgeek.com/*
 *://*.world-fusigi.net/*
+*://*.www.baidu.com/*
+*://*.www.bilibili.com/*
+*://*.www.cbmgv.com/*
+*://*.www.dailymotion.com/*
 *://*.www.dmm.co.jp/*
 *://*.www.ghosthost.sk/*
 *://*.www.nukistream.com/*
 *://*.www.panchira.club/*
+*://*.www.ptt.cc/*
+*://*.www.pttweb.cc/*
 *://*.www.tiktok.com/*
 *://*.www.tokyomotion.net/*
 *://*.www.uraaka-joshi.com/*
@@ -165,6 +183,7 @@ title/(?=.*エロ)(?=.*体験談)/
 *://*.xvideos.com/*
 *://*.xvideos2.com/*
 *://*.xvideos3.com/*
+*://*.yandex.com/*
 *://*.yaruo.info/*
 *://*.youskbe.com/*
 *://*.zettai-ero.com/*
